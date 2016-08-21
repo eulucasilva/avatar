@@ -313,8 +313,26 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete RIT',
                 'description' => 'Delete RIT'
             ],
-
-
+            [
+                'name' => 'gestao_departamento-list',
+                'display_name' => 'Display Departamento Listing',
+                'description' => 'See only Listing Departamento'
+            ],
+            [
+                'name' => 'gestao_departamento-list-create',
+                'display_name' => 'Create Departamento',
+                'description' => 'Create New Departamento'
+            ],
+            [
+                'name' => 'gestao_departamento-edit',
+                'display_name' => 'Edit Departamento',
+                'description' => 'Edit Departamento'
+            ],
+            [
+                'name' => 'gestao_departamento-delete',
+                'display_name' => 'Delete Departamento',
+                'description' => 'Delete Departamento'
+            ],
 
         ];
 

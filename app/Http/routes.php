@@ -38,4 +38,15 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('itemCRUD2/{id}/edit',['as'=>'itemCRUD2.edit','uses'=>'ItemCRUD2Controller@edit','middleware' => ['permission:item-edit']]);
 	Route::patch('itemCRUD2/{id}',['as'=>'itemCRUD2.update','uses'=>'ItemCRUD2Controller@update','middleware' => ['permission:item-edit']]);
 	Route::delete('itemCRUD2/{id}',['as'=>'itemCRUD2.destroy','uses'=>'ItemCRUD2Controller@destroy','middleware' => ['permission:item-delete']]);
+
+	Route::get('periodoLetivo',['as'=>'periodoLetivo.index','uses'=>'PeriodoLetivoController@index','middleware' => ['permission:gestao_periodo_letivo-list|gestao_periodo_letivo-create|gestao_periodo_letivo-edit|gestao_periodo_letivo-delete']]);
+	Route::get('periodoLetivo/create',['as'=>'periodoLetivo.create','uses'=>'PeriodoLetivoController@create','middleware' => ['permission:gestao_periodo_letivo-create']]);
+	Route::post('periodoLetivo/create',['as'=>'periodoLetivo.store','uses'=>'PeriodoLetivoController@store','middleware' => ['permission:gestao_periodo_letivo-create']]);
+	Route::get('periodoLetivo/{id}',['as'=>'periodoLetivo.show','uses'=>'PeriodoLetivoController@show']);
+	Route::get('periodoLetivo/{id}/edit',['as'=>'periodoLetivo.edit','uses'=>'PeriodoLetivoController@edit','middleware' => ['permission:gestao_periodo_letivo-edit']]);
+	Route::patch('periodoLetivo/{id}',['as'=>'periodoLetivo.update','uses'=>'PeriodoLetivoController@update','middleware' => ['permission:gestao_periodo_letivo-edit']]);
+	Route::delete('periodoLetivo/{id}',['as'=>'periodoLetivo.destroy','uses'=>'PeriodoLetivoController@destroy','middleware' => ['permission:gestao_periodo_letivo-delete']]);
+
+
 });
+
