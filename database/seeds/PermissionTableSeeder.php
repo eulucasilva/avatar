@@ -319,7 +319,7 @@ class PermissionTableSeeder extends Seeder
                 'description' => 'See only Listing Departamento'
             ],
             [
-                'name' => 'gestao_departamento-list-create',
+                'name' => 'gestao_departamento-create',
                 'display_name' => 'Create Departamento',
                 'description' => 'Create New Departamento'
             ],
@@ -332,6 +332,86 @@ class PermissionTableSeeder extends Seeder
                 'name' => 'gestao_departamento-delete',
                 'display_name' => 'Delete Departamento',
                 'description' => 'Delete Departamento'
+            ],
+             [
+                'name' => 'gestao_professor-list',
+                'display_name' => 'Display Professor Listing',
+                'description' => 'See only Listing Departamento'
+            ],
+            [
+                'name' => 'gestao_professor-create',
+                'display_name' => 'Create Professor',
+                'description' => 'Create New Professor'
+            ],
+            [
+                'name' => 'gestao_professor-edit',
+                'display_name' => 'Edit Professor',
+                'description' => 'Edit Professor'
+            ],
+            [
+                'name' => 'gestao_professor-delete',
+                'display_name' => 'Delete Professor',
+                'description' => 'Delete Professor'
+            ],
+            [
+                'name' => 'gestao_coordenacao-list',
+                'display_name' => 'Display Coordenador Listing',
+                'description' => 'See only Listing Coordenador'
+            ],
+            [
+                'name' => 'gestao_coordenacao-create',
+                'display_name' => 'Create Coordenador',
+                'description' => 'Create New Coordenador'
+            ],
+            [
+                'name' => 'gestao_coordenacao-edit',
+                'display_name' => 'Edit Coordenador',
+                'description' => 'Edit Coordenador'
+            ],
+            [
+                'name' => 'gestao_coordenacao-delete',
+                'display_name' => 'Delete Coordenador',
+                'description' => 'Delete Coordenador'
+            ],
+            [
+                'name' => 'gestao_colegiado-list',
+                'display_name' => 'Display Colegiado Listing',
+                'description' => 'See only Listing Colegiado'
+            ],
+            [
+                'name' => 'gestao_colegiado-create',
+                'display_name' => 'Create Colegiado',
+                'description' => 'Create New Colegiado'
+            ],
+            [
+                'name' => 'gestao_colegiado-edit',
+                'display_name' => 'Edit Colegiado',
+                'description' => 'Edit Colegiado'
+            ],
+            [
+                'name' => 'gestao_colegiado-delete',
+                'display_name' => 'Delete Colegiado',
+                'description' => 'Delete Colegiado'
+            ],
+            [
+                'name' => 'gestao_secretario-list',
+                'display_name' => 'Display Secretario Listing',
+                'description' => 'See only Listing Secretario'
+            ],
+            [
+                'name' => 'gestao_secretario-create',
+                'display_name' => 'Create Secretario',
+                'description' => 'Create New Secretario'
+            ],
+            [
+                'name' => 'gestao_secretario-edit',
+                'display_name' => 'Edit Secretario',
+                'description' => 'Edit Secretario'
+            ],
+            [
+                'name' => 'gestao_secretario-delete',
+                'display_name' => 'Delete Secretario',
+                'description' => 'Delete Secretario'
             ],
 
         ];
