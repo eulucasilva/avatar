@@ -39,7 +39,7 @@
             @endpermission
             @permission('gestao_disciplina-delete')
             {!! Form::open(['method' => 'DELETE','route' => ['disciplina.destroy', $disciplina->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
             @endpermission
         </td>

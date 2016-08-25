@@ -30,32 +30,38 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ route('users.index') }}">Users</a></li>
-                    <li><a href="{{ route('roles.index') }}">Roles</a></li>
-                    <li><a href="{{ route('itemCRUD2.index') }}">Items</a></li>
-                    <li><a href="{{ route('periodoLetivo.index') }}">Periodo Letivo</a></li>
-                    <li><a href="{{ route('professor.index') }}">Professor</a></li>
-                    <li><a href="{{ route('aluno.index') }}">Aluno</a></li>
-                    <li><a href="{{ route('coordenacao.index') }}">Coordenação</a></li>
-                    <li><a href="{{ route('secretario.index') }}">Secretario</a></li>
-                    <li><a href="{{ route('colegiado.index') }}">Colegiado</a></li>
-                    <li><a href="{{ route('area.index') }}">Area</a></li>
-                    <li><a href="{{ route('departamento.index') }}">Departamento</a></li>
-                    <li><a href="{{ route('disciplina.index') }}">Disciplina</a></li>
+                     <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gerenciar<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('users.index') }}">Usuarios</a></li>
+                            <li><a href="{{ route('roles.index') }}">Papeis</a></li>
+                            <li><a href="{{ route('itemCRUD2.index') }}">Items</a></li>
+                            <li><a href="{{ route('periodoLetivo.index') }}">Periodo Letivo</a></li>
+                            <li><a href="{{ route('professor.index') }}">Professor</a></li>
+                            <li><a href="{{ route('aluno.index') }}">Aluno</a></li>
+                            <li><a href="{{ route('coordenacao.index') }}">Coordenação</a></li>
+                            <li><a href="{{ route('secretario.index') }}">Secretario</a></li>
+                            <li><a href="{{ route('colegiado.index') }}">Colegiado</a></li>
+                            <li><a href="{{ route('area.index') }}">Area</a></li>
+                            <li><a href="{{ route('departamento.index') }}">Departamento</a></li>
+                            <li><a href="{{ route('disciplina.index') }}">Disciplina</a></li>
+                        </ul>
+                      </li>
+                 
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+                        <li><a href="{{ url('/register') }}"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sair</a></li>
                             </ul>
                         </li>
                     @endif

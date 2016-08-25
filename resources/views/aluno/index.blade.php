@@ -40,14 +40,14 @@
 		<td>{{ $aluno->endereco_aluno }}</td>
 		<td>
 			@permission('gestao_aluno-create')
-			<a class="btn btn-info" href="{{ route('aluno.show',$aluno->id) }}">Show</a>
+			<a class="btn btn-info" href="{{ route('aluno.show',$aluno->id) }}">Visualizar</a>
 			@endpermission
 			@permission('gestao_aluno-edit')
-			<a class="btn btn-primary" href="{{ route('aluno.edit',$aluno->id) }}">Edit</a>
+			<a class="btn btn-primary" href="{{ route('aluno.edit',$aluno->id) }}">Editar</a>
 			@endpermission
 			@permission('gestao_aluno-delete')
 			{!! Form::open(['method' => 'DELETE','route' => ['aluno.destroy', $aluno->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
         	@endpermission
 		</td>

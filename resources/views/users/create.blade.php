@@ -4,10 +4,10 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Create New User</h2>
+	            <h2>Criar Novo Usuário</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('users.index') }}"> Voltar</a>
 	        </div>
 	    </div>
 	</div>
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-primary">Salvar</button>
         </div>
 	</div>
 	{!! Form::close() !!}

@@ -42,14 +42,14 @@
 		<td>{{ $secretario->fk_usuario }}</td>
 		<td>
 			@permission('gestao_secretario-create')
-			<a class="btn btn-info" href="{{ route('secretario.show',$secretario->id) }}">Show</a>
+			<a class="btn btn-info" href="{{ route('secretario.show',$secretario->id) }}">Visualizar</a>
 			@endpermission
 			@permission('gestao_secretario-edit')
-			<a class="btn btn-primary" href="{{ route('secretario.edit',$secretario->id) }}">Edit</a>
+			<a class="btn btn-primary" href="{{ route('secretario.edit',$secretario->id) }}">Editar</a>
 			@endpermission
 			@permission('gestao_secretario-delete')
 			{!! Form::open(['method' => 'DELETE','route' => ['secretario.destroy', $secretario->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
         	@endpermission
 		</td>

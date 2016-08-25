@@ -21,12 +21,12 @@ class DisciplinaController extends Controller {
     
     public function index(Request $request) {
         $disciplinas = Disciplina::orderBy('id', 'DESC')->paginate(5);
-        return view('disciplinas.index', compact('disciplinas'))
+        return view('disciplina.index', compact('disciplinas'))
                         ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     public function create(){
-        return view('disciplinas.create');
+        return view('disciplina.create');
     }
     
     public function store(Request $request)

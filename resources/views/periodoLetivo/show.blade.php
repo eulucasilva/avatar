@@ -7,7 +7,7 @@
 	            <h2> Show Periodo Letivo</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('itemCRUD2.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('itemCRUD2.index') }}"> Voltar</a>
 	        </div>
 	    </div>
 	</div>

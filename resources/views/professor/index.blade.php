@@ -56,14 +56,14 @@
 		<td>{{ $professor->fk_usuario }}</td>
 		<td>
 			@permission('gestao_professor-create')
-			<a class="btn btn-info" href="{{ route('professor.show',$professor->id) }}">Show</a>
+			<a class="btn btn-info" href="{{ route('professor.show',$professor->id) }}">Visualizar</a>
 			@endpermission
 			@permission('gestao_professor-edit')
-			<a class="btn btn-primary" href="{{ route('professor.edit',$professor->id) }}">Edit</a>
+			<a class="btn btn-primary" href="{{ route('professor.edit',$professor->id) }}">Editar</a>
 			@endpermission
 			@permission('gestao_professor-delete')
 			{!! Form::open(['method' => 'DELETE','route' => ['professor.destroy', $professor->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
         	@endpermission
 		</td>

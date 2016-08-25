@@ -22,14 +22,14 @@ class AreaController extends Controller {
 
     public function index(Request $request) {
         $areas = Area::orderBy('id', 'DESC')->paginate(5);
-        return view('areas.index', compact('areas'))
+        return view('area.index', compact('areas'))
                         ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     public function create() {
         //$departamentos = DB::table('departamentos')->orderBy('nome', 'asc')->lists('nome', 'id');
         $departamentos = Departamento::lists('nome', 'id');
-        return view('areas.create', compact('departamentos'));
+        return view('area.create', compact('departamentos'));
     }
 
     public function store(Request $request) {
@@ -47,7 +47,7 @@ class AreaController extends Controller {
     public function edit($id) {
         $area = Area::find($id);
         $departamentos = Departamento::lists('nome', 'id');
-        return view('areas.edit', compact('area', 'departamentos'));
+        return view('area.edit', compact('area', 'departamentos'));
     }
 
     public function update(Request $request, $id) {
@@ -70,7 +70,7 @@ class AreaController extends Controller {
 
     public function show($id) {
         $area = Area::find($id);
-        return view('areas.show', compact('area'));
+        return view('area.show', compact('area'));
     }
 
 }

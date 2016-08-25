@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Departamento;
+use App\Area;
 
 use Illuminate\Http\Request;
 
@@ -21,12 +22,12 @@ class DepartamentoController extends Controller {
     
     public function index(Request $request) {
         $departamentos = Departamento::orderBy('id', 'DESC')->paginate(5);
-        return view('departamentos.index', compact('departamentos'))
+        return view('departamento.index', compact('departamentos'))
                         ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     public function create() {
-        return view('departamentos.create');
+        return view('departamento.create');
     }
 
     public function store(Request $request) {
@@ -44,8 +45,9 @@ class DepartamentoController extends Controller {
     }
 
     public function edit($id) {
-        $area = Departamento::find($id);
-        return view('areas.edit', compact('area'));
+        $departamento = Departamento::find($id);
+        return view('departamento.edit', compact('departamento'));
+
     }
 
     public function update(Request $request, $id) {
@@ -70,7 +72,7 @@ class DepartamentoController extends Controller {
 
     public function show($id) {
         $departamento = Departamento::find($id);
-        //return view('departamentos.show', compact('departamento'));
+        //return view('departamento.show', compact('departamento'));
     }
     
 }

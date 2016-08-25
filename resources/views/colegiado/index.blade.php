@@ -40,14 +40,14 @@
 		<td>{{ $colegiado->fk_secretario }}</td>
 		<td>
 			@permission('gestao_colegiado-create')
-			<a class="btn btn-info" href="{{ route('colegiado.show',$colegiado->id) }}">Show</a>
+			<a class="btn btn-info" href="{{ route('colegiado.show',$colegiado->id) }}">Visualizar</a>
 			@endpermission
 			@permission('gestao_colegiado-edit')
-			<a class="btn btn-primary" href="{{ route('colegiado.edit',$colegiado->id) }}">Edit</a>
+			<a class="btn btn-primary" href="{{ route('colegiado.edit',$colegiado->id) }}">Editar</a>
 			@endpermission
 			@permission('gestao_colegiado-delete')
 			{!! Form::open(['method' => 'DELETE','route' => ['colegiado.destroy', $colegiado->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
         	@endpermission
 		</td>

@@ -1,13 +1,14 @@
+
 @extends('layouts.app')
 
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Cadastrar Área</h2>
+            <h2>Cadastrar Departamento</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('area.index') }}">Voltar</a>
+            <a class="btn btn-primary" href="{{ route('departamento.index') }}">Voltar</a>
         </div>
     </div>
 </div>
@@ -21,7 +22,7 @@
     </ul>
 </div>
 @endif
-{!! Form::open(array('route' => 'area.store','method'=>'POST')) !!}
+{!! Form::open(array('route' => 'departamento.store','method'=>'POST')) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -31,12 +32,24 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Departamento</strong>
-            {!! Form::select('fk_departamento', $departamentos, null, array('class' => 'form-control')) !!}
+            <strong>Sigla:</strong>
+            {!! Form::text('sigla', null, array('placeholder' => 'Digite a sigla','class' => 'form-control')) !!}
+        </div>
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Email:</strong>
+            {!! Form::text('email', null, array('placeholder' => 'Digite o email','class' => 'form-control')) !!}
+        </div>
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Campus:</strong>
+            {!! Form::text('campus', null, array('placeholder' => 'Digite a campus','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
 </div>
 {!! Form::close() !!}

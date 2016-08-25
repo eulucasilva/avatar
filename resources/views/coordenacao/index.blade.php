@@ -40,14 +40,14 @@
 		<td>{{ $coordenacao->fk_usuario }}</td>
 		<td>
 			@permission('gestao_coordenacao-create')
-			<a class="btn btn-info" href="{{ route('coordenacao.show',$coordenacao->id) }}">Show</a>
+			<a class="btn btn-info" href="{{ route('coordenacao.show',$coordenacao->id) }}">Visualizar</a>
 			@endpermission
 			@permission('gestao_coordenacao-edit')
-			<a class="btn btn-primary" href="{{ route('coordenacao.edit',$coordenacao->id) }}">Edit</a>
+			<a class="btn btn-primary" href="{{ route('coordenacao.edit',$coordenacao->id) }}">Editar</a>
 			@endpermission
 			@permission('gestao_coordenacao-delete')
 			{!! Form::open(['method' => 'DELETE','route' => ['coordenacao.destroy', $coordenacao->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
         	@endpermission
 		</td>

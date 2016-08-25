@@ -38,14 +38,14 @@
 		<td>{{ $periodo->termino_periodoLetivo }}</td>
 		<td>
 			@permission('gestao_periodo_letivo-create')
-			<a class="btn btn-info" href="{{ route('periodoLetivo.show',$periodo->id) }}">Show</a>
+			<a class="btn btn-info" href="{{ route('periodoLetivo.show',$periodo->id) }}">Visualizar</a>
 			@endpermission
 			@permission('gestao_periodo_letivo-edit')
-			<a class="btn btn-primary" href="{{ route('periodoLetivo.edit',$periodo->id) }}">Edit</a>
+			<a class="btn btn-primary" href="{{ route('periodoLetivo.edit',$periodo->id) }}">Editar</a>
 			@endpermission
 			@permission('gestao_periodo_letivo-delete')
 			{!! Form::open(['method' => 'DELETE','route' => ['periodoLetivo.destroy', $periodo->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
         	@endpermission
 		</td>
