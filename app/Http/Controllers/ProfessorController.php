@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Professor;
+use App\Departamento;
+use App\Area;
+use App\User;
 
 class professorController extends Controller
 {
@@ -27,7 +30,11 @@ class professorController extends Controller
      */
     public function create()
     {
-        return view('professor.create');
+       
+            $departamentos = Departamento::lists('nome', 'id');
+            $areas = Area::lists('nome', 'id');
+            $usuarios = User::lists('name', 'id');
+            return view('professor.create', compact('coordenadores','areas','usuarios'));
     }
 
     /**
@@ -53,6 +60,8 @@ class professorController extends Controller
             'telefone_professor' => 'required',
             'endereco_professor' => 'required',
             'fk_usuario' => 'required',
+            'fk_departamento' => 'required',
+            'fk_area' => 'required',
 
         ]);
 
@@ -83,7 +92,10 @@ class professorController extends Controller
     public function edit($id)
     {
         $professor = Professor::find($id);
-        return view('professor.edit',compact('professor'));
+        $departamentos = Departamento::lists('nome', 'id');
+        $areas = Area::lists('nome', 'id');
+        $usuarios = User::lists('nome', 'id');
+        return view('professor.edit',compact('professor','departamentos','areas','usuarios' ));
     }
 
     /**
@@ -110,6 +122,8 @@ class professorController extends Controller
             'telefone_professor' => 'required',
             'endereco_professor' => 'required',
             'fk_usuario' => 'required',
+            'fk_departamento' => 'required',
+            'fk_area' => 'required',
         ]);
 
         Professor::find($id)->update($request->all());

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Coordenacao;
+use App\User;
+use App\Professor;
 
 class coordenacaoController extends Controller
 {
@@ -15,7 +17,7 @@ class coordenacaoController extends Controller
      */
     public function index(Request $request)
     {
-        $coordenacaos = coordenacao::orderBy('id','DESC')->paginate(5);
+        $coordenacaos = Coordenacao::orderBy('id','DESC')->paginate(5);
         return view('coordenacao.index',compact('coordenacaos'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -27,7 +29,9 @@ class coordenacaoController extends Controller
      */
     public function create()
     {
-        return view('coordenacao.create');
+        $professores = Professor::lists('nome_professor', 'id');
+        $usuarios = User::lists('name', 'id');
+        return view('coordenacao.create', compact('professores','usuarios'));
     }
 
     /**
@@ -73,8 +77,11 @@ class coordenacaoController extends Controller
      */
     public function edit($id)
     {
-        $coordenacao = coordenacao::find($id);
-        return view('coordenacao.edit',compact('coordenacao'));
+        
+         $coordenacao = coordenacao::find($id);
+         $professores = Professor::lists('nome_professor', 'id');
+         $usuarios = User::lists('name', 'id');
+         return view('coordenacao.edit', compact('coordenacao','professores','usuarios'));
     }
 
     /**

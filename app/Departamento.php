@@ -11,4 +11,8 @@ class Departamento extends Model
     public function areas(){
         return $this->hasMany(Area::class);
     }
+
+    public function professores(){
+        return $this->hasMany(Professor::class);
+    }
 }

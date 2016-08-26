@@ -15,7 +15,7 @@ class colegiadoController extends Controller
      */
     public function index(Request $request)
     {
-        $colegiados = colegiado::orderBy('id','DESC')->paginate(5);
+        $colegiados = Colegiado::orderBy('id','DESC')->paginate(5);
         return view('colegiado.index',compact('colegiados'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

@@ -30,6 +30,10 @@ class CreateProfessorsTable extends Migration
             $table->string('endereco_professor', 100);
             $table->integer('fk_usuario')->unsigned();
             $table->foreign('fk_usuario')->references('id')-> on('users');
+            $table->integer('fk_area')->unsigned();
+            $table->foreign('fk_area')->references('id')-> on('areas');
+            $table->integer('fk_departamento')->unsigned();
+            $table->foreign('fk_departamento')->references('id')-> on('departamentos');
 
         });
     }

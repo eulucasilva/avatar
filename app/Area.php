@@ -12,4 +12,7 @@ class Area extends Model {
         return $this->belongsTo(Departamento::class, 'fk_departamento');
     }
 
+     public function professores(){
+        return $this->hasMany(Professor::class);
+    }
 }

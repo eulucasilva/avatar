@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/home') }}">Início</a></li>
                      <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gerenciar<span class="caret"></span></a>
                         <ul class="dropdown-menu">

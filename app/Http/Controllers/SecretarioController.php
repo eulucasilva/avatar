@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\secretario;
+use App\Secretario;
+use App\User;
 
 class secretarioController extends Controller
 {
@@ -15,7 +16,7 @@ class secretarioController extends Controller
      */
     public function index(Request $request)
     {
-        $secretarios = secretario::orderBy('id','DESC')->paginate(5);
+        $secretarios = Secretario::orderBy('id','DESC')->paginate(5);
         return view('secretario.index',compact('secretarios'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -27,7 +28,8 @@ class secretarioController extends Controller
      */
     public function create()
     {
-        return view('secretario.create');
+        $usuarios = User::lists('name', 'id');
+        return view('secretario.create', compact('usuarios'));
     }
 
     /**
@@ -75,8 +77,9 @@ class secretarioController extends Controller
      */
     public function edit($id)
     {
+        $usuarios = User::lists('name', 'id');
         $secretario = secretario::find($id);
-        return view('secretario.edit',compact('secretario'));
+        return view('secretario.edit',compact('secretario', 'usuarios'));
     }
 
     /**

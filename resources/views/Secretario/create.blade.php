@@ -65,10 +65,10 @@
                 {!! Form::text('endereco_secretario', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
             </div>
         </div>
-          <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>fk_usuario:</strong>
-                {!! Form::text('fk_usuario', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+                <strong>Usuario</strong>
+                {!! Form::select('fk_usuario', $usuarios, null, array('class' => 'form-control')) !!}
             </div>
         </div>
      
