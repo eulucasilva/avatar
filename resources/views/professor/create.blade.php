@@ -109,19 +109,19 @@
         </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Usuario</strong>
+                <strong>Usuario:</strong>
                 {!! Form::select('fk_usuario', $usuarios, null, array('class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Departamento</strong>
+                <strong>Departamento:</strong>
                 {!! Form::select('fk_departamento', $departamentos, null, array('class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
            <div class="form-group">
-            <strong>Area</strong>
+            <strong>Area:</strong>
             {!! Form::select('fk_area', $areas, null, array('class' => 'form-control')) !!}
          </div>
         </div>

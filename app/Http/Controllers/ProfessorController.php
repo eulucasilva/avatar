@@ -34,7 +34,7 @@ class professorController extends Controller
             $departamentos = Departamento::lists('nome', 'id');
             $areas = Area::lists('nome', 'id');
             $usuarios = User::lists('name', 'id');
-            return view('professor.create', compact('coordenadores','areas','usuarios'));
+            return view('professor.create', compact('coordenadores','areas','usuarios', 'departamentos'));
     }
 
     /**

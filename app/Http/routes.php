@@ -114,34 +114,34 @@ Route::group(['middleware' => ['auth']], function() {
 	//rotas de disciplina
 	Route::group(['prefix'=>'disciplina','where'=>['id'=>'[0-9]+']], function(){
 	Route::get('',['as'=>'disciplina.index','uses'=>'DisciplinaController@index','middleware' => ['permission:gestao_disciplina-list|gestao_disciplina-create|gestao_disciplina-edit|gestao_disciplina-delete']]);
-    Route::get('/create',['as'=>'disciplina.create','uses'=>'DisciplinaController@create','middleware' => ['permission:gestao_disciplina-create']]);
+        Route::get('/create',['as'=>'disciplina.create','uses'=>'DisciplinaController@create','middleware' => ['permission:gestao_disciplina-create']]);
 	Route::post('/create',['as'=>'disciplina.store','uses'=>'DisciplinaController@store','middleware' => ['permission:gestao_disciplina-create']]);
-    Route::get('/{id}',['as'=>'disciplina.show','uses'=>'DisciplinaController@show']);
+        Route::get('/{id}',['as'=>'disciplina.show','uses'=>'DisciplinaController@show']);
 	Route::get('/{id}/edit',['as'=>'disciplina.edit','uses'=>'DisciplinaController@edit','middleware' => ['permission:gestao_disciplina-edit']]);
 	Route::patch('/{id}',['as'=>'disciplina.update','uses'=>'DisciplinaController@update','middleware' => ['permission:gestao_disciplina-edit']]);
-    Route::delete('/{id}',['as'=>'disciplina.destroy','uses'=>'DisciplinaController@destroy','middleware' => ['permission:gestao_disciplina-delete']]);
+        Route::delete('/{id}',['as'=>'disciplina.destroy','uses'=>'DisciplinaController@destroy','middleware' => ['permission:gestao_disciplina-delete']]);
     });
 
     //rotas de departamento
-    Route::group(['prefix'=>'departamento','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'departamento.index','uses'=>'DepartamentoController@index','middleware' => ['permission:gestao_departamento-list|gestao_departamento-create|gestao_departamento-edit|gestao_departamento-delete']]);
+        Route::group(['prefix'=>'departamento','where'=>['id'=>'[0-9]+']], function(){
+        Route::get('',['as'=>'departamento.index','uses'=>'DepartamentoController@index','middleware' => ['permission:gestao_departamento-list|gestao_departamento-create|gestao_departamento-edit|gestao_departamento-delete']]);
 	Route::get('/create',['as'=>'departamento.create','uses'=>'DepartamentoController@create','middleware' => ['permission:gestao_departamento-create']]);
 	Route::post('/create',['as'=>'departamento.store','uses'=>'DepartamentoController@store','middleware' => ['permission:gestao_departamento-create']]);
 	Route::get('/{id}',['as'=>'departamento.show','uses'=>'DepartamentoController@show']);
 	Route::get('/{id}/edit',['as'=>'departamento.edit','uses'=>'DepartamentoController@edit','middleware' => ['permission:gestao_departamento-edit']]);
 	Route::patch('/{id}',['as'=>'departamento.update','uses'=>'DepartamentoController@update','middleware' => ['permission:gestao_departamento-edit']]);
-    Route::delete('/{id}',['as'=>'departamento.destroy','uses'=>'DepartamentoController@destroy','middleware' => ['permission:gestao_departamento-delete']]);
+        Route::delete('/{id}',['as'=>'departamento.destroy','uses'=>'DepartamentoController@destroy','middleware' => ['permission:gestao_departamento-delete']]);
     });
 
 	//rotas de área
-    Route::group(['prefix'=>'area','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'area.index','uses'=>'AreaController@index','middleware' => ['permission:gestao_areas-list|gestao_areas-create|gestao_areas-edit|gestao_areas-delete']]);
+        Route::group(['prefix'=>'area','where'=>['id'=>'[0-9]+']], function(){
+        Route::get('',['as'=>'area.index','uses'=>'AreaController@index','middleware' => ['permission:gestao_areas-list|gestao_areas-create|gestao_areas-edit|gestao_areas-delete']]);
 	Route::get('/create',['as'=>'area.create','uses'=>'AreaController@create','middleware' => ['permission:gestao_areas-create']]);
 	Route::post('/create',['as'=>'area.store','uses'=>'AreaController@store','middleware' => ['permission:gestao_areas-create']]);
 	Route::get('/{id}',['as'=>'area.show','uses'=>'AreaController@show']);
 	Route::get('/{id}/edit',['as'=>'area.edit','uses'=>'AreaController@edit','middleware' => ['permission:gestao_areas-edit']]);
 	Route::patch('/{id}',['as'=>'area.update','uses'=>'AreaController@update','middleware' => ['permission:gestao_areas-edit']]);
-    Route::delete('/{id}',['as'=>'area.destroy','uses'=>'AreaController@destroy','middleware' => ['permission:gestao_areas-delete']]);
+        Route::delete('/{id}',['as'=>'area.destroy','uses'=>'AreaController@destroy','middleware' => ['permission:gestao_areas-delete']]);
     });
     
 });

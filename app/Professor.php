@@ -22,6 +22,10 @@ class Professor extends Model
       public function area() {
         return $this->belongsTo(Area::class, 'fk_area');
       }
+      
+      public function coordenacao(){
+          return $this->hasOne(Coordenacao::class);
+      }
 
 
 }
