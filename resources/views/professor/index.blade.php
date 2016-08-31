@@ -35,7 +35,7 @@
 			<th>Telefone</th>
 			<th>Endereço</th>
 			<th>Usuario</th>
-			<th width="280px">Action</th>
+			<th width="280px">Ação</th>
 		</tr>
 	@foreach ($professores as $key => $professor)
 	<tr>

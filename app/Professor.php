@@ -23,7 +23,11 @@ class Professor extends Model
         return $this->belongsTo(Area::class, 'fk_area');
       }
       
-     public function projeto() {
+      public function coordenacao(){
+          return $this->hasOne(Coordenacao::class);
+      }
+      
+      public function projeto() {
         return $this->belongsTo(Professor::class);
     }
     
@@ -34,7 +38,6 @@ class Professor extends Model
     public function teste(){
         return $this->belongsTo($related, $foreignKey, $otherKey);
     }
-    
 
 
 }
