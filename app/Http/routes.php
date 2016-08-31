@@ -144,5 +144,28 @@ Route::group(['middleware' => ['auth']], function() {
     Route::delete('/{id}',['as'=>'area.destroy','uses'=>'AreaController@destroy','middleware' => ['permission:gestao_areas-delete']]);
     });
     
+    //rotas de projeto
+    Route::group(['prefix'=>'projeto','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'projeto.index','uses'=>'ProjetoController@index','middleware' => ['permission:gestao_projeto-list|gestao_projeto-create|gestao_projeto-edit|gestao_projeto-delete']]);
+	Route::get('/create',['as'=>'projeto.create','uses'=>'ProjetoController@create','middleware' => ['permission:gestao_projeto-create']]);
+	Route::post('/create',['as'=>'projeto.store','uses'=>'ProjetoController@store','middleware' => ['permission:gestao_projeto-create']]);
+	Route::get('/{id}',['as'=>'projeto.show','uses'=>'ProjetoController@show']);
+	Route::get('/{id}/edit',['as'=>'projeto.edit','uses'=>'ProjetoController@edit','middleware' => ['permission:gestao_projeto-edit']]);
+	Route::patch('/{id}',['as'=>'projeto.update','uses'=>'ProjetoController@update','middleware' => ['permission:gestao_projeto-edit']]);
+    Route::delete('/{id}',['as'=>'projeto.destroy','uses'=>'ProjetoController@destroy','middleware' => ['permission:gestao_projeto-delete']]);
+    });
+    
+    
+    //rotas de substituicao
+    Route::group(['prefix'=>'substituicao','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'substituicao.index','uses'=>'SubstituicaoController@index','middleware' => ['permission:gestao_substituicao-list|gestao_substituicao-create|gestao_substituicao-edit|gestao_substituicao-delete']]);
+	Route::get('/create',['as'=>'substituicao.create','uses'=>'SubstituicaoController@create','middleware' => ['permission:gestao_substituicao-create']]);
+	Route::post('/create',['as'=>'substituicao.store','uses'=>'SubstituicaoController@store','middleware' => ['permission:gestao_substituicao-create']]);
+	Route::get('/{id}',['as'=>'substituicao.show','uses'=>'SubstituicaoController@show']);
+	Route::get('/{id}/edit',['as'=>'substituicao.edit','uses'=>'SubstituicaoController@edit','middleware' => ['permission:gestao_substituicao-edit']]);
+	Route::patch('/{id}',['as'=>'substituicao.update','uses'=>'SubstituicaoController@update','middleware' => ['permission:gestao_substituicao-edit']]);
+    Route::delete('/{id}',['as'=>'substituicao.destroy','uses'=>'SubstituicaoController@destroy','middleware' => ['permission:gestao_substituicao-delete']]);
+    });
+    
 });
 

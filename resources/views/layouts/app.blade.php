@@ -45,6 +45,8 @@
                             <li><a href="{{ route('area.index') }}">Area</a></li>
                             <li><a href="{{ route('departamento.index') }}">Departamento</a></li>
                             <li><a href="{{ route('disciplina.index') }}">Disciplina</a></li>
+                            <li><a href="{{ route('projeto.index') }}">Projeto</a></li>
+                            <li><a href="{{ route('substituicao.index') }}">Substitição</a></li>
                         </ul>
                       </li>
                  

@@ -413,6 +413,26 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete Secretario',
                 'description' => 'Delete Secretario'
             ],
+            [
+                'name' => 'gestao_substituicao-list',
+                'display_name' => 'Display substituicao Listing',
+                'description' => 'See only Listing substituicao'
+            ],
+            [
+                'name' => 'gestao_substituicao-create',
+                'display_name' => 'Create substituicao',
+                'description' => 'Create New substituicao'
+            ],
+            [
+                'name' => 'gestao_substituicao-edit',
+                'display_name' => 'Edit substituicao',
+                'description' => 'Edit substituicao'
+            ],
+            [
+                'name' => 'gestao_substituicao-delete',
+                'display_name' => 'Delete substituicao',
+                'description' => 'Delete substituicao'
+            ],
 
         ];
 

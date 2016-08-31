@@ -22,6 +22,19 @@ class Professor extends Model
       public function area() {
         return $this->belongsTo(Area::class, 'fk_area');
       }
+      
+     public function projeto() {
+        return $this->belongsTo(Professor::class);
+    }
+    
+    public function substituicao() {
+        return $this->belongsTo(Professor::class, 'fk_professor_substituido','fk_professor_substituto');
+    }
+    
+    public function teste(){
+        return $this->belongsTo($related, $foreignKey, $otherKey);
+    }
+    
 
 
 }
