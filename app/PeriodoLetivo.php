@@ -10,7 +10,7 @@ class PeriodoLetivo extends Model
      'inicio_periodoLetivo','termino_periodoLetivo'];
     
     public function projeto() {
-        return $this->belongsTo(Professor::class);
+        return $this->hasOne(Professor::class);
     }
 }
 

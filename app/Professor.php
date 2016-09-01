@@ -28,7 +28,7 @@ class Professor extends Model
       }
       
       public function projeto() {
-        return $this->belongsTo(Professor::class);
+        return $this->hasOne(Professor::class);
     }
     
     public function substituicao() {
