@@ -18,5 +18,9 @@ class Coordenacao extends Model
        public function usuario() {
         return $this->belongsTo(User::class, 'fk_usuario');
       }
+      
+      public function colegiado(){
+          return $this->belongsTo(Colegiado::class);
+      }
 
   }

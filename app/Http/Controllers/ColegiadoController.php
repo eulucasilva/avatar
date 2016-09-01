@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\colegiado;
+use App\Colegiado;
+use App\Professor;
+use DB;
 
 class colegiadoController extends Controller
 {
@@ -27,7 +29,9 @@ class colegiadoController extends Controller
      */
     public function create()
     {
-        return view('colegiado.create');
+        $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                       ->lists('professors.nome_professor', 'professors.id');
+        return view('colegiado.create', compact('coordenador'));
     }
 
     /**

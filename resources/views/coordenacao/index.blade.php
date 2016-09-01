@@ -21,13 +21,13 @@
 	<table class="table table-bordered">
 		<tr>
 			<th>No</th>
-			<th>tipo_coordenacao</th>
-			<th>portaria_nomeacao_coordenacao</th>
-			<th>inicio_mandato_coordenacao</th>
-			<th>termino_mandato_coordenacao</th>
-			<th>fk_professor</th>
-			<th>fk_usuario</th>
-			<th width="280px">Action</th>
+			<th>Tipo</th>
+			<th>Portaria de nomeação</th>
+			<th>Início do mandato</th>
+			<th>Término do mandato</th>
+			<th>Professor</th>
+			<th>fk_usuário</th>
+			<th width="280px">Ação</th>
 		</tr>
 	@foreach ($coordenacaos as $key => $coordenacao)
 	<tr>
@@ -36,7 +36,7 @@
 		<td>{{ $coordenacao->portaria_nomeacao_coordenacao }}</td>
 		<td>{{ $coordenacao->inicio_mandato_coordenacao }}</td>
 		<td>{{ $coordenacao->termino_mandato_coordenacao }}</td>
-		<td>{{ $coordenacao->fk_professor }}</td>
+		<td>{{ $coordenacao->professor->nome_professor }}</td>
 		<td>{{ $coordenacao->fk_usuario }}</td>
 		<td>
 			@permission('gestao_coordenacao-create')
