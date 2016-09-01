@@ -26,6 +26,18 @@ class Professor extends Model
       public function coordenacao(){
           return $this->hasOne(Coordenacao::class);
       }
+      
+      public function projeto() {
+        return $this->belongsTo(Professor::class);
+    }
+    
+    public function substituicao() {
+        return $this->belongsTo(Professor::class, 'fk_professor_substituido','fk_professor_substituto');
+    }
+    
+    public function teste(){
+        return $this->belongsTo($related, $foreignKey, $otherKey);
+    }
 
 
 }
