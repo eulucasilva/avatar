@@ -433,6 +433,26 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete substituicao',
                 'description' => 'Delete substituicao'
             ],
+           //curso
+            ['name' => 'gestao_curso-list',
+                'display_name' => 'Display curso Listing',
+                'description' => 'See only Listing curso'
+            ],
+            [
+                'name' => 'gestao_curso-create',
+                'display_name' => 'Create curso',
+                'description' => 'Create New curso'
+            ],
+            [
+                'name' => 'gestao_curso-edit',
+                'display_name' => 'Edit curso',
+                'description' => 'Edit curso'
+            ],
+            [
+                'name' => 'gestao_curso-delete',
+                'display_name' => 'Delete curso',
+                'description' => 'Delete curso'
+            ],
 
         ];
 

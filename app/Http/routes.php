@@ -167,5 +167,16 @@ Route::group(['middleware' => ['auth']], function() {
     Route::delete('/{id}',['as'=>'substituicao.destroy','uses'=>'SubstituicaoController@destroy','middleware' => ['permission:gestao_substituicao-delete']]);
     });
     
+    //rotas de curso
+    Route::group(['prefix'=>'curso','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'curso.index','uses'=>'CursoController@index','middleware' => ['permission:gestao_curso-list|gestao_curso-create|gestao_curso-edit|gestao_curso-delete']]);
+	Route::get('/create',['as'=>'curso.create','uses'=>'CursoController@create','middleware' => ['permission:gestao_curso-create']]);
+	Route::post('/create',['as'=>'curso.store','uses'=>'CursoController@store','middleware' => ['permission:gestao_curso-create']]);
+	Route::get('/{id}',['as'=>'curso.show','uses'=>'CursoController@show']);
+	Route::get('/{id}/edit',['as'=>'curso.edit','uses'=>'CursoController@edit','middleware' => ['permission:gestao_curso-edit']]);
+	Route::patch('/{id}',['as'=>'curso.update','uses'=>'CursoController@update','middleware' => ['permission:gestao_curso-edit']]);
+    Route::delete('/{id}',['as'=>'curso.destroy','uses'=>'CursoController@destroy','middleware' => ['permission:gestao_curso-delete']]);
+    });
+    
 });
 

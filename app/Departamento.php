@@ -15,4 +15,7 @@ class Departamento extends Model
     public function professores(){
         return $this->hasMany(Professor::class);
     }
+    public function curso() {
+        return $this->hasOne(Departamento::class);
+    }
 }

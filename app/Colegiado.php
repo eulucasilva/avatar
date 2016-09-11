@@ -13,4 +13,8 @@ class Colegiado extends Model {
         $this->hasOne(Coordenacao::class, 'fk_coordenador');
     }
 
+    public function curso() {
+        return $this->hasOne(Professor::class);
+    }
+
 }
