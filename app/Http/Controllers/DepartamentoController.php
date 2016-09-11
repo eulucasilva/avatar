@@ -30,7 +30,8 @@ class DepartamentoController extends Controller {
         return view('departamento.create');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request) 
+    {
         $this->validate($request, [
             'nome' => 'required',
             'sigla' => 'required',
@@ -44,7 +45,8 @@ class DepartamentoController extends Controller {
                         ->with('success', 'Departamento cadastrado com sucesso!');
     }
 
-    public function edit($id) {
+    public function edit($id) 
+    {
         $departamento = Departamento::find($id);
         return view('departamento.edit', compact('departamento'));
 

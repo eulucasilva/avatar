@@ -7,7 +7,8 @@ class CreateSubstituicaosTable extends Migration
 {
     public function up()
     {
-        Schema::create('substituicaos', function (Blueprint $table) {
+        Schema::create('substituicaos', function (Blueprint $table) 
+        {
             $table->increments('id');
             $table->timestamps();
             

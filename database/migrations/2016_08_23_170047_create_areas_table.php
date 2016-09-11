@@ -12,7 +12,8 @@ class CreateAreasTable extends Migration
      */
     public function up()
     {
-        Schema::create('areas', function (Blueprint $table) {
+        Schema::create('areas', function (Blueprint $table) 
+        {
             $table->increments('id');
             $table->string('nome', 45);
             $table->integer('fk_departamento')->unsigned();

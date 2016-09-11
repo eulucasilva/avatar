@@ -47,6 +47,13 @@
                             <li><a href="{{ route('disciplina.index') }}">Disciplina</a></li>
                             <li><a href="{{ route('projeto.index') }}">Projeto</a></li>
                             <li><a href="{{ route('substituicao.index') }}">Substitição</a></li>
+
+                            <li><a href="{{ route('atividadeComplementar.index') }}">Atividade Complementar</a></li>
+                            <li><a href="{{ route('atividadePesquisa.index') }}">Atividade de Pesquisa</a></li>
+                            <li><a href="{{ route('atividadeEnsino.index') }}">Atividade de Ensino</a></li>
+                            <li><a href="{{ route('atividadeAdministrativa.index') }}">Atividade Administrativa</a></li>
+                            <li><a href="{{ route('atividadeAdministrativaAcd.index') }}">Atividade Administrativa Acadêmica</a></li>
+                            <li><a href="{{ route('atividadeProjetoExtensao.index') }}">Atividade de Projeto de Extensão</a></li>
                         </ul>
                       </li>
                  

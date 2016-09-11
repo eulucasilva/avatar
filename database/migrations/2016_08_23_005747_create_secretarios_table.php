@@ -12,7 +12,8 @@ class CreateSecretariosTable extends Migration
      */
     public function up()
     {
-         Schema::create('secretarios', function (Blueprint $table) {
+        Schema::create('secretarios', function (Blueprint $table) 
+        {
             $table->increments('id');
             $table->timestamps();
             $table->string('matricula_secretario', 45);

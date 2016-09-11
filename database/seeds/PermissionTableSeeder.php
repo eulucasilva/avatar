@@ -173,6 +173,107 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete Atividade Administrativa',
                 'description' => 'Delete Atividade Administrativa'
             ],
+
+
+
+            [
+                'name' => 'gestao_atividade_ensino-list',
+                'display_name' => 'Display Atividade ensino Listing',
+                'description' => 'See only Listing Atividade ensino'
+            ],
+            [
+                'name' => 'gestao_atividade_ensino-create',
+                'display_name' => 'Create Atividade ensino',
+                'description' => 'Create New Atividade ensino'
+            ],
+            [
+                'name' => 'gestao_atividade_ensino-edit',
+                'display_name' => 'Edit Atividade ensino',
+                'description' => 'Edit Atividade ensino'
+            ],
+            [
+                'name' => 'gestao_atividade_ensino-delete',
+                'display_name' => 'Delete Atividade ensino',
+                'description' => 'Delete Atividade ensino'
+            ],
+
+
+
+
+
+  [
+                'name' => 'gestao_atividade_pesquisa-list',
+                'display_name' => 'Display Atividade pesquisa Listing',
+                'description' => 'See only Listing Atividade pesquisa'
+            ],
+            [
+                'name' => 'gestao_atividade_pesquisa-create',
+                'display_name' => 'Create Atividade pesquisa',
+                'description' => 'Create New Atividade pesquisa'
+            ],
+            [
+                'name' => 'gestao_atividade_pesquisa-edit',
+                'display_name' => 'Edit Atividade pesquisa',
+                'description' => 'Edit Atividade pesquisa'
+            ],
+            [
+                'name' => 'gestao_atividade_pesquisa-delete',
+                'display_name' => 'Delete Atividade pesquisa',
+                'description' => 'Delete Atividade pesquisa'
+            ],
+
+
+
+
+
+              [
+                'name' => 'gestao_atividade_complementar-list',
+                'display_name' => 'Display Atividade complementar Listing',
+                'description' => 'See only Listing Atividade complementar'
+            ],
+            [
+                'name' => 'gestao_atividade_complementar-create',
+                'display_name' => 'Create Atividade complementar',
+                'description' => 'Create New Atividade complementar'
+            ],
+            [
+                'name' => 'gestao_atividade_complementar-edit',
+                'display_name' => 'Edit Atividade complementar',
+                'description' => 'Edit Atividade complementar'
+            ],
+            [
+                'name' => 'gestao_atividade_complementar-delete',
+                'display_name' => 'Delete Atividade complementar',
+                'description' => 'Delete Atividade complementar'
+            ],
+
+
+             [
+                'name' => 'gestao_atividade_projeto_extensao-list',
+                'display_name' => 'Display Atividade projeto de extensao Listing',
+                'description' => 'See only Listing Atividade de projeto de extensao'
+            ],
+            [
+                'name' => 'gestao_atividade_projeto_extensao-create',
+                'display_name' => 'Create Atividade de projeto de extensao',
+                'description' => 'Create New Atividade de projeto de extensao'
+            ],
+            [
+                'name' => 'gestao_atividade_projeto_extensao-edit',
+                'display_name' => 'Edit Atividade de projeto de extensao',
+                'description' => 'Edit Atividade de projeto de extensao'
+            ],
+            [
+                'name' => 'gestao_atividade_projeto_extensao-delete',
+                'display_name' => 'Delete Atividade de projeto de extensao',
+                'description' => 'Delete Atividade de projeto de extensao'
+            ],
+
+
+
+
+
+
             [
                 'name' => 'gestao_atividade_sindical-list',
                 'display_name' => 'Display Atividade Sindical Listing',
@@ -194,22 +295,22 @@ class PermissionTableSeeder extends Seeder
                 'description' => 'Delete Atividade Sindical'
             ],
             [
-                'name' => 'gestao_atividade_academica-list',
+                'name' => 'gestao_atividade_administrativa_acd-list',
                 'display_name' => 'Display Atividade Academica Listing',
                 'description' => 'See only Listing Atividade Academica'
             ],
             [
-                'name' => 'gestao_atividade_academica-create',
+                'name' => 'gestao_atividade_administrativa_acd-create',
                 'display_name' => 'Create Atividade Academica',
                 'description' => 'Create New Atividade Academica'
             ],
             [
-                'name' => 'gestao_atividade_academica-edit',
+                'name' => 'gestao_atividade_administrativa_acd-edit',
                 'display_name' => 'Edit Atividade Academica',
                 'description' => 'Edit Atividade Academica'
             ],
             [
-                'name' => 'gestao_atividade_academica-delete',
+                'name' => 'gestao_atividade_administrativa_acd-delete',
                 'display_name' => 'Delete Atividade Academica',
                 'description' => 'Delete Atividade Academica'
             ],
