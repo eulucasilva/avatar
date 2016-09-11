@@ -12,7 +12,8 @@ class CreateCoordenacaosTable extends Migration
      */
     public function up()
     {
-         Schema::create('coordenacaos', function (Blueprint $table) {
+         Schema::create('coordenacaos', function (Blueprint $table) 
+         {
             $table->increments('id');
             $table->timestamps();
             $table->string('tipo_coordenacao', 45);

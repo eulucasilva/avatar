@@ -10,12 +10,14 @@ class Coordenacao extends Model
     'fk_professor','fk_usuario'];
 
 
-     public function professor() {
+     public function professor() 
+     {
         return $this->belongsTo(Professor::class, 'fk_professor');
-      }
+     }
 
 
-       public function usuario() {
+       public function usuario() 
+       {
         return $this->belongsTo(User::class, 'fk_usuario');
       }
       

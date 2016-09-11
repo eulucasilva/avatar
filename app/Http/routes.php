@@ -166,6 +166,74 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::patch('/{id}',['as'=>'substituicao.update','uses'=>'SubstituicaoController@update','middleware' => ['permission:gestao_substituicao-edit']]);
     Route::delete('/{id}',['as'=>'substituicao.destroy','uses'=>'SubstituicaoController@destroy','middleware' => ['permission:gestao_substituicao-delete']]);
     });
+
+     //rotas de atividade administrativa
+    Route::group(['prefix'=>'atividade_administrativa','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'atividadeAdministrativa.index','uses'=>'AtividadeAdministrativaController@index','middleware' => ['permission:gestao_atividade_administrativa-list|gestao_atividade_administrativa-create|gestao_atividade_administrativa-edit|gestao_atividade_administrativa-delete']]);
+	Route::get('/create',['as'=>'atividadeAdministrativa.create','uses'=>'AtividadeAdministrativaController@create','middleware' => ['permission:gestao_atividade_administrativa-create']]);
+	Route::post('/create',['as'=>'atividadeAdministrativa.store','uses'=>'AtividadeAdministrativaController@store','middleware' => ['permission:gestao_atividade_administrativa-create']]);
+	Route::get('/{id}',['as'=>'atividadeAdministrativa.show','uses'=>'AtividadeAdministrativaController@show']);
+	Route::get('/{id}/edit',['as'=>'atividadeAdministrativa.edit','uses'=>'AtividadeAdministrativaController@edit','middleware' => ['permission:gestao_atividade_administrativa-edit']]);
+	Route::patch('/{id}',['as'=>'atividadeAdministrativa.update','uses'=>'AtividadeAdministrativaController@update','middleware' => ['permission:gestao_atividade_administrativa-edit']]);
+    Route::delete('/{id}',['as'=>'atividadeAdministrativa.destroy','uses'=>'AtividadeAdministrativaController@destroy','middleware' => ['permission:gestao_atividade_administrativa-delete']]);
+    });
+
+     //rotas de atividade de ensino
+    Route::group(['prefix'=>'atividade_ensino','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'atividadeEnsino.index','uses'=>'AtividadeEnsinoController@index','middleware' => ['permission:gestao_atividade_ensino-list|gestao_atividade_ensino-create|gestao_atividade_ensino-edit|gestao_atividade_ensino-delete']]);
+	Route::get('/create',['as'=>'atividadeEnsino.create','uses'=>'AtividadeEnsinoController@create','middleware' => ['permission:gestao_atividade_ensino-create']]);
+	Route::post('/create',['as'=>'atividadeEnsino.store','uses'=>'AtividadeEnsinoController@store','middleware' => ['permission:gestao_atividade_ensino-create']]);
+	Route::get('/{id}',['as'=>'atividadeEnsino.show','uses'=>'AtividadeEnsinoController@show']);
+	Route::get('/{id}/edit',['as'=>'atividadeEnsino.edit','uses'=>'AtividadeEnsinoController@edit','middleware' => ['permission:gestao_atividade_ensino-edit']]);
+	Route::patch('/{id}',['as'=>'atividadeEnsino.update','uses'=>'AtividadeEnsinoController@update','middleware' => ['permission:gestao_atividade_ensino-edit']]);
+    Route::delete('/{id}',['as'=>'atividadeEnsino.destroy','uses'=>'AtividadeEnsinoController@destroy','middleware' => ['permission:gestao_atividade_ensino-delete']]);
+    });
+
+      //rotas de atividade complementar
+    Route::group(['prefix'=>'atividade_complementar','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'atividadeComplementar.index','uses'=>'AtividadeComplementarController@index','middleware' => ['permission:gestao_atividade_complementar-list|gestao_atividade_complementar-create|gestao_atividade_complementar-edit|gestao_atividade_complementar-delete']]);
+	Route::get('/create',['as'=>'atividadeComplementar.create','uses'=>'AtividadeComplementarController@create','middleware' => ['permission:gestao_atividade_complementar-create']]);
+	Route::post('/create',['as'=>'atividadeComplementar.store','uses'=>'AtividadeComplementarController@store','middleware' => ['permission:gestao_atividade_complementar-create']]);
+	Route::get('/{id}',['as'=>'atividadeComplementar.show','uses'=>'AtividadeComplementarController@show']);
+	Route::get('/{id}/edit',['as'=>'atividadeComplementar.edit','uses'=>'AtividadeComplementarController@edit','middleware' => ['permission:gestao_atividade_complementar-edit']]);
+	Route::patch('/{id}',['as'=>'atividadeComplementar.update','uses'=>'AtividadeComplementarController@update','middleware' => ['permission:gestao_atividade_complementar-edit']]);
+    Route::delete('/{id}',['as'=>'atividadeComplementar.destroy','uses'=>'AtividadeComplementarController@destroy','middleware' => ['permission:gestao_atividade_complementar-delete']]);
+    });
+
+
+      //rotas de atividade administrativa acadêmica
+    Route::group(['prefix'=>'atividade_administrativa_acd','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'atividadeAdministrativaAcd.index','uses'=>'AtividadeAdministrativaAcdController@index','middleware' => ['permission:gestao_atividade_administrativa_acd-list|gestao_atividade_administrativa_acd-create|gestao_atividade_administrativa_acd-edit|gestao_atividade_administrativa_acd-delete']]);
+	Route::get('/create',['as'=>'atividadeAdministrativaAcd.create','uses'=>'AtividadeAdministrativaAcdController@create','middleware' => ['permission:gestao_atividade_administrativa_acd-create']]);
+	Route::post('/create',['as'=>'atividadeAdministrativaAcd.store','uses'=>'AtividadeAdministrativaAcdController@store','middleware' => ['permission:gestao_atividade_administrativa_acd-create']]);
+	Route::get('/{id}',['as'=>'atividadeAdministrativaAcd.show','uses'=>'AtividadeAdministrativaAcdController@show']);
+	Route::get('/{id}/edit',['as'=>'atividadeAdministrativaAcd.edit','uses'=>'AtividadeAdministrativaAcdController@edit','middleware' => ['permission:gestao_atividade_administrativa_acd-edit']]);
+	Route::patch('/{id}',['as'=>'atividadeAdministrativaAcd.update','uses'=>'AtividadeAdministrativaAcdController@update','middleware' => ['permission:gestao_atividade_administrativa-edit']]);
+    Route::delete('/{id}',['as'=>'atividadeAdministrativaAcd.destroy','uses'=>'AtividadeAdministrativaAcdController@destroy','middleware' => ['permission:gestao_atividade_administrativa_acd-delete']]);
+    });
+
+
+      //rotas de atividade de pesquisa
+    Route::group(['prefix'=>'atividade_pesquisa','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'atividadePesquisa.index','uses'=>'AtividadePesquisaController@index','middleware' => ['permission:gestao_atividade_pesquisa-list|gestao_atividade_pesquisa-create|gestao_atividade_pesquisa-edit|gestao_atividade_pesquisa-delete']]);
+	Route::get('/create',['as'=>'atividadePesquisa.create','uses'=>'AtividadePesquisaController@create','middleware' => ['permission:gestao_atividade_pesquisa-create']]);
+	Route::post('/create',['as'=>'atividadePesquisa.store','uses'=>'AtividadePesquisaController@store','middleware' => ['permission:gestao_atividade_pesquisa-create']]);
+	Route::get('/{id}',['as'=>'atividadePesquisa.show','uses'=>'AtividadePesquisaController@show']);
+	Route::get('/{id}/edit',['as'=>'atividadePesquisa.edit','uses'=>'AtividadePesquisaController@edit','middleware' => ['permission:gestao_atividade_pesquisa-edit']]);
+	Route::patch('/{id}',['as'=>'atividadePesquisa.update','uses'=>'AtividadePesquisaController@update','middleware' => ['permission:gestao_atividade_pesquisa-edit']]);
+    Route::delete('/{id}',['as'=>'atividadePesquisa.destroy','uses'=>'AtividadePesquisaController@destroy','middleware' => ['permission:gestao_atividade_pesquisa-delete']]);
+    });
+
+      //rotas de atividade projeto de extensao
+    Route::group(['prefix'=>'atividade_projeto_extensao','where'=>['id'=>'[0-9]+']], function(){
+    Route::get('',['as'=>'atividadeProjetoExtensao.index','uses'=>'AtividadeProjetoExtensaoController@index','middleware' => ['permission:gestao_atividade_projeto_extensao-list|gestao_aatividade_projeto_extensao-create|gestao_atividade_projeto_extensao-edit|gestao_atividade_projeto_extensao-delete']]);
+	Route::get('/create',['as'=>'atividadeProjetoExtensao.create','uses'=>'AtividadeProjetoExtensaoController@create','middleware' => ['permission:gestao_atividade_projeto_extensao-create']]);
+	Route::post('/create',['as'=>'atividadeProjetoExtensao.store','uses'=>'AtividadeProjetoExtensaoController@store','middleware' => ['permission:gestao_atividade_projeto_extensao-create']]);
+	Route::get('/{id}',['as'=>'atividadeProjetoExtensao.show','uses'=>'AtividadeProjetoExtensaoController@show']);
+	Route::get('/{id}/edit',['as'=>'atividadeProjetoExtensao.edit','uses'=>'AtividadeProjetoExtensaoController@edit','middleware' => ['permission:gestao_atividade_projeto_extensao-edit']]);
+	Route::patch('/{id}',['as'=>'atividadeProjetoExtensao.update','uses'=>'AtividadeProjetoExtensaoController@update','middleware' => ['permission:gestao_atividade_projeto_extensao-edit']]);
+    Route::delete('/{id}',['as'=>'atividadeProjetoExtensao.destroy','uses'=>'AtividadeProjetoExtensaoController@destroy','middleware' => ['permission:gestao_atividade_projeto_extensao-delete']]);
+    });
     
     //rotas de curso
     Route::group(['prefix'=>'curso','where'=>['id'=>'[0-9]+']], function(){

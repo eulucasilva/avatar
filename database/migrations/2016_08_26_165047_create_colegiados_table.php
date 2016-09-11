@@ -12,7 +12,8 @@ class CreateColegiadosTable extends Migration
      */
     public function up()
     {
-         Schema::create('colegiados', function (Blueprint $table) {
+         Schema::create('colegiados', function (Blueprint $table) 
+         {
             $table->increments('id');
             $table->timestamps();
             $table->string('nome_colegiado', 50);
