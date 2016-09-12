@@ -593,10 +593,7 @@ class PermissionTableSeeder extends Seeder
                 'name' => 'gestao_curso-delete',
                 'display_name' => 'Delete curso',
                 'description' => 'Delete curso'
-
-
-
-
+            ]
         ];
 
         foreach ($permission as $key => $value) {
