@@ -34,8 +34,8 @@
 		<td>{{ $projeto->nome_projeto }}</td>
 		<td>{{ $projeto->tipo_projeto}}</td>
 		<td>{{ $projeto->tipo_participacao_projeto}}</td>
-		<td>{{ $projeto->fk_professor}}</td>
-		<td>{{ $projeto->fk_periodo_letivo}}</td>
+		<td>{{ $projeto->professor->nome_professor}}</td>
+		<td>{{ $projeto->periodoLetivo->periodo_periodoLetivo}}</td>
 		<td>
 			@permission('gestao_projeto-create')
 			<a class="btn btn-info" href="{{ route('projeto.show',$projeto->id) }}">Visualizar</a>

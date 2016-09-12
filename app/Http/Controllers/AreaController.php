@@ -44,7 +44,8 @@ class AreaController extends Controller {
                         ->with('success', 'Área cadastrada com sucesso!');
     }
 
-    public function edit($id) {
+    public function edit($id) 
+    {
         $area = Area::find($id);
         $departamentos = Departamento::lists('nome', 'id');
         return view('area.edit', compact('area', 'departamentos'));

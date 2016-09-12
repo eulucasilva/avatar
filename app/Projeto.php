@@ -10,10 +10,10 @@ class Projeto extends Model
      'fk_professor','fk_periodo_letivo'];
    
     public function professor() {
-        return $this->hasOne(Professor::class, 'fk_professor');
+        return $this->belongsTo(Professor::class, 'fk_professor');
     }
 
     public function periodoLetivo() {
-         return $this->hasOne(User::class, 'fk_periodo_letivo');
+         return $this->belongsTo(PeriodoLetivo::class, 'fk_periodo_letivo');
     }
 }
