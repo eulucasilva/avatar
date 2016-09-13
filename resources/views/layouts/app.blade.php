@@ -54,6 +54,8 @@
                             <li><a href="{{ route('atividadeAdministrativa.index') }}">Atividade Administrativa</a></li>
                             <li><a href="{{ route('atividadeAdministrativaAcd.index') }}">Atividade Administrativa Acadêmica</a></li>
                             <li><a href="{{ route('atividadeProjetoExtensao.index') }}">Atividade de Projeto de Extensão</a></li>
+                            <li><a href="{{ route('orientacao.index') }}">Orientação</a></li>
+                              <li><a href="{{ route('orientacao_projeto.index') }}">Orientação de Projeto</a></li>
                         </ul>
                       </li>
                  

@@ -269,11 +269,6 @@ class PermissionTableSeeder extends Seeder
                 'description' => 'Delete Atividade de projeto de extensao'
             ],
 
-
-
-
-
-
             [
                 'name' => 'gestao_atividade_sindical-list',
                 'display_name' => 'Display Atividade Sindical Listing',
@@ -534,7 +529,52 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete substituicao',
                 'description' => 'Delete substituicao'
             ],
-           //curso
+           
+           
+           
+           [
+                'name' => 'gestao_orientacao-list',
+                'display_name' => 'Display orientacao Listing',
+                'description' => 'See only Listing orientacao'
+            ],
+            [
+                'name' => 'gestao_orientacao-create',
+                'display_name' => 'Create orientacao',
+                'description' => 'Create New orientacao'
+            ],
+            [
+                'name' => 'gestao_orientacao-edit',
+                'display_name' => 'Edit orientacao',
+                'description' => 'Edit orientacao'
+            ],
+            [
+                'name' => 'gestao_orientacao-delete',
+                'display_name' => 'Delete orientacao',
+                'description' => 'Delete orientacao'
+            ],
+           
+            [
+                'name' => 'gestao_orientacao_projeto-list',
+                'display_name' => 'Display orientacao projeto Listing',
+                'description' => 'See only Listing orientacao projeto'
+            ],
+            [
+                'name' => 'gestao_orientacao_projeto-create',
+                'display_name' => 'Create orientacao projeto',
+                'description' => 'Create New orientacao'
+            ],
+            [
+                'name' => 'gestao_orientacao_projeto-edit',
+                'display_name' => 'Edit orientaca oprojeto',
+                'description' => 'Edit orientacao projeto'
+            ],
+            [
+                'name' => 'gestao_orientacao_projeto-delete',
+                'display_name' => 'Delete orientacao projeto',
+                'description' => 'Delete orientacao projeto'
+            ],
+           
+            //curso
             ['name' => 'gestao_curso-list',
                 'display_name' => 'Display curso Listing',
                 'description' => 'See only Listing curso'
@@ -553,8 +593,7 @@ class PermissionTableSeeder extends Seeder
                 'name' => 'gestao_curso-delete',
                 'display_name' => 'Delete curso',
                 'description' => 'Delete curso'
-            ],
-
+            ]
         ];
 
         foreach ($permission as $key => $value) {
