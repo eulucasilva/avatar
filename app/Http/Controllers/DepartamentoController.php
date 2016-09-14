@@ -33,9 +33,9 @@ class DepartamentoController extends Controller {
     public function store(Request $request) 
     {
         $this->validate($request, [
-            'nome' => 'required',
-            'sigla' => 'required',
-            'email' => 'required',
+            'nome' => 'required|max:45',
+            'sigla' => 'required|max:10',
+            'email' => 'required|email|unique:users,email|max:30',
             'campus' => 'required'
         ]);
 
@@ -54,9 +54,9 @@ class DepartamentoController extends Controller {
 
     public function update(Request $request, $id) {
         $this->validate($request, [
-             'nome' => 'required',
-            'sigla' => 'required',
-            'email' => 'required',
+            'nome' => 'required|max:45',
+            'sigla' => 'required|max:10',
+            'email' => 'required|max:30',
             'campus' => 'required'
         ]);
 

@@ -97,7 +97,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Telefone:</strong>
-            {!! Form::text('telefone_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('telefone_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px', 'id' => 'telefoneProfessor')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -138,6 +138,10 @@ jQuery(function ($) {
 
 jQuery(function ($) {
     $("#campoAno").mask("9999");
+});
+
+jQuery(function ($) {
+    $("#telefoneProfessor").mask("(99)99999-9999");
 });
 
 

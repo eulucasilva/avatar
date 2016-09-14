@@ -36,14 +36,14 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Matricula:</strong>
-            {!! Form::text('matricula_aluno', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px')) !!}
+            {!! Form::text('matricula_aluno', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px', 'id'=>'campoMatricula')) !!}
 
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Ano Ingresso:</strong>
-            {!! Form::text('ano_ingresso_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'campoAno')) !!}
+            {!! Form::text('ano_ingresso_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'campoAnoIngresso')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -55,7 +55,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Telefone:</strong>
-            {!! Form::text('telefone_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('telefone_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px', 'id'=>'campoTelefone')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -72,12 +72,17 @@
 {!! Form::close() !!}
 
 <script>
+
 jQuery(function ($) {
-    $("#campoPeriodo").mask("9999.9");
+    $("#campoMatricula").mask("99999999");
 });
 
 jQuery(function ($) {
-    $("#campoAno").mask("9999");
+    $("#campoAnoIngresso").mask("9999");
+});
+
+jQuery(function ($) {
+    $("#campoTelefone").mask("(99)9999-9999");
 });
 
 

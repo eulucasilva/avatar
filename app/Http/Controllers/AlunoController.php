@@ -44,7 +44,8 @@ class alunoController extends Controller
             'nome_aluno' => 'required',
             'endereco_aluno' => 'required',
             'telefone_aluno' => 'required',
-            'email_aluno' => 'required',
+            'email_aluno' => 'required|email|unique:users,email|max:30',
+
         ]);
 
         aluno::create($request->all());

@@ -34,8 +34,9 @@ class AreaController extends Controller {
 
     public function store(Request $request) {
         $this->validate($request, [
-            'nome' => 'required',
-            'fk_departamento' => 'required'
+            'nome' => 'required:|max:45',
+            'fk_departamento' => 'required',
+            'fk_coordenacao' => 'required'
         ]);
 
         Area::create($request->all());
