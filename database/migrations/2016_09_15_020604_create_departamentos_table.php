@@ -12,13 +12,16 @@ class CreateDepartamentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('departamentos', function (Blueprint $table) 
-        {
+        Schema::create('departamentos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 45);
             $table->string('sigla', 10);
             $table->string('email', 30);
             $table->string('campus', 25);
+//            $table->integer('fk_coordenacao')->unsigned();
+//            $table->foreign('fk_coordenacao')->references('id')->on('professors');
+            $table->integer('fk_secretario')->unsigned();
+            $table->foreign('fk_secretario')->references('id')-> on('secretarios');
             $table->timestamps();
         });
     }

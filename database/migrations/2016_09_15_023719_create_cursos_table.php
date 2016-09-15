@@ -14,8 +14,6 @@ class CreateCursosTable extends Migration
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            
             $table->string('nome_curso', 300);
             $table->string('regime_curso', 300);
             $table->string('campus_curso', 300);
@@ -26,6 +24,7 @@ class CreateCursosTable extends Migration
             
             $table->integer('fk_colegiado')->unsigned();
             $table->foreign('fk_colegiado')->references('id')-> on('colegiados');
+            $table->timestamps();
         });
     }
 

@@ -14,10 +14,14 @@ class CreateDisciplinasTable extends Migration
     {
         Schema::create('disciplinas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome', 100);
-            $table->string('codigo', 6);
-            $table->integer('ch_total');
-            $table->string('natureza', 100);
+            $table->string('nome_disciplina', 100);
+            $table->string('codigo_disciplina', 6);
+            $table->integer('ch_total_disciplina');
+            $table->string('natureza_disciplina', 100);
+            $table->integer('fk_area')->unsigned();
+            $table->foreign('fk_area')->references('id')-> on('areas');
+            $table->integer('fk_departamento')->unsigned();
+            $table->foreign('fk_departamento')->references('id')-> on('departamentos');
             $table->timestamps();
         });
     }

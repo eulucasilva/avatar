@@ -10,7 +10,8 @@ namespace App\Http\Controllers;
 
 use App\Area;
 use Illuminate\Http\Request;
-use DB;
+use App\Coordenacao;
+use App\Professor;
 use App\Departamento;
 
 /**
@@ -27,29 +28,43 @@ class AreaController extends Controller {
     }
 
     public function create() {
-        //$departamentos = DB::table('departamentos')->orderBy('nome', 'asc')->lists('nome', 'id');
+        $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                ->where('coordenacaos.tipo_coordenacao', '=', 'Área')
+                ->lists('professors.nome_professor', 'professors.id');
         $departamentos = Departamento::lists('nome', 'id');
-        return view('area.create', compact('departamentos'));
+        return view('area.create', compact('departamentos', 'coordenador'));
     }
 
     public function store(Request $request) {
         $this->validate($request, [
             'nome' => 'required:|max:45',
             'fk_departamento' => 'required',
-            'fk_coordenacao' => 'required'
         ]);
 
-        Area::create($request->all());
+
+        $campos = $request->all();
+
+
+        $id_coordenacao = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                        ->select('coordenacaos.id')->where('fk_professor', '=', $request->input('fk_coordenador'))->getBindings();
+
+        //$fk_coordenacao = Coordenacao::select('id')->where('fk_professor', '=', $request->input('fk_coordenador'))->getBindings();
+        $str = implode("", $id_coordenacao); //transformando array para string
+        $campos['fk_coordenador'] = $str;
+        Area::create($campos);
+
 
         return redirect()->route('area.index')
                         ->with('success', 'Área cadastrada com sucesso!');
     }
 
-    public function edit($id) 
-    {
+    public function edit($id) {
         $area = Area::find($id);
+        $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                ->where('coordenacaos.tipo_coordenacao', '=', 'Área')
+                ->lists('professors.nome_professor', 'professors.id');
         $departamentos = Departamento::lists('nome', 'id');
-        return view('area.edit', compact('area', 'departamentos'));
+        return view('area.edit', compact('area', 'departamentos', 'coordenador'));
     }
 
     public function update(Request $request, $id) {
@@ -58,7 +73,16 @@ class AreaController extends Controller {
             'fk_departamento' => 'required'
         ]);
 
-        Area::find($id)->update($request->all());
+        $campos = $request->all();
+
+        $id_coordenacao = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                        ->select('coordenacaos.id')->where('fk_professor', '=', $request->input('fk_coordenador'))->getBindings();
+
+        $str = implode("", $id_coordenacao); //transformando array para string
+        $campos['fk_coordenador'] = $str;
+       // dd($campos);
+        
+        Area::find($id)->update($campos);
 
         return redirect()->route('area.index')
                         ->with('success', 'Área atualizada com sucesso!');

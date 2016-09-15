@@ -12,10 +12,8 @@ class CreateCoordenacaosTable extends Migration
      */
     public function up()
     {
-         Schema::create('coordenacaos', function (Blueprint $table) 
-         {
+        Schema::create('coordenacaos', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('tipo_coordenacao', 45);
             $table->string('portaria_nomeacao_coordenacao', 45);
             $table->date('inicio_mandato_coordenacao');
@@ -26,6 +24,7 @@ class CreateCoordenacaosTable extends Migration
 
             $table->integer('fk_usuario')->unsigned();
             $table->foreign('fk_usuario')->references('id')-> on('users');
+            $table->timestamps();
         });
     }
 
@@ -36,6 +35,6 @@ class CreateCoordenacaosTable extends Migration
      */
     public function down()
     {
-       Schema::drop('coordenacaos');
+        Schema::drop('coordenacaos');
     }
 }

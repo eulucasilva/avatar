@@ -14,4 +14,5 @@ class Atividade_complementar extends Model
      public function periodo_letivo() {
         return $this->belongsTo(PeriodoLetivo::class, 'fk_periodo_letivo');
     }
+
 }

@@ -22,12 +22,14 @@
     <tr>
         <th>Nome</th>
         <th>Departamento</th>
+        <th>Coordenador</th>
         <th width="280px">Ação</th>
     </tr>
     @foreach ($areas as $key => $area)
     <tr>
-        <td>{{ $area->nome }}</td>
-         <td>{{$area->departamento->nome}}</td>
+        <td>{{$area->nome}}</td>
+        <td>{{$area->departamento->nome}}</td>
+        <td>{{$area->coordenacao->professor->nome_professor}}</td>
         <td>
             <a class="btn btn-info" href="{{ route('area.show',$area->id) }}">Visualizar</a>
             @permission('gestao_areas-edit')

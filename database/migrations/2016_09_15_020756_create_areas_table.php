@@ -3,21 +3,21 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAreasTable extends Migration
-{
+class CreateAreasTable extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('areas', function (Blueprint $table) 
-        {
+    public function up() {
+        Schema::create('areas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome', 45);
             $table->integer('fk_departamento')->unsigned();
             $table->foreign('fk_departamento')->references('id')->on('departamentos');
+//            $table->integer('fk_coordenacao')->unsigned();
+//            $table->foreign('fk_coordenacao')->references('id')->on('professors');
             $table->timestamps();
         });
     }
@@ -27,8 +27,8 @@ class CreateAreasTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::drop('areas');
     }
+
 }

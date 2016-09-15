@@ -4,17 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Colegiado extends Model {
-
+class Colegiado extends Model
+{
     public $fillable = ['nome_colegiado', 'sigla_colegiado', 'email_colegiado', 'campus_colegiado',
         'fk_coordenador', 'fk_secretario'];
 
     public function coordenacao() {
-        $this->hasOne(Coordenacao::class, 'fk_coordenador');
+        return $this->belongsTo(Professor::class, 'fk_coordenador');
+    }
+    
+    public function secretario() {
+        return $this->belongsTo(Secretario::class, 'fk_secretario');
     }
 
     public function curso() {
         return $this->hasOne(Professor::class);
     }
-
 }

@@ -3,22 +3,19 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAtividadeAdministrativaTable extends Migration
+class CreateAtividadeAdministrativaAcdsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-   public function up()
+    public function up()
     {
-        Schema::create('atividade_administrativas', function (Blueprint $table) 
-        {        
+        Schema::create('atividade_administrativa_acds', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-
-            $table->string('tipo_atividade_administrativa', 45);
-            $table->integer('ch_atividade_administrativa', false, false, 45);
+            $table->string('tipo_participacao_atividade_administrativa_acd', 45);
+            $table->integer('ch_participacao_atividade_administrativa_acd', false, false, 45);
             
 
             $table->integer('fk_professor')->unsigned();
@@ -26,10 +23,17 @@ class CreateAtividadeAdministrativaTable extends Migration
 
             $table->integer('fk_periodo_letivo')->unsigned();
             $table->foreign('fk_periodo_letivo')->references('id')-> on('periodo_letivos');
+            $table->timestamps();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::drop('atividade_administrativas');
+        Schema::drop('atividade_administrativa_acds');
     }
 }

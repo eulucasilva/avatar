@@ -12,10 +12,8 @@ class CreateProfessorsTable extends Migration
      */
     public function up()
     {
-         Schema::create('professors', function (Blueprint $table) 
-         {
+        Schema::create('professors', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('matricula_professor', 11);
             $table->string('situacao_professor', 15);
             $table->string('regime_trabalho_professor', 10);
@@ -35,7 +33,7 @@ class CreateProfessorsTable extends Migration
             $table->foreign('fk_area')->references('id')-> on('areas');
             $table->integer('fk_departamento')->unsigned();
             $table->foreign('fk_departamento')->references('id')-> on('departamentos');
-
+            $table->timestamps();
         });
     }
 
@@ -46,6 +44,6 @@ class CreateProfessorsTable extends Migration
      */
     public function down()
     {
-       Schema::drop('professors');
+        Schema::drop('professors');
     }
 }

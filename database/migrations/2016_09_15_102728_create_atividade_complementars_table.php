@@ -3,22 +3,18 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAtividadeProjetoExtensaoTable extends Migration
+class CreateAtividadeComplementarsTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-   public function up()
+    public function up()
     {
-        Schema::create('atividade_projeto_extensaos', function (Blueprint $table) 
-        {        
+        Schema::create('atividade_complementars', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-
-            $table->string('tipo_part_prof_atividade_projeto_extensao', 45);
-            $table->integer('ch_total_atividade_projeto_extensao', false, false, 45);
+            $table->integer('ch_total_atividade_complementar', false, false, 45);
             
 
             $table->integer('fk_professor')->unsigned();
@@ -26,10 +22,17 @@ class CreateAtividadeProjetoExtensaoTable extends Migration
 
             $table->integer('fk_periodo_letivo')->unsigned();
             $table->foreign('fk_periodo_letivo')->references('id')-> on('periodo_letivos');
+            $table->timestamps();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::drop('atividade_projeto_extensaos');
+        Schema::drop('atividade_complementars');
     }
 }

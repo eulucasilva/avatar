@@ -30,12 +30,16 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Departamento</strong>
+            <strong>Departamento:</strong>
             {!! Form::select('fk_departamento', $departamentos, null, array('class' => 'form-control')) !!}
         </div>
     </div>
-    
-    
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Coordenador:</strong>
+            {!! Form::select('fk_coordenador', $coordenador, null, array('class' => 'form-control')) !!}
+        </div>
+    </div>
     
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Salvar</button>

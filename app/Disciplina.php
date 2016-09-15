@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Disciplina extends Model
 {
-    public $fillable = ['nome', 'codigo', 'ch_total', 'natureza'];
+    public $fillable = ['nome_disciplina', 'codigo_disciplina', 'ch_total_disciplina', 'natureza', 'fk_area', 'fk_departamento'];
+    
+    public function area(){
+        return $this->belongsTo(Area::class, 'fk_area');
+    }
+    
+    public function departamento(){
+       return $this->belongsTo(Departamento::class, 'fk_departamento');
+    }
 }

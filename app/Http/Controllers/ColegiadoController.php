@@ -6,20 +6,20 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Colegiado;
 use App\Professor;
+use App\Secretario;
 use DB;
 
-class colegiadoController extends Controller
-{
+class colegiadoController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        $colegiados = Colegiado::orderBy('id','DESC')->paginate(5);
-        return view('colegiado.index',compact('colegiados'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+    public function index(Request $request) {
+        $colegiados = Colegiado::orderBy('id', 'DESC')->paginate(5);
+        return view('colegiado.index', compact('colegiados'))
+                        ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -27,11 +27,12 @@ class colegiadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
-                       ->lists('professors.nome_professor', 'professors.id');
-        return view('colegiado.create', compact('coordenador'));
+                ->where('coordenacaos.tipo_coordenacao', '=', 'Colegiado')
+                ->lists('professors.nome_professor', 'professors.id');
+        $secretario = Secretario::lists('nome_secretario', 'id');
+        return view('colegiado.create', compact('coordenador', 'secretario'));
     }
 
     /**
@@ -40,8 +41,7 @@ class colegiadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $this->validate($request, [
             'nome_colegiado' => 'required',
             'sigla_colegiado' => 'required',
@@ -54,7 +54,7 @@ class colegiadoController extends Controller
         colegiado::create($request->all());
 
         return redirect()->route('colegiado.index')
-                        ->with('success','colegiado cadastrado com sucesso!');
+                        ->with('success', 'Colegiado cadastrado com sucesso!');
     }
 
     /**
@@ -63,10 +63,9 @@ class colegiadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         $colegiado = colegiado::find($id);
-        return view('colegiado.show',compact('colegiado'));
+        return view('colegiado.show', compact('colegiado'));
     }
 
     /**
@@ -75,10 +74,13 @@ class colegiadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         $colegiado = colegiado::find($id);
-        return view('colegiado.edit',compact('colegiado'));
+        $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                       ->where('coordenacaos.tipo_coordenacao', '=', 'Colegiado')
+                       ->lists('professors.nome_professor', 'professors.id');
+        $secretario = Secretario::lists('nome_secretario', 'id');
+        return view('colegiado.edit', compact('colegiado', 'secretario', 'coordenador'));
     }
 
     /**
@@ -88,21 +90,20 @@ class colegiadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $this->validate($request, [
-           'nome_colegiado' => 'required',
-           'sigla_colegiado' => 'required',
-           'email_colegiado' => 'required',
-           'campus_colegiado' => 'required',
-           'fk_coordenador' => 'required',
-           'fk_secretario' => 'required',
+            'nome_colegiado' => 'required',
+            'sigla_colegiado' => 'required',
+            'email_colegiado' => 'required',
+            'campus_colegiado' => 'required',
+            'fk_coordenador' => 'required',
+            'fk_secretario' => 'required',
         ]);
 
         colegiado::find($id)->update($request->all());
 
         return redirect()->route('colegiado.index')
-                        ->with('success','colegiado atualizado com sucesso');
+                        ->with('success', 'Colegiado atualizado com sucesso');
     }
 
     /**
@@ -111,10 +112,10 @@ class colegiadoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         colegiado::find($id)->delete();
         return redirect()->route('colegiado.index')
-                        ->with('success','colegiado apagado com sucesso!');
+                        ->with('success', 'Colegiado apagado com sucesso!');
     }
+
 }

@@ -12,5 +12,4 @@ class Substituicao extends Model
     public function professor() {
         return $this->hasOne(Professor::class, 'fk_professor_substituido', 'fk_professor_substituto');
     }
-    
 }

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Orientacao_projeto extends Model {
 
-    //
     public $fillable = ['fk_aluno', 'fk_projeto', 'fk_professor', 'fk_periodoLetivo'];
 
     public function aluno() {

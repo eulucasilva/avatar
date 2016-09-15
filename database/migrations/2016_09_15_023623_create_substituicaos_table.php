@@ -5,13 +5,15 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateSubstituicaosTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('substituicaos', function (Blueprint $table) 
-        {
+        Schema::create('substituicaos', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            
             $table->date('inicio_substituicao');
             $table->date('fim_substituicao');
             
@@ -24,9 +26,15 @@ class CreateSubstituicaosTable extends Migration
             
             $table->integer('fk_professor_substituto')->unsigned();
             $table->foreign('fk_professor_substituto')->references('id')-> on('professors');
-
+            $table->timestamps();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::drop('substituicaos');

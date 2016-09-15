@@ -29,38 +29,38 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Tipo Coordenação:</strong>
-            {!! Form::text('tipo_coordenacao', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            <strong>Tipo de coordenação:</strong>
+            {!!Form::select('tipo_coordenacao', array('Colegiado' => 'Colegiado', 'Departamento' => 'Departamento','Área' => 'Área'), null, array('class' => 'form-control'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Portaria Nomeação:</strong>
+            <strong>Portaria de nomeação:</strong>
             {!! Form::text('portaria_nomeacao_coordenacao', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px')) !!}
 
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>inicio_mandato_coordenacao:</strong>
+            <strong>Início do mandato:</strong>
             {!! Form::text('inicio_mandato_coordenacao', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>termino_mandato_coordenacao:</strong>
+            <strong>Término do mandato:</strong>
             {!! Form::text('termino_mandato_coordenacao', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Usuario</strong>
+            <strong>Usuário:</strong>
             {!! Form::select('fk_usuario', $usuarios, null, array('class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Professor</strong>
+            <strong>Professor:</strong>
             {!! Form::select('fk_professor', $professores, null, array('class' => 'form-control')) !!}
         </div>
     </div>

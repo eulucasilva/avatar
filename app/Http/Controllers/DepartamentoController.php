@@ -9,7 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Departamento;
-use App\Area;
+use App\Secretario;
 
 use Illuminate\Http\Request;
 
@@ -27,7 +27,8 @@ class DepartamentoController extends Controller {
     }
 
     public function create() {
-        return view('departamento.create');
+        $secretario = Secretario::lists('nome_secretario', 'id');
+        return view('departamento.create', compact('secretario'));
     }
 
     public function store(Request $request) 
@@ -36,7 +37,8 @@ class DepartamentoController extends Controller {
             'nome' => 'required|max:45',
             'sigla' => 'required|max:10',
             'email' => 'required|email|unique:users,email|max:30',
-            'campus' => 'required'
+            'campus' => 'required',
+            'fk_secretario' => 'required'
         ]);
 
         Departamento::create($request->all());
@@ -47,8 +49,9 @@ class DepartamentoController extends Controller {
 
     public function edit($id) 
     {
+        $secretario = Secretario::lists('nome_secretario', 'id');
         $departamento = Departamento::find($id);
-        return view('departamento.edit', compact('departamento'));
+        return view('departamento.edit', compact('departamento', 'secretario'));
 
     }
 
@@ -57,7 +60,8 @@ class DepartamentoController extends Controller {
             'nome' => 'required|max:45',
             'sigla' => 'required|max:10',
             'email' => 'required|max:30',
-            'campus' => 'required'
+            'campus' => 'required',
+            'fk_secretario' => 'required'
         ]);
 
         Departamento::find($id)->update($request->all());
