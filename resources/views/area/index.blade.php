@@ -29,7 +29,11 @@
     <tr>
         <td>{{$area->nome}}</td>
         <td>{{$area->departamento->nome}}</td>
+        @if(!empty($area->coordenacao->professor->nome_professor))
         <td>{{$area->coordenacao->professor->nome_professor}}</td>
+        @else
+        <td>{{"-"}}</td>
+        @endif
         <td>
             <a class="btn btn-info" href="{{ route('area.show',$area->id) }}">Visualizar</a>
             @permission('gestao_areas-edit')

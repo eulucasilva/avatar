@@ -30,7 +30,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Tipo de coordenação:</strong>
-            {!!Form::select('tipo_coordenacao', array('Colegiado' => 'Colegiado', 'Departamento' => 'Departamento','Área' => 'Área'), null, array('class' => 'form-control'))!!}
+            {!!Form::select('tipo_coordenacao', array('Colegiado' => 'Coordenação de colegiado', 'Departamento' => 'Diretor de departamento','Área' => 'Coordenação de área'), null, array('class' => 'form-control', 'placeholder' => '-- Selecione --'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
