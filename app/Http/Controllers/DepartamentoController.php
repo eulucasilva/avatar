@@ -98,7 +98,12 @@ class DepartamentoController extends Controller {
     }
 
     public function destroy($id) {
-        Departamento::find($id)->delete();
+        try{
+             Departamento::find($id)->delete();
+        } catch (QueryException $ex) {
+            
+        }
+        //Departamento::find($id)->delete();
         return redirect()->route('departamento.index')
                         ->with('success', 'Departamento excluído com sucesso!');
     }

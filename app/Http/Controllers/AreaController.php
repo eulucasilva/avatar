@@ -45,8 +45,6 @@ class AreaController extends Controller {
         $campos = $request->all();
 
         if ($request->input('fk_coordenador') != null) {
-            $campos = $request->all();
-
             //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
             $id_coordenacao = DB::table('professors')->join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
                                                     ->select('coordenacaos.id')
