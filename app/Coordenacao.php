@@ -22,7 +22,7 @@ class Coordenacao extends Model
     }
     
      public function departamento() {
-        return $this->hasOne(Colegiado::class);
+        return $this->hasOne(Departamento::class);
     }
     
     public function area(){
