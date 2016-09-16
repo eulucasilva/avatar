@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Departamento extends Model
 {
-    public $fillable = ['nome', 'sigla', 'email', 'campus', 'fk_coordenacao', 'fk_secretario'];
+    public $fillable = ['nome', 'sigla', 'email', 'campus', 'fk_coordenador', 'fk_secretario'];
     
     public function areas(){
         return $this->hasMany(Area::class);
@@ -19,9 +19,8 @@ class Departamento extends Model
         return $this->hasOne(Departamento::class);
     }
     public function coordenacao() {
-        return $this->belongsTo(Professor::class, 'fk_coordenador');
+        return $this->belongsTo(Coordenacao::class, 'fk_coordenador');
     }
-    
     public function secretario() {
         return $this->belongsTo(Secretario::class, 'fk_secretario');
     }

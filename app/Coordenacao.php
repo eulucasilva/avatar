@@ -20,5 +20,13 @@ class Coordenacao extends Model
     public function colegiado() {
         return $this->hasOne(Colegiado::class);
     }
+    
+     public function departamento() {
+        return $this->hasOne(Colegiado::class);
+    }
+    
+    public function area(){
+         return $this->hasOne(Area::class);
+    }
 
 }

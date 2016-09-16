@@ -35,13 +35,13 @@
             {!! Form::text('sigla', null, array('placeholder' => 'Digite a sigla','class' => 'form-control')) !!}
         </div>
     </div>
-     <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Email:</strong>
             {!! Form::text('email', null, array('placeholder' => 'Digite o email','class' => 'form-control')) !!}
         </div>
     </div>
-     <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Campus:</strong>
             {!! Form::text('campus', null, array('placeholder' => 'Digite a campus','class' => 'form-control')) !!}
@@ -51,6 +51,12 @@
         <div class="form-group">
             <strong>Secretário:</strong>
             {!! Form::select('fk_secretario', $secretario, null, array('class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Coordenador:</strong>
+            {!! Form::select('fk_coordenador', $coordenador, null, array('class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

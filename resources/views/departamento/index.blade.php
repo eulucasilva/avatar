@@ -24,6 +24,7 @@
         <th>Sigla</th>
         <th>Email</th>
         <th>Campus</th>
+        <th>Coordenador</th>
         <th width="280px">Ação</th>
     </tr>
     @foreach ($departamentos as $key => $departamento)
@@ -32,6 +33,7 @@
         <td>{{ $departamento->sigla }}</td>
         <td>{{ $departamento->email }}</td>
         <td>{{ $departamento->campus }}</td>
+        <td>{{ $departamento->coordenacao->professor->nome_professor }}</td>
         <td>
             <a class="btn btn-info" href="{{ route('departamento.show', $departamento->id) }}">Visualizar</a>
             @permission('gestao_departamento-edit')

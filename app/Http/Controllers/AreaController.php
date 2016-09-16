@@ -10,7 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Area;
 use Illuminate\Http\Request;
-use App\Coordenacao;
+use DB;
 use App\Professor;
 use App\Departamento;
 
@@ -44,13 +44,17 @@ class AreaController extends Controller {
 
         $campos = $request->all();
 
+        if ($request->input('fk_coordenador') != null) {
+            $campos = $request->all();
 
-        $id_coordenacao = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
-                        ->select('coordenacaos.id')->where('fk_professor', '=', $request->input('fk_coordenador'))->getBindings();
+            //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
+            $id_coordenacao = DB::table('professors')->join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                                                    ->select('coordenacaos.id')
+                                                    ->where('coordenacaos.fk_professor', '=', $request->input('fk_coordenador'))
+                                                    ->lists('id');
 
-        //$fk_coordenacao = Coordenacao::select('id')->where('fk_professor', '=', $request->input('fk_coordenador'))->getBindings();
-        $str = implode("", $id_coordenacao); //transformando array para string
-        $campos['fk_coordenador'] = $str;
+            $campos['fk_coordenador'] = (string) $id_coordenacao[0];
+        }
         Area::create($campos);
 
 
@@ -75,13 +79,14 @@ class AreaController extends Controller {
 
         $campos = $request->all();
 
-        $id_coordenacao = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
-                        ->select('coordenacaos.id')->where('fk_professor', '=', $request->input('fk_coordenador'))->getBindings();
+        //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
+        $id_coordenacao = DB::table('professors')->join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                ->select('coordenacaos.id')
+                ->where('coordenacaos.fk_professor', '=', $request->input('fk_coordenador'))
+                ->lists('id');
 
-        $str = implode("", $id_coordenacao); //transformando array para string
-        $campos['fk_coordenador'] = $str;
-       // dd($campos);
-        
+        $campos['fk_coordenador'] = (string) $id_coordenacao[0];
+
         Area::find($id)->update($campos);
 
         return redirect()->route('area.index')

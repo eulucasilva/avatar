@@ -3,16 +3,15 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterAreasTable extends Migration
-{
+class AlterDepartamentosTable extends Migration {
+
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('areas', function (Blueprint $table) {
+    public function up() {
+        Schema::table('departamentos', function (Blueprint $table) {
             $table->integer('fk_coordenador')->unsigned()->nullable();
             $table->foreign('fk_coordenador')->references('id')->on('coordenacaos');
         });
@@ -23,11 +22,11 @@ class AlterAreasTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::table('areas', function (Blueprint $table) {
-            $table->dropForeign('areas_fk_coordenador_foreign');
-            $table->dropColumn('fk_coordenacao');
+    public function down() {
+        Schema::table('departamentos', function (Blueprint $table) {
+            $table->dropForeign('departamentos_fk_coordenador_foreign');
+            $table->dropColumn('fk_departamentos');
         });
     }
+
 }

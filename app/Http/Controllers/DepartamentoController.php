@@ -10,7 +10,8 @@ namespace App\Http\Controllers;
 
 use App\Departamento;
 use App\Secretario;
-
+use App\Professor;
+use DB;
 use Illuminate\Http\Request;
 
 /**
@@ -19,7 +20,7 @@ use Illuminate\Http\Request;
  * @author Lucas
  */
 class DepartamentoController extends Controller {
-    
+
     public function index(Request $request) {
         $departamentos = Departamento::orderBy('id', 'DESC')->paginate(5);
         return view('departamento.index', compact('departamentos'))
@@ -28,11 +29,13 @@ class DepartamentoController extends Controller {
 
     public function create() {
         $secretario = Secretario::lists('nome_secretario', 'id');
-        return view('departamento.create', compact('secretario'));
+        $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                ->where('coordenacaos.tipo_coordenacao', '=', 'Departamento')
+                ->lists('professors.nome_professor', 'professors.id');
+        return view('departamento.create', compact('secretario', 'coordenador'));
     }
 
-    public function store(Request $request) 
-    {
+    public function store(Request $request) {
         $this->validate($request, [
             'nome' => 'required|max:45',
             'sigla' => 'required|max:10',
@@ -40,19 +43,33 @@ class DepartamentoController extends Controller {
             'campus' => 'required',
             'fk_secretario' => 'required'
         ]);
+        
+        $campos = $request->all();
 
-        Departamento::create($request->all());
+        if ($request->input('fk_coordenador') != null) {
+            $campos = $request->all();
+
+            //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
+            $id_coordenacao = DB::table('professors')->join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                                                    ->select('coordenacaos.id')
+                                                    ->where('coordenacaos.fk_professor', '=', $request->input('fk_coordenador'))
+                                                    ->lists('id');
+
+            $campos['fk_coordenador'] = (string) $id_coordenacao[0];
+        }
+        Departamento::create($campos);
 
         return redirect()->route('departamento.index')
                         ->with('success', 'Departamento cadastrado com sucesso!');
     }
 
-    public function edit($id) 
-    {
+    public function edit($id) {
         $secretario = Secretario::lists('nome_secretario', 'id');
+        $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                ->where('coordenacaos.tipo_coordenacao', '=', 'Departamento')
+                ->lists('professors.nome_professor', 'professors.id');
         $departamento = Departamento::find($id);
-        return view('departamento.edit', compact('departamento', 'secretario'));
-
+        return view('departamento.edit', compact('departamento', 'secretario', 'coordenador'));
     }
 
     public function update(Request $request, $id) {
@@ -63,8 +80,18 @@ class DepartamentoController extends Controller {
             'campus' => 'required',
             'fk_secretario' => 'required'
         ]);
+        
+        $campos = $request->all();
 
-        Departamento::find($id)->update($request->all());
+        //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
+        $id_coordenacao = DB::table('professors')->join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                ->select('coordenacaos.id')
+                ->where('coordenacaos.fk_professor', '=', $request->input('fk_coordenador'))
+                ->lists('id');
+
+        $campos['fk_coordenador'] = (string) $id_coordenacao[0];
+
+        Departamento::find($id)->update($campos);
 
         return redirect()->route('departamento.index')
                         ->with('success', 'Departamento atualizado com sucesso!');
@@ -78,7 +105,7 @@ class DepartamentoController extends Controller {
 
     public function show($id) {
         $departamento = Departamento::find($id);
-        //return view('departamento.show', compact('departamento'));
+        return view('departamento.show', compact('departamento'));
     }
-    
+
 }
