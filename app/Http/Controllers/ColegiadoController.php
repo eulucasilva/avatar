@@ -43,10 +43,10 @@ class colegiadoController extends Controller {
      */
     public function store(Request $request) {
         $this->validate($request, [
-            'nome_colegiado' => 'required',
-            'sigla_colegiado' => 'required',
-            'email_colegiado' => 'required',
-            'campus_colegiado' => 'required',
+            'nome_colegiado' => 'required|max:45',
+            'sigla_colegiado' => 'required|max:10',
+            'email_colegiado' => 'required|max:30',
+            'campus_colegiado' => 'required|max:25',
             'fk_coordenador' => 'required',
             'fk_secretario' => 'required',
         ]);

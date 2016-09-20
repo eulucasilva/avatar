@@ -30,38 +30,38 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nome Colegiado:</strong>
-            {!! Form::text('nome_colegiado', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('nome_colegiado', null, array('placeholder' => 'Digite o nome do colegiado','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Sigla Colegiado:</strong>
-            {!! Form::text('sigla_colegiado', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px')) !!}
+            {!! Form::text('sigla_colegiado', null, array('placeholder' => 'Digite a sigla do colegiado','class' => 'form-control', 'style'=>'height:30px')) !!}
 
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Email:</strong>
-            {!! Form::text('email_colegiado', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('email_colegiado', null, array('placeholder' => 'Digite o email do colegiado','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Campus Colegiado:</strong>
-            {!! Form::text('campus_colegiado', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+          {!!Form::select('campus_colegiado', array('Itapetinga' => 'Itapetinga', 'Jequié' => 'Jequié', 'Vitória da Conquista' => 'Vitória da Conquista'),  null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Coordenador:</strong>
-            {!! Form::select('fk_coordenador', $coordenador, null, array('class' => 'form-control')) !!}
+            {!! Form::select('fk_coordenador', $coordenador, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>  
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>fk_secretario:</strong>
-            {!! Form::text('fk_secretario', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            <strong>Secretario:</strong>
+           {!! Form::select('fk_secretario', $secretario, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
 

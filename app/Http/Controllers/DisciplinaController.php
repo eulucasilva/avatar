@@ -32,10 +32,10 @@ class DisciplinaController extends Controller {
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nome' => 'required',
-            'codigo' => 'required',
+            'nome' => 'required|max:100',
+            'codigo' => 'required|max:6',
             'ch_total' => 'required',
-            'natureza' => 'required'
+            'natureza' => 'required|max:100'
         ]);
 
         Disciplina::create($request->all());

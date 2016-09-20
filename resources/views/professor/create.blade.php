@@ -30,98 +30,98 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nome:</strong>
-            {!! Form::text('nome_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('nome_professor', null, array('placeholder' => 'Digite o nome do professor','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Matricula:</strong>
-            {!! Form::text('matricula_professor', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px')) !!}
+            {!! Form::text('matricula_professor', null, array('placeholder' => 'Digite a matrícula do professor','class' => 'form-control', 'style'=>'height:30px')) !!}
 
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Situação:</strong>
-            {!! Form::text('situacao_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!!Form::select('situacao_professor', array('Atuando' => 'Atuando', 'Afastado' => 'Afastado'),null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Regime de Trabalho:</strong>
-            {!! Form::text('regime_trabalho_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+           {!!Form::select('regime_trabalho_professor', array('20 horas' => '20 horas', '40 horas' => '40 horas', 'Dedicação Exclusiva'=>'Dedicação Exclusiva'),null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Carga Horária:</strong>
-            {!! Form::text('ch_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+             {!!Form::select('regime_trabalho_professor', array('20 horas' => '20 horas', '40 horas' => '40 horas'),null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Inicio Contrato:</strong>
-            {!! Form::text('inicio_contrato_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
+            {!! Form::text('inicio_contrato_professor', null, array('placeholder' => '--Selecione--','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Temino Contrato:</strong>
-            {!! Form::text('termino_contrato_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
+            {!! Form::text('termino_contrato_professor', null, array('placeholder' => '--Selecione--','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Contrato Professor:</strong>
-            {!! Form::text('contrato_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('contrato_professor', null, array('placeholder' => 'Digite o número do contrato','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Classe:</strong>
-            {!! Form::text('classe_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!!Form::select('classe_professor', array('Auxiliar' => 'Auxiliar', 'Assistente' => 'Assistente','Adjunto'=>'Adjunto' ,'Titular'=>'Titular', 'Pleno'=>'Pleno'),null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Titulo:</strong>
-            {!! Form::text('titulo_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!!Form::select('titulo_professor', array('Graduado(a)' => 'Graduado(a)', 'Especialista' => 'Especialista', 'Mestre'=>'Mestre', 'Doutor(a)'=>'Doutor(a)'),null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Email:</strong>
-            {!! Form::text('email_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:40px')) !!}
+            {!! Form::text('email_professor', null, array('placeholder' => 'Digite o e-mail','class' => 'form-control','style'=>'height:40px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Telefone:</strong>
-            {!! Form::text('telefone_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px', 'id' => 'telefoneProfessor')) !!}
+            {!! Form::text('telefone_professor', null, array('placeholder' => 'Digite o telefone','class' => 'form-control','style'=>'height:30px', 'id' => 'telefoneProfessor')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Endereço:</strong>
-            {!! Form::text('endereco_professor', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('endereco_professor', null, array('placeholder' => 'Digite o endereço','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Usuario:</strong>
-            {!! Form::select('fk_usuario', $usuarios, null, array('class' => 'form-control')) !!}
+            {!! Form::select('fk_usuario', $usuarios, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Departamento:</strong>
-            {!! Form::select('fk_departamento', $departamentos, null, array('class' => 'form-control')) !!}
+            {!! Form::select('fk_departamento', $departamentos, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Area:</strong>
-            {!! Form::select('fk_area', $areas, null, array('class' => 'form-control')) !!}
+            {!! Form::select('fk_area', $areas, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
 
@@ -132,9 +132,8 @@
 {!! Form::close() !!}
 
 <script>
-jQuery(function ($) {
-    $("#campoPeriodo").mask("9999.9");
-});
+
+
 
 jQuery(function ($) {
     $("#campoAno").mask("9999");
