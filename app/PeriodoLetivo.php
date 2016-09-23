@@ -32,6 +32,11 @@ class PeriodoLetivo extends Model
      public function atividade_projeto_extensao(){
         return $this->hasMany(Atividade_projeto_extensao::class);
     }
+
+    public function solicitacao()
+    {
+        return $this->hasMany(Solicitacao::class);
+    }
 }
 
 

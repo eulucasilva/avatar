@@ -11,7 +11,9 @@
   |
  */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::auth();
 
@@ -19,17 +21,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/home', 'HomeController@index');
 
-    //rotas de users
-    Route::group(['prefix' => 'users', 'where' => ['id' => '[0-9]+']], function() {
-        Route::get('', ['as' => 'users.index', 'uses' => 'UserController@index', 'middleware' => ['permission:gestao_usuario-list|gestao_usuario-create|gestao_usuario-edit|gestao_usuario-delete']]);
-        Route::get('/create', ['as' => 'users.create', 'uses' => 'UserController@create', 'middleware' => ['permission:gestao_usuario-create']]);
-        Route::post('/create', ['as' => 'users.store', 'uses' => 'UserController@store', 'middleware' => ['permission:gestao_usuario-create']]);
-        Route::get('/{id}', ['as' => 'users.show', 'uses' => 'UserController@show']);
-        Route::get('/{id}/edit', ['as' => 'users.edit', 'uses' => 'UserController@edit', 'middleware' => ['permission:gestao_usuario-edit']]);
-        Route::patch('/{id}', ['as' => 'users.update', 'uses' => 'UserController@update', 'middleware' => ['permission:gestao_usuario-edit']]);
-        Route::delete('/{id}', ['as' => 'users.destroy', 'uses' => 'UserController@destroy', 'middleware' => ['permission:gestao_usuario-delete']]);
-    });
-
+    Route::resource('users', 'UserController');
 
     //rotas de roles
     Route::group(['prefix' => 'roles', 'where' => ['id' => '[0-9]+']], function() {
@@ -274,5 +266,31 @@ Route::group(['middleware' => ['auth']], function() {
     Route::delete('/{id}', ['as' => 'orientacao_projeto.destroy', 'uses' => 'Orientacao_projetoController@destroy', 'middleware' => ['permission:gestao_orientacao_projeto-delete']]);
     });
 
-});
+     //rotas de solicitação
+    Route::group(['prefix'=>'solicitacao','where'=>['id'=>'[0-9]+']], function()
+    {
+        Route::get('',['as'=>'solicitacao.index','uses'=>'SolicitacaoController@index','middleware' => ['permission:gestao_solicitacao-list|gestao_solicitacao-create|gestao_solicitacao-edit|gestao_solicitacao-delete']]);
+        Route::get('/create',['as'=>'solicitacao.create','uses'=>'SolicitacaoController@create','middleware' => ['permission:gestao_solicitacao-create']]);
+        Route::post('/create',['as'=>'solicitacao.store','uses'=>'SolicitacaoController@store','middleware' => ['permission:gestao_solicitacao-create']]);
+        Route::get('/{id}',['as'=>'solicitacao.show','uses'=>'SolicitacaoController@show']);
+        Route::get('/{id}/edit',['as'=>'solicitacao.edit','uses'=>'SolicitacaoController@edit','middleware' => ['permission:gestao_solicitacao-edit']]);
+        Route::patch('/{id}',['as'=>'solicitacao.update','uses'=>'SolicitacaoController@update','middleware' => ['permission:gestao_solicitacao-edit']]);
+        Route::delete('/{id}',['as'=>'solicitacao.destroy','uses'=>'SolicitacaoController@destroy','middleware' => ['permission:gestao_solicitacao-delete']]);
+    });
 
+     //rotas de turmas
+    Route::group(['prefix'=>'turma','where'=>['id'=>'[0-9]+']], function()
+    {
+        Route::get('',['as'=>'turma.index','uses'=>'TurmaController@index','middleware' => ['permission:gestao_turma-list|gestao_turma-create|gestao_turma-edit|gestao_turma-delete']]);
+        Route::get('/create',['as'=>'turma.create','uses'=>'TurmaController@create','middleware' => ['permission:gestao_turma-create']]);
+        Route::post('/create',['as'=>'turma.store','uses'=>'TurmaController@store','middleware' => ['permission:gestao_turma-create']]);
+        Route::get('/{id}',['as'=>'turma.show','uses'=>'TurmaController@show']);
+        Route::get('/{id}/edit',['as'=>'turma.edit','uses'=>'TurmaController@edit','middleware' => ['permission:gestao_turma-edit']]);
+        Route::patch('/{id}',['as'=>'turma.update','uses'=>'TurmaController@update','middleware' => ['permission:gestao_turma-edit']]);
+        Route::delete('/{id}',['as'=>'turma.destroy','uses'=>'TurmaController@destroy','middleware' => ['permission:gestao_turma-delete']]);
+         Route::get('/{id}',['as'=>'turma.gerar','uses'=>'TurmaController@gerar','middleware' => ['permission:gestao_turma-create']]);
+    });
+
+}); 
+
+ 

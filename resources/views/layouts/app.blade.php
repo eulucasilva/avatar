@@ -44,6 +44,9 @@ desired effect
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->
+
+            <li><a href="{{ route('solicitacao.index') }}">Solicitar Turmas</a></li>
+            <li><a href="{{ route('turma.index') }}">Alocar Turmas</a></li>
             @yield('main-content')
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

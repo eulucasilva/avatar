@@ -126,6 +126,9 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+
+        Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
+
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -178,6 +181,13 @@ return [
     */
 
     'aliases' => [
+
+
+/*
+* Acacha AdminLTE template alias
+*/
+'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+    
 
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,

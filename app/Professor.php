@@ -39,7 +39,8 @@ class Professor extends Model {
         return $this->belongsTo(Professor::class, 'fk_professor_substituido', 'fk_professor_substituto');
     }
 
-    public function atividade_administrativa() {
+    public function atividade_administrativa()
+    {
         return $this->hasMany(Atividade_administrativa::class);
     }
 
@@ -61,6 +62,11 @@ class Professor extends Model {
 
     public function atividade_projeto_extensao() {
         return $this->hasMany(Atividade_projeto_extensao::class);
+    }
+
+     public function turma() 
+     {
+        return $this->hasMany(Turma::class);
     }
 
 }
