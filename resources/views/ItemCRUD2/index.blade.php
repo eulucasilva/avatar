@@ -1,11 +1,13 @@
 @extends('layouts.app')
  
-@section('content')
+@section('main-content')
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
+	    	@section('contentheader_title')
 	        <div class="pull-left">
 	            <h2>Items CRUD</h2>
 	        </div>
+	         @endsection
 	        <div class="pull-right">
 	        	@permission('item-create')
 	            <a class="btn btn-success" href="{{ route('itemCRUD2.create') }}"> Create Novo Item</a>

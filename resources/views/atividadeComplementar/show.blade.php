@@ -1,11 +1,13 @@
 @extends('layouts.app')
  
-@section('content')
+@section('main-content')
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
+            @section('contentheader_title')    
 	            <h2> Atividades de Complementar</h2>
 	        </div>
+            @endsection 
 	       </div>
 	</div>
 	<div class="row">

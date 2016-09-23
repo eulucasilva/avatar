@@ -1,11 +1,13 @@
 @extends('layouts.app')
  
-@section('content')
+@section('main-content')
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
-	        <div class="pull-left">
-	            <h2>Administração do Aluno</h2>
-	        </div>
+	    	@section('contentheader_title')
+	             <div class="pull-left">
+	            		<h2>Administração do Aluno</h2>
+	        	</div>
+	        @endsection	
 	        <div class="pull-right">
 	        	@permission('gestao_aluno-create')
 	            <a class="btn btn-success" href="{{ route('aluno.create') }}"> Criar Novo aluno</a>

@@ -5,12 +5,14 @@
 <script src = "{{ asset('js/jquery-ui-1.12.0/jquery-ui.js') }}" type = "text/javascript" ></script>
 <link href="{{ asset('js/jquery-ui-themes-1.12.0/themes/base/jquery-ui.css') }}" rel="stylesheet">
 
-@section('content')
+@section('main-content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
+       @section('contentheader_title') 
         <div class="pull-left">
             <h2>Editar Atividade Ensino</h2>
         </div>
+        @endsection   
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('atividadeEnsino.index') }}"> Voltar</a>
         </div>

@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
-@section('content')
+@section('main-content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
+        @section('contentheader_title')
         <div class="pull-left">
             <h2>Áreas</h2>
         </div>
+        @endsection
         <div class="pull-right">
             @permission('gestao_areas-create')
             <a class="btn btn-success" href="{{ route('area.create') }}">Cadastrar Área</a>

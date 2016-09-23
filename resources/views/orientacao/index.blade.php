@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
-@section('content')
+@section('main-content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
+         @section('contentheader_title')
         <div class="pull-left">
             <h2>Administração de Orientação</h2>
         </div>
+         @endsection
         <div class="pull-right">
             @permission('gestao_orientacao-create')
             <a class="btn btn-success" href="{{ route('orientacao.create') }}"> Criar Nova Orientação</a>

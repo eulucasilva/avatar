@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\PeriodoLetivo;
-use App\Atividade_projeto_extensao;
+use App\Atividade_extensao;
 use App\Professor;
 
 class AtividadeProjetoExtensaoController extends Controller
@@ -18,7 +18,7 @@ class AtividadeProjetoExtensaoController extends Controller
      */
     public function index(Request $request)
     {
-        $atividade_projeto_extensaos = Atividade_projeto_extensao::orderBy('id','DESC')->paginate(5);
+        $atividade_projeto_extensaos = Atividade_extensao::orderBy('id','DESC')->paginate(5);
         return view('atividadeProjetoExtensao.index',compact('atividade_projeto_extensaos'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -45,7 +45,7 @@ class AtividadeProjetoExtensaoController extends Controller
             'fk_professor' => 'required',
         ]);
 
-        Atividade_projeto_extensao::create($request->all());
+        Atividade_extensao::create($request->all());
 
         return redirect()->route('atividadeProjetoExtensao.index')
                         ->with('success','Atividade cadastrada com sucesso!');
@@ -53,14 +53,14 @@ class AtividadeProjetoExtensaoController extends Controller
 
     public function show($id)
     {
-        $atividade_projeto_extensao = Atividade_projeto_extensao::find($id);
+        $atividade_projeto_extensao = Atividade_extensao::find($id);
         return view('atividadeProjetoExtensao.show',compact('atividade_projeto_extensao'));
     }
 
     public function edit($id)
     {
         
-        $atividade_projeto_extensao = Atividade_projeto_extensao::find($id);
+        $atividade_projeto_extensao = Atividade_extensao::find($id);
         $professores = Professor::lists('nome_professor', 'id');
         $periodo_letivos = PeriodoLetivo::lists('periodo_periodoLetivo', 'id');
        
@@ -83,7 +83,7 @@ class AtividadeProjetoExtensaoController extends Controller
             'fk_professor' => 'required',
         ]);
 
-        Atividade_projeto_extensao::find($id)->update($request->all());
+        Atividade_extensao::find($id)->update($request->all());
 
         return redirect()->route('atividadeProjetoExtensao.index')
                         ->with('success','Atividade atualizada com sucesso');

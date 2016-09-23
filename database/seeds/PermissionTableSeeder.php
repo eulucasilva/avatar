@@ -528,11 +528,8 @@ class PermissionTableSeeder extends Seeder
                 'name' => 'gestao_substituicao-delete',
                 'display_name' => 'Delete substituicao',
                 'description' => 'Delete substituicao'
-            ],
-           
-           
-           
-           [
+            ],          
+            [
                 'name' => 'gestao_orientacao-list',
                 'display_name' => 'Display orientacao Listing',
                 'description' => 'See only Listing orientacao'
@@ -593,6 +590,42 @@ class PermissionTableSeeder extends Seeder
                 'name' => 'gestao_curso-delete',
                 'display_name' => 'Delete curso',
                 'description' => 'Delete curso'
+            ],
+            // Telas iniciais
+            [
+                'name' => 'viewTelaSecretarioDepartamento',
+                'display_name' => 'Ver Tela Secretario Departamento',
+                'description' => 'Ver Tela do Secretario Departamento'
+            ],
+            [
+                'name' => 'viewTelaSecretarioColegiado',
+                'display_name' => 'Ver Tela Secretario Colegiado',
+                'description' => 'Ver Tela do Secretario Colegiado'
+            ],
+            [
+                'name' => 'viewTelaCoordenadorDepartamento',
+                'display_name' => 'Ver Tela Coordenador Departamento',
+                'description' => 'Ver Tela do Coordenador Departamento'
+            ],
+            [
+                'name' => 'viewTelaCoordenadorColegiado',
+                'display_name' => 'Ver Tela Coordenador Colegiado',
+                'description' => 'Ver Tela do Coordenador Colegiado'
+            ],
+            [
+                'name' => 'viewTelaCoordenadorArea',
+                'display_name' => 'Ver Tela Coordenador Area',
+                'description' => 'Ver Tela do Coordenador Area'
+            ],
+            [
+                'name' => 'viewTelaProfessor',
+                'display_name' => 'Ver Tela Professor',
+                'description' => 'Ver Tela do Professor'
+            ],
+            [
+                'name' => 'viewTelaAdministradorDoSistema',
+                'display_name' => 'Ver Tela Administrador Sistema',
+                'description' => 'Ver Tela do Administrador Sistema'
             ]
         ];
 
