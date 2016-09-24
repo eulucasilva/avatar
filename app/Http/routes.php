@@ -274,14 +274,12 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/create',['as'=>'solicitacao.store','uses'=>'SolicitacaoController@store','middleware' => ['permission:gestao_solicitacao-create']]);
         Route::get('/{id}',['as'=>'solicitacao.show','uses'=>'SolicitacaoController@show']);
 
-        Route::get('/{id}/edit',['as'=>'solicitacao.edit','uses'=>'SolicitacaoController@edit','middleware' => ['permission:gestao_turma-edit']]);
-        Route::get('/{id}/responder',['as'=>'solicitacao.responder','uses'=>'SolicitacaoController@responder','middleware' => ['permission:gestao_turma-edit']]);
-       
-        
+        Route::get('/{id}/edit',['as'=>'solicitacao.edit','uses'=>'SolicitacaoController@edit','middleware' => ['permission:gestao_solicitacao-edit']]);
+        Route::get('/{id}/responder',['as'=>'solicitacao.responder','uses'=>'SolicitacaoController@responder','middleware' => ['permission:gestao_solicitacao-edit']]);        
 
-        Route::patch('/{id}',['as'=>'solicitacao.gravarResposta','uses'=>'SolicitacaoController@gravarResposta','middleware' => ['permission:gestao_solicitacao-edit']]);
+        Route::patch('/{id}/up',['as'=>'solicitacao.gravarResposta','uses'=>'SolicitacaoController@gravarResposta','middleware' => ['permission:gestao_solicitacao-edit']]);
 
-        Route::patch('/{id}',['as'=>'solicitacao.up','uses'=>'SolicitacaoController@update','middleware' => ['permission:gestao_solicitacao-edit']]);
+        Route::patch('/{id}/gb',['as'=>'solicitacao.up','uses'=>'SolicitacaoController@update','middleware' => ['permission:gestao_solicitacao-edit']]);
 
         Route::delete('/{id}',['as'=>'solicitacao.destroy','uses'=>'SolicitacaoController@destroy','middleware' => ['permission:gestao_solicitacao-delete']]);
     });
