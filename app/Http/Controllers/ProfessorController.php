@@ -54,7 +54,7 @@ class professorController extends Controller
             'termino_contrato_professor' => 'required',
             'contrato_professor' => 'required|max:15',
             'classe_professor' => 'required|max:45',
-            'titulo_professor' => 'required:max:45',
+            'titulo_professor' => 'required|max:45',
             'email_professor' => 'required|max:30',
             'nome_professor' => 'required|max:100',
             'telefone_professor' => 'required|max:15',
