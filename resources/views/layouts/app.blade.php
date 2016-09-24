@@ -47,6 +47,7 @@ desired effect
 
             <li><a href="{{ route('solicitacao.index') }}">Solicitar Turmas</a></li>
             <li><a href="{{ route('turma.index') }}">Alocar Turmas</a></li>
+            
             @yield('main-content')
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

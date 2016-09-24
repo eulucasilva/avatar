@@ -1,6 +1,6 @@
 @extends('layouts.app')
  
-@section('content')
+@section('main-content')
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
@@ -37,7 +37,6 @@
 		</tr>
 		@foreach ($solicitacaos as $key => $solicitacao)
 			<tr>
-				
 				<td>{{ ++$i }}</td>
 				<td>{{ $solicitacao->colegiado->sigla_colegiado }}</td>
 				<td>{{ $solicitacao->departamento->sigla }}</td>
@@ -51,12 +50,16 @@
 				<td>{{ $solicitacao->data_resultado }}</td>
 
 				<td>
-					@permission('gestao_solicitacao-create')
+					@permission('gestao_solicitacao-list')
 						<a class="btn btn-info" href="{{ route('solicitacao.show',$solicitacao->id) }}">Visualizar</a>
 					@endpermission
 					
 					@permission('gestao_solicitacao-edit')
 						<a class="btn btn-primary" href="{{ route('solicitacao.edit',$solicitacao->id) }}">Editar</a>
+					@endpermission
+
+					@permission('gestao_solicitacao-edit')
+						<a class="btn btn-primary" href="{{ route('solicitacao.responder',$solicitacao->id) }}">Responder</a>
 					@endpermission
 					
 					@permission('gestao_solicitacao-delete')

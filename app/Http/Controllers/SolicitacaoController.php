@@ -123,6 +123,13 @@ class SolicitacaoController extends Controller
         return view('solicitacao.edit', compact('solicitacaos', 'colegiados', 'periodo_letivos', 'cursos','areas', 'disciplinas', 'departamentos'));
     }
 
+    public function responder($id)
+    {
+        $solicitacaos = Solicitacao::find($id);
+
+        return view('solicitacao.responder', compact('solicitacaos'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -130,6 +137,7 @@ class SolicitacaoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         $this->validate
@@ -143,17 +151,34 @@ class SolicitacaoController extends Controller
                 'fk_area' => 'required',
                 'fk_disciplina' => 'required',
                 'data_solicitacao' => 'required',
-                'data_resultado' => 'required',
                 'quant_pratica_solicitada' => 'required',
                 'quant_teorica_solicitada' => 'required',
                 'quant_estagio_solicitada' => 'required',
-                'descricao_solicitacao' => 'required',
             ]
         );
 
         Solicitacao::find($id)->update($request->all());
 
         return redirect()->route('solicitacao.index')->with('success','Solicitação atualizada com sucesso');
+    }
+
+    public function gravarResposta(Request $request, $id)
+    {
+        $this->validate
+        (
+            $request, 
+            [
+               'status_solicitacao' => 'required',
+                'quant_pratica_aprovada' => 'required',
+                'quant_teorica_aprovada' => 'required',
+                'quant_estagio_aprovada' => 'required',
+                'data_resultado' => 'required',
+            ]
+        );
+
+        Solicitacao::find($id)->update($request->all());
+
+        return redirect()->route('solicitacao.index')->with('success','Resposta gravada com sucesso');
     }
 
     /**

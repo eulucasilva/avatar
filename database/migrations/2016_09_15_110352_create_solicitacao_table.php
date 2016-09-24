@@ -12,7 +12,8 @@ class CreateSolicitacaoTable extends Migration
      */
      public function up()
     {
-        Schema::create('solicitacaos', function (Blueprint $table) {
+        Schema::create('solicitacaos', function (Blueprint $table) 
+        {
             $table->increments('id');
             $table->timestamps();
                        
@@ -22,13 +23,13 @@ class CreateSolicitacaoTable extends Migration
             $table->integer('fk_departamento')->unsigned();
             $table->foreign('fk_departamento')->references('id')-> on('departamentos');
 
-             $table->integer('fk_periodo_letivo')->unsigned();
+            $table->integer('fk_periodo_letivo')->unsigned();
             $table->foreign('fk_periodo_letivo')->references('id')-> on('periodo_letivos');
             
             $table->integer('fk_curso')->unsigned();
             $table->foreign('fk_curso')->references('id')-> on('cursos');
 
-             $table->integer('fk_area')->unsigned();
+            $table->integer('fk_area')->unsigned();
             $table->foreign('fk_area')->references('id')-> on('areas');
             
             $table->integer('fk_disciplina')->unsigned();
@@ -52,7 +53,8 @@ class CreateSolicitacaoTable extends Migration
             $table->string('creditacao_estagio', 300);
             $table->string('creditacao_pratica', 300);
             $table->string('creditacao_teorica', 300);
-            $table->string('descricao_solicitacao', 300);
+            $table->string('observacoes_colegiado', 300)->nullable();;
+            $table->string('observacoes_area', 300)->nullable();;
         });
     }
 

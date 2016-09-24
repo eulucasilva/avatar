@@ -6,7 +6,7 @@
     <script src = "{{ asset('js/jquery-ui-1.12.0/jquery-ui.js') }}" type = "text/javascript" ></script>
     <link href="{{ asset('js/jquery-ui-themes-1.12.0/themes/base/jquery-ui.css') }}" rel="stylesheet">
 
-  @section('content')
+  @section('main-content')
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
@@ -27,7 +27,7 @@
 			</ul>
 		</div>
 	@endif
-	{!! Form::model($solicitacaos, ['method' => 'PATCH','route' => ['solicitacao.update', $solicitacaos->id]]) !!}
+	{!! Form::model($solicitacaos, ['method' => 'PATCH','route' => ['solicitacao.up', $solicitacaos->id]]) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -41,13 +41,6 @@
                 {!! Form::select('fk_departamento', $departamentos, 0, array('class' => 'form-control', 'id' => 'departamento')) !!}           
 
             </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Status:</strong>
-            {!!Form::select('status_solicitacao', array('Pendente' => 'Pendente', 'Aprovada' => 'Aprovada', 'Corrigir' => 'Corrigir', 'Recusada' => 'Recusada'),  null, array('class' => 'form-control'))!!}
-        </div>
     </div>
 
   <div class="col-xs-12 col-sm-12 col-md-12">
@@ -84,14 +77,6 @@
         </div>
     </div>
 
- <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Data do Resultado</strong>
-            {!! Form::text('data_resultado', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataResultado')) !!}
-        </div>
-    </div>
-
-
      <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Quantidade de Turmas Práticas:</strong>
@@ -113,7 +98,7 @@
         </div>
     </div>
 
- <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Quantidade de Alunos Previstos pra Turma Teórica:</strong>
             {!! Form::number('quant_aluno_teorica', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
@@ -127,7 +112,7 @@
         </div>
     </div>
 
- <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Quantidade de Alunos Previstos pra Turma de Estágio:</strong>
             {!! Form::number('quant_aluno_estagio', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
@@ -157,33 +142,10 @@
         </div>
     </div>
 
-
-<div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Quantidade Prática Aprovada/strong>
-            {!! Form::number('quant_pratica_aprovada', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Quantidade Teórica Aprovada</strong>
-            {!! Form::number('quant_teorica_aprovada', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
-        </div>
-    </div>
-
  <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Quantidade Estágio Aprovada</strong>
-            {!! Form::number('quant_estagio_aprovada', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
-        </div>
-    </div>
-
-
- <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Descrição da Solicitação:</strong>
-            {!! Form::textarea('descricao_solicitacao', null, array('placeholder' => 'Informe a descrição da Solicitação','class' => 'form-control','style'=>'height:30px')) !!}
+            <strong>Observações do Colegiado:</strong>
+            {!! Form::textarea('observacoes_colegiado', null, array('placeholder' => 'Informe a descrição da Solicitação','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
 
