@@ -1,4 +1,8 @@
 @extends('layouts.app')
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet" >
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
  
 @section('main-content')
 	<div class="row">
@@ -30,7 +34,7 @@
 		            <th>Status</th>
 
 		            <th>Data da Solicitação</th>
-		            <th>Data do Resultado</th>
+	 	            <th>Data do Resultado</th>
 		            
 
 		            <th width="280px">Action</th>
@@ -71,19 +75,19 @@
 			<th>No</th>
 			<th>Número da Solicitação</th>
 			<th>Professor</th>
+			<th>CH do Professor</th>
 			<th>Tipo de Turma</th>
 			<th>Carga Horária Semestral</th>
-			<th>Carga Horária Semanal</th>
+			<th>Carga Horária Semanal</th> 
 			<th>Local</th>
 			<th width="280px">Ação</th>
 		</tr>
 		@foreach ($turmas as $key => $turma)
 		<tr>
-			
-		
 				<td>{{ $turma-> id }}</td>
 				<td>{{ $turma-> fk_solicitacao }}</td>
-	            <td>{{ $turma-> fk_professor }}</td>
+	            <td>{!! Form::select('fk_professor', $professors, null, array('placeholder' => 'Selecionar','class' => 'form-control')) !!}</td>
+	            <td></td>
 	            <td>{{ $turma-> tipo_turma }}</td>
 	            <td>{{ $turma-> ch_semestral_turma }}</td>
 	            <td>{{ $turma-> ch_semanal_turma }}</td>
@@ -100,6 +104,13 @@
 		            {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
 		        	{!! Form::close() !!}
 	        	@endpermission
+
+				<div class="checkbox">
+	                <label>
+	                    <input type="checkbox" value="{{$turma->id}}">Confirmar
+	                </label>
+	            </div>
+
 			</td>
 		</tr>
 		@endforeach

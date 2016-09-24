@@ -42,10 +42,10 @@
 
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                   <strong>Professor</strong>
-                {!! Form::select('fk_professor', $professors, null, array('class' => 'form-control')) !!}
+                {!! Form::select('fk_professor', $professors, null, array('class' => 'form-control')) !!} 
            
             </div>
         </div>
