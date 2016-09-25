@@ -1,19 +1,13 @@
 <?php
 
-/*
- * Taken from
- * https://github.com/laravel/framework/blob/5.2/src/Illuminate/Auth/Console/stubs/make/controllers/HomeController.stub
- */
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Departamento;
+use App\Item;
 
-/**
- * Class HomeController
- * @package App\Http\Controllers
- */
 class HomeController extends Controller
 {
     /**
@@ -29,10 +23,30 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('home');
+    { //return view('home');
+
+       $user = Auth::user();
+       $role;
+
+       if(!empty($user->roles)){
+                foreach($user->roles as $v){
+                    $role = $v->name ;
+                }
+
+            if($role == "Administrador Sistema"){ return view('telasIniciais.TelaInicialAdministrador');} 
+            else if($role == "Coordenador Colegiado"){ return view('telasIniciais.TelaInicialCoordenadoColegiado');}
+            else if($role == "Coordenador Área"){ return view('telasIniciais.TelaInicialCoordenadorArea');}
+            else if($role == "Coordenador Departamento"){ return view('telasIniciais.TelaInicialCoordenadorDepartamento');}
+            else if($role == "Professor"){ return view('telasIniciais.TelaInicialProfessor');}
+            else if($role == "Secretario Colegiado"){ return view('telasIniciais.TelaInicialSecretarioColegiado');}
+            else if($role == "Secretario Departamento"){ return view('telasIniciais.TelaInicialSecretarioDepartamento');}
+            else{return view('home');}
+        }
+        else{
+            return view('home');
+       }
     }
 }

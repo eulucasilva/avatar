@@ -11,9 +11,7 @@
   |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::auth();
 
@@ -21,7 +19,16 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/home', 'HomeController@index');
 
-    Route::resource('users', 'UserController');
+   //rotas de users
+    Route::group(['prefix' => 'users', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'users.index', 'uses' => 'UserController@index', 'middleware' => ['permission:gestao_usuario-list|gestao_usuario-create|gestao_usuario-edit|gestao_usuario-delete']]);
+        Route::get('/create', ['as' => 'users.create', 'uses' => 'UserController@create', 'middleware' => ['permission:gestao_usuario-create']]);
+        Route::post('/create', ['as' => 'users.store', 'uses' => 'UserController@store', 'middleware' => ['permission:gestao_usuario-create']]);
+        Route::get('/{id}', ['as' => 'users.show', 'uses' => 'UserController@show']);
+        Route::get('/{id}/edit', ['as' => 'users.edit', 'uses' => 'UserController@edit', 'middleware' => ['permission:gestao_usuario-edit']]);
+        Route::patch('/{id}', ['as' => 'users.update', 'uses' => 'UserController@update', 'middleware' => ['permission:gestao_usuario-edit']]);
+        Route::delete('/{id}', ['as' => 'users.destroy', 'uses' => 'UserController@destroy', 'middleware' => ['permission:gestao_usuario-delete']]);
+    });
 
     //rotas de roles
     Route::group(['prefix' => 'roles', 'where' => ['id' => '[0-9]+']], function() {

@@ -3,6 +3,11 @@
 @section('main-content')
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
+	    	@section('contentheader_title')
+	    		  <div class="pull-left">
+	           		 <h2>ALOCAÇÃO DE TURMAS</h2>
+	        	</div>
+	    	 @endsection 
 	        <div class="pull-left">
 	            <h2>Solicitações Aprovadas</h2>
 	        </div>

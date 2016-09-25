@@ -19,12 +19,14 @@
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
+                <?php /*
                 <li class="dropdown messages-menu">
                     <!-- Menu toggle button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-envelope-o"></i>
                         <span class="label label-success">4</span>
                     </a>
+               
                     <ul class="dropdown-menu">
                         <li class="header">{{ trans('adminlte_lang::message.tabmessages') }}</li>
                         <li>
@@ -50,7 +52,7 @@
                         <li class="footer"><a href="#">c</a></li>
                     </ul>
                 </li><!-- /.messages-menu -->
-
+                   
                 <!-- Notifications Menu -->
                 <li class="dropdown notifications-menu">
                     <!-- Menu toggle button -->
@@ -73,6 +75,7 @@
                         <li class="footer"><a href="#">{{ trans('adminlte_lang::message.viewall') }}</a></li>
                     </ul>
                 </li>
+
                 <!-- Tasks Menu -->
                 <li class="dropdown tasks-menu">
                     <!-- Menu Toggle Button -->
@@ -80,10 +83,12 @@
                         <i class="fa fa-flag-o"></i>
                         <span class="label label-danger">9</span>
                     </a>
+                    */  ?>
                     <ul class="dropdown-menu">
                         <li class="header">{{ trans('adminlte_lang::message.tasks') }}</li>
                         <li>
                             <!-- Inner menu: contains the tasks -->
+
                             <ul class="menu">
                                 <li><!-- Task item -->
                                     <a href="#">
@@ -103,6 +108,7 @@
                                 </li><!-- end task item -->
                             </ul>
                         </li>
+
                         <li class="footer">
                             <a href="#">{{ trans('adminlte_lang::message.alltasks') }}</a>
                         </li>
@@ -117,19 +123,20 @@
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="{{asset('/img/user2-160x160.jpg')}}" class="user-image" alt="User Image"/>
+                            <img src="{{asset('/img/logo_uesb.jpg')}}" class="user-image" alt="User Image"/>
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">{{ Auth::user()->name }}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
                             <li class="user-header">
-                                <img src="{{asset('/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image" />
+                                <img src="{{asset('/img/logo_uesb.jpg')}}" class="img-circle" alt="User Image" />
                                 <p>
                                     {{ Auth::user()->name }}
-                                    <small>{{ trans('adminlte_lang::message.login') }} Nov. 2012</small>
+                                    <small>{{ trans('adminlte_lang::message.login') }} Usuário</small>
                                 </p>
                             </li>
+                            <?php /*
                             <!-- Menu Body -->
                             <li class="user-body">
                                 <div class="col-xs-4 text-center">
@@ -142,6 +149,7 @@
                                     <a href="#">{{ trans('adminlte_lang::message.friends') }}</a>
                                 </div>
                             </li>
+                            */  ?>
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
@@ -155,10 +163,13 @@
                     </li>
                 @endif
 
+                <?php
+                /*
                 <!-- Control Sidebar Toggle Button -->
                 <li>
                     <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                 </li>
+                */ ?>
             </ul>
         </div>
     </nav>

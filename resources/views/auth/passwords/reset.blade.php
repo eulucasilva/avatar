@@ -9,7 +9,7 @@
     <body class="login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+            <a href="{{ url('/home') }}"><b>E-</b>SARE</a>
         </div><!-- /.login-logo -->
 
         @if (session('status'))
@@ -60,7 +60,7 @@
                 </div>
             </form>
 
-            <a href="{{ url('/login') }}">Log in</a><br>
+            <a href="{{ url('/login') }}">Entrar</a><br>
             <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.membreship') }}</a>
 
         </div><!-- /.login-box-body -->

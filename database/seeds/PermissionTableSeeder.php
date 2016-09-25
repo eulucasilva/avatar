@@ -310,26 +310,6 @@ class PermissionTableSeeder extends Seeder
                 'description' => 'Delete Atividade Academica'
             ],
             [
-                'name' => 'gestao_cursos-list',
-                'display_name' => 'Display Cursos Listing',
-                'description' => 'See only Listing Cursos'
-            ],
-            [
-                'name' => 'gestao_cursos-create',
-                'display_name' => 'Create Cursos',
-                'description' => 'Create New Cursos'
-            ],
-            [
-                'name' => 'gestao_cursos-edit',
-                'display_name' => 'Edit Cursos',
-                'description' => 'Edit Cursos'
-            ],
-            [
-                'name' => 'gestao_cursos-delete',
-                'display_name' => 'Delete Cursos',
-                'description' => 'Delete Cursos'
-            ],
-            [
                 'name' => 'gestao_alocacao_professor-list',
                 'display_name' => 'Display Alocacao Professor Listing',
                 'description' => 'See only Listing Alocacao Professor'
@@ -591,6 +571,50 @@ class PermissionTableSeeder extends Seeder
                 'display_name' => 'Delete curso',
                 'description' => 'Delete curso'
             ],
+
+             //turma
+            ['name' => 'gestao_turma-list',
+                'display_name' => 'Display Turma Listing',
+                'description' => 'See only Listing Turma'
+            ],
+            [
+                'name' => 'gestao_turma-create',
+                'display_name' => 'Create Turma',
+                'description' => 'Create New Turma'
+            ],
+            [
+                'name' => 'gestao_turma-edit',
+                'display_name' => 'Edit Turma',
+                'description' => 'Edit Turma'
+            ],
+            [
+                'name' => 'gestao_turma-delete',
+                'display_name' => 'Delete Turma',
+                'description' => 'Delete Turma'
+            ],
+
+            //solicitação
+              ['name' => 'gestao_solicitacao-list',
+                'display_name' => 'Display  Solicitação',
+                'description' => 'See only Listing Solicitação'
+            ],
+            [
+                'name' => 'gestao_solicitacao-create',
+                'display_name' => 'Create Solicitação',
+                'description' => 'Create New Solicitação'
+            ],
+            [
+                'name' => 'gestao_solicitacao-edit',
+                'display_name' => 'Edit Solicitação',
+                'description' => 'Edit Solicitação'
+            ],
+            [
+                'name' => 'gestao_solicitacao-delete',
+                'display_name' => 'Delete Solicitação',
+                'description' => 'Delete Solicitação'
+            ],
+
+
             // Telas iniciais
             [
                 'name' => 'viewTelaSecretarioDepartamento',
