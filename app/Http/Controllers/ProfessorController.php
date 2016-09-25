@@ -48,7 +48,7 @@ class professorController extends Controller
         $this->validate($request, [
             'matricula_professor' => 'required|max:11',
             'situacao_professor' => 'required|max:15',
-            'regime_trabalho_professor' => 'required:max:10',
+            'regime_trabalho_professor' => 'required:max:30',
             'ch_professor' => 'required',
             'inicio_contrato_professor' => 'required',
             'termino_contrato_professor' => 'required',

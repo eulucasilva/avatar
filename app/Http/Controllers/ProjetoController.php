@@ -37,9 +37,9 @@ class projetoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nome_projeto' => 'required',
-            'tipo_projeto' => 'required',
-            'tipo_participacao_projeto' => 'required',
+            'nome_projeto' => 'required|max:200',
+            'tipo_projeto' => 'required|max:50',
+            'tipo_participacao_projeto' => 'required|max:50',
             'fk_professor' => 'required',
             'fk_periodo_letivo' => 'required',
         ]);
