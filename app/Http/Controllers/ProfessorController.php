@@ -94,7 +94,7 @@ class professorController extends Controller
         $professor = Professor::find($id);
         $departamentos = Departamento::lists('nome', 'id');
         $areas = Area::lists('nome', 'id');
-        $usuarios = User::lists('nome', 'id');
+        $usuarios = User::lists('name', 'id');
         return view('professor.edit',compact('professor','departamentos','areas','usuarios' ));
     }
 
