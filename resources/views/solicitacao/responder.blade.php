@@ -69,7 +69,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Observações da Área:</strong>
-                        {!! Form::textarea('observacoes_area', null, array('placeholder' => 'Se necessário, faça observações sobre a decisão da área.','class' => 'form-control','style'=>'height:30px')) !!}
+                        {!! Form::textarea('observacoes_departamento', null, array('placeholder' => 'Se necessário, faça observações sobre a decisão da área.','class' => 'form-control','style'=>'height:30px')) !!}
                     </div>
                 </div>
 
