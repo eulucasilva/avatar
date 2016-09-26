@@ -3,7 +3,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Area;
+use App\Pit;
 use Illuminate\Http\Request;
 use App\Professor;
 use App\PeriodoLetivo;
