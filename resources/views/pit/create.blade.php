@@ -43,6 +43,19 @@
                 {!! Form::select('fk_periodoLetivo',  $periodoLetivo, null, array('class' => 'form-control'))!!}
             </div>
         </div>
+        <h1> Atividades de Ensino</h1>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Aulas de graduação (semanal): </strong>
+                
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
         
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 				<button type="submit" class="btn btn-primary">Salvar</button>
