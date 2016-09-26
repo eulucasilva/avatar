@@ -54,7 +54,7 @@ class CreateSolicitacaoTable extends Migration
             $table->string('creditacao_pratica', 300);
             $table->string('creditacao_teorica', 300);
             $table->string('observacoes_colegiado', 300)->nullable();;
-            $table->string('observacoes_area', 300)->nullable();;
+            $table->string('observacoes_departamento', 300)->nullable();;
         });
     }
 

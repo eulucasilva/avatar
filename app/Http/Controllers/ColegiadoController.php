@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Colegiado;
 use App\Professor;
 use App\Secretario;
+use App\Coordenacao;
 use DB;
 
 class colegiadoController extends Controller {

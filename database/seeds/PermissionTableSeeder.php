@@ -650,6 +650,12 @@ class PermissionTableSeeder extends Seeder
                 'name' => 'viewTelaAdministradorDoSistema',
                 'display_name' => 'Ver Tela Administrador Sistema',
                 'description' => 'Ver Tela do Administrador Sistema'
+            ],
+           
+           [
+                'name' => 'relatorioUsuario',
+                'display_name' => 'Ver relatório de usuários',
+                'description' => 'Ver relatório de usuários'
             ]
         ];
 
