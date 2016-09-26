@@ -19,7 +19,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/home', 'HomeController@index');
 
-   //rotas de users
+    //rotas de users
     Route::group(['prefix' => 'users', 'where' => ['id' => '[0-9]+']], function() {
         Route::get('', ['as' => 'users.index', 'uses' => 'UserController@index', 'middleware' => ['permission:gestao_usuario-list|gestao_usuario-create|gestao_usuario-edit|gestao_usuario-delete']]);
         Route::get('/create', ['as' => 'users.create', 'uses' => 'UserController@create', 'middleware' => ['permission:gestao_usuario-create']]);
@@ -174,86 +174,86 @@ Route::group(['middleware' => ['auth']], function() {
         Route::delete('/{id}', ['as' => 'substituicao.destroy', 'uses' => 'SubstituicaoController@destroy', 'middleware' => ['permission:gestao_substituicao-delete']]);
     });
 
-     //rotas de atividade administrativa
-    Route::group(['prefix'=>'atividade_administrativa','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'atividadeAdministrativa.index','uses'=>'AtividadeAdministrativaController@index','middleware' => ['permission:gestao_atividade_administrativa-list|gestao_atividade_administrativa-create|gestao_atividade_administrativa-edit|gestao_atividade_administrativa-delete']]);
-	Route::get('/create',['as'=>'atividadeAdministrativa.create','uses'=>'AtividadeAdministrativaController@create','middleware' => ['permission:gestao_atividade_administrativa-create']]);
-	Route::post('/create',['as'=>'atividadeAdministrativa.store','uses'=>'AtividadeAdministrativaController@store','middleware' => ['permission:gestao_atividade_administrativa-create']]);
-	Route::get('/{id}',['as'=>'atividadeAdministrativa.show','uses'=>'AtividadeAdministrativaController@show']);
-	Route::get('/{id}/edit',['as'=>'atividadeAdministrativa.edit','uses'=>'AtividadeAdministrativaController@edit','middleware' => ['permission:gestao_atividade_administrativa-edit']]);
-	Route::patch('/{id}',['as'=>'atividadeAdministrativa.update','uses'=>'AtividadeAdministrativaController@update','middleware' => ['permission:gestao_atividade_administrativa-edit']]);
-    Route::delete('/{id}',['as'=>'atividadeAdministrativa.destroy','uses'=>'AtividadeAdministrativaController@destroy','middleware' => ['permission:gestao_atividade_administrativa-delete']]);
+    //rotas de atividade administrativa
+    Route::group(['prefix' => 'atividade_administrativa', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'atividadeAdministrativa.index', 'uses' => 'AtividadeAdministrativaController@index', 'middleware' => ['permission:gestao_atividade_administrativa-list|gestao_atividade_administrativa-create|gestao_atividade_administrativa-edit|gestao_atividade_administrativa-delete']]);
+        Route::get('/create', ['as' => 'atividadeAdministrativa.create', 'uses' => 'AtividadeAdministrativaController@create', 'middleware' => ['permission:gestao_atividade_administrativa-create']]);
+        Route::post('/create', ['as' => 'atividadeAdministrativa.store', 'uses' => 'AtividadeAdministrativaController@store', 'middleware' => ['permission:gestao_atividade_administrativa-create']]);
+        Route::get('/{id}', ['as' => 'atividadeAdministrativa.show', 'uses' => 'AtividadeAdministrativaController@show']);
+        Route::get('/{id}/edit', ['as' => 'atividadeAdministrativa.edit', 'uses' => 'AtividadeAdministrativaController@edit', 'middleware' => ['permission:gestao_atividade_administrativa-edit']]);
+        Route::patch('/{id}', ['as' => 'atividadeAdministrativa.update', 'uses' => 'AtividadeAdministrativaController@update', 'middleware' => ['permission:gestao_atividade_administrativa-edit']]);
+        Route::delete('/{id}', ['as' => 'atividadeAdministrativa.destroy', 'uses' => 'AtividadeAdministrativaController@destroy', 'middleware' => ['permission:gestao_atividade_administrativa-delete']]);
     });
 
-     //rotas de atividade de ensino
-    Route::group(['prefix'=>'atividade_ensino','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'atividadeEnsino.index','uses'=>'AtividadeEnsinoController@index','middleware' => ['permission:gestao_atividade_ensino-list|gestao_atividade_ensino-create|gestao_atividade_ensino-edit|gestao_atividade_ensino-delete']]);
-	Route::get('/create',['as'=>'atividadeEnsino.create','uses'=>'AtividadeEnsinoController@create','middleware' => ['permission:gestao_atividade_ensino-create']]);
-	Route::post('/create',['as'=>'atividadeEnsino.store','uses'=>'AtividadeEnsinoController@store','middleware' => ['permission:gestao_atividade_ensino-create']]);
-	Route::get('/{id}',['as'=>'atividadeEnsino.show','uses'=>'AtividadeEnsinoController@show']);
-	Route::get('/{id}/edit',['as'=>'atividadeEnsino.edit','uses'=>'AtividadeEnsinoController@edit','middleware' => ['permission:gestao_atividade_ensino-edit']]);
-	Route::patch('/{id}',['as'=>'atividadeEnsino.update','uses'=>'AtividadeEnsinoController@update','middleware' => ['permission:gestao_atividade_ensino-edit']]);
-    Route::delete('/{id}',['as'=>'atividadeEnsino.destroy','uses'=>'AtividadeEnsinoController@destroy','middleware' => ['permission:gestao_atividade_ensino-delete']]);
+    //rotas de atividade de ensino
+    Route::group(['prefix' => 'atividade_ensino', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'atividadeEnsino.index', 'uses' => 'AtividadeEnsinoController@index', 'middleware' => ['permission:gestao_atividade_ensino-list|gestao_atividade_ensino-create|gestao_atividade_ensino-edit|gestao_atividade_ensino-delete']]);
+        Route::get('/create', ['as' => 'atividadeEnsino.create', 'uses' => 'AtividadeEnsinoController@create', 'middleware' => ['permission:gestao_atividade_ensino-create']]);
+        Route::post('/create', ['as' => 'atividadeEnsino.store', 'uses' => 'AtividadeEnsinoController@store', 'middleware' => ['permission:gestao_atividade_ensino-create']]);
+        Route::get('/{id}', ['as' => 'atividadeEnsino.show', 'uses' => 'AtividadeEnsinoController@show']);
+        Route::get('/{id}/edit', ['as' => 'atividadeEnsino.edit', 'uses' => 'AtividadeEnsinoController@edit', 'middleware' => ['permission:gestao_atividade_ensino-edit']]);
+        Route::patch('/{id}', ['as' => 'atividadeEnsino.update', 'uses' => 'AtividadeEnsinoController@update', 'middleware' => ['permission:gestao_atividade_ensino-edit']]);
+        Route::delete('/{id}', ['as' => 'atividadeEnsino.destroy', 'uses' => 'AtividadeEnsinoController@destroy', 'middleware' => ['permission:gestao_atividade_ensino-delete']]);
     });
 
-      //rotas de atividade complementar
-    Route::group(['prefix'=>'atividade_complementar','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'atividadeComplementar.index','uses'=>'AtividadeComplementarController@index','middleware' => ['permission:gestao_atividade_complementar-list|gestao_atividade_complementar-create|gestao_atividade_complementar-edit|gestao_atividade_complementar-delete']]);
-	Route::get('/create',['as'=>'atividadeComplementar.create','uses'=>'AtividadeComplementarController@create','middleware' => ['permission:gestao_atividade_complementar-create']]);
-	Route::post('/create',['as'=>'atividadeComplementar.store','uses'=>'AtividadeComplementarController@store','middleware' => ['permission:gestao_atividade_complementar-create']]);
-	Route::get('/{id}',['as'=>'atividadeComplementar.show','uses'=>'AtividadeComplementarController@show']);
-	Route::get('/{id}/edit',['as'=>'atividadeComplementar.edit','uses'=>'AtividadeComplementarController@edit','middleware' => ['permission:gestao_atividade_complementar-edit']]);
-	Route::patch('/{id}',['as'=>'atividadeComplementar.update','uses'=>'AtividadeComplementarController@update','middleware' => ['permission:gestao_atividade_complementar-edit']]);
-    Route::delete('/{id}',['as'=>'atividadeComplementar.destroy','uses'=>'AtividadeComplementarController@destroy','middleware' => ['permission:gestao_atividade_complementar-delete']]);
-    });
-
-
-      //rotas de atividade administrativa acadêmica
-    Route::group(['prefix'=>'atividade_administrativa_acd','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'atividadeAdministrativaAcd.index','uses'=>'AtividadeAdministrativaAcdController@index','middleware' => ['permission:gestao_atividade_administrativa_acd-list|gestao_atividade_administrativa_acd-create|gestao_atividade_administrativa_acd-edit|gestao_atividade_administrativa_acd-delete']]);
-	Route::get('/create',['as'=>'atividadeAdministrativaAcd.create','uses'=>'AtividadeAdministrativaAcdController@create','middleware' => ['permission:gestao_atividade_administrativa_acd-create']]);
-	Route::post('/create',['as'=>'atividadeAdministrativaAcd.store','uses'=>'AtividadeAdministrativaAcdController@store','middleware' => ['permission:gestao_atividade_administrativa_acd-create']]);
-	Route::get('/{id}',['as'=>'atividadeAdministrativaAcd.show','uses'=>'AtividadeAdministrativaAcdController@show']);
-	Route::get('/{id}/edit',['as'=>'atividadeAdministrativaAcd.edit','uses'=>'AtividadeAdministrativaAcdController@edit','middleware' => ['permission:gestao_atividade_administrativa_acd-edit']]);
-	Route::patch('/{id}',['as'=>'atividadeAdministrativaAcd.update','uses'=>'AtividadeAdministrativaAcdController@update','middleware' => ['permission:gestao_atividade_administrativa-edit']]);
-    Route::delete('/{id}',['as'=>'atividadeAdministrativaAcd.destroy','uses'=>'AtividadeAdministrativaAcdController@destroy','middleware' => ['permission:gestao_atividade_administrativa_acd-delete']]);
+    //rotas de atividade complementar
+    Route::group(['prefix' => 'atividade_complementar', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'atividadeComplementar.index', 'uses' => 'AtividadeComplementarController@index', 'middleware' => ['permission:gestao_atividade_complementar-list|gestao_atividade_complementar-create|gestao_atividade_complementar-edit|gestao_atividade_complementar-delete']]);
+        Route::get('/create', ['as' => 'atividadeComplementar.create', 'uses' => 'AtividadeComplementarController@create', 'middleware' => ['permission:gestao_atividade_complementar-create']]);
+        Route::post('/create', ['as' => 'atividadeComplementar.store', 'uses' => 'AtividadeComplementarController@store', 'middleware' => ['permission:gestao_atividade_complementar-create']]);
+        Route::get('/{id}', ['as' => 'atividadeComplementar.show', 'uses' => 'AtividadeComplementarController@show']);
+        Route::get('/{id}/edit', ['as' => 'atividadeComplementar.edit', 'uses' => 'AtividadeComplementarController@edit', 'middleware' => ['permission:gestao_atividade_complementar-edit']]);
+        Route::patch('/{id}', ['as' => 'atividadeComplementar.update', 'uses' => 'AtividadeComplementarController@update', 'middleware' => ['permission:gestao_atividade_complementar-edit']]);
+        Route::delete('/{id}', ['as' => 'atividadeComplementar.destroy', 'uses' => 'AtividadeComplementarController@destroy', 'middleware' => ['permission:gestao_atividade_complementar-delete']]);
     });
 
 
-      //rotas de atividade de pesquisa
-    Route::group(['prefix'=>'atividade_pesquisa','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'atividadePesquisa.index','uses'=>'AtividadePesquisaController@index','middleware' => ['permission:gestao_atividade_pesquisa-list|gestao_atividade_pesquisa-create|gestao_atividade_pesquisa-edit|gestao_atividade_pesquisa-delete']]);
-	Route::get('/create',['as'=>'atividadePesquisa.create','uses'=>'AtividadePesquisaController@create','middleware' => ['permission:gestao_atividade_pesquisa-create']]);
-	Route::post('/create',['as'=>'atividadePesquisa.store','uses'=>'AtividadePesquisaController@store','middleware' => ['permission:gestao_atividade_pesquisa-create']]);
-	Route::get('/{id}',['as'=>'atividadePesquisa.show','uses'=>'AtividadePesquisaController@show']);
-	Route::get('/{id}/edit',['as'=>'atividadePesquisa.edit','uses'=>'AtividadePesquisaController@edit','middleware' => ['permission:gestao_atividade_pesquisa-edit']]);
-	Route::patch('/{id}',['as'=>'atividadePesquisa.update','uses'=>'AtividadePesquisaController@update','middleware' => ['permission:gestao_atividade_pesquisa-edit']]);
-    Route::delete('/{id}',['as'=>'atividadePesquisa.destroy','uses'=>'AtividadePesquisaController@destroy','middleware' => ['permission:gestao_atividade_pesquisa-delete']]);
+    //rotas de atividade administrativa acadêmica
+    Route::group(['prefix' => 'atividade_administrativa_acd', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'atividadeAdministrativaAcd.index', 'uses' => 'AtividadeAdministrativaAcdController@index', 'middleware' => ['permission:gestao_atividade_administrativa_acd-list|gestao_atividade_administrativa_acd-create|gestao_atividade_administrativa_acd-edit|gestao_atividade_administrativa_acd-delete']]);
+        Route::get('/create', ['as' => 'atividadeAdministrativaAcd.create', 'uses' => 'AtividadeAdministrativaAcdController@create', 'middleware' => ['permission:gestao_atividade_administrativa_acd-create']]);
+        Route::post('/create', ['as' => 'atividadeAdministrativaAcd.store', 'uses' => 'AtividadeAdministrativaAcdController@store', 'middleware' => ['permission:gestao_atividade_administrativa_acd-create']]);
+        Route::get('/{id}', ['as' => 'atividadeAdministrativaAcd.show', 'uses' => 'AtividadeAdministrativaAcdController@show']);
+        Route::get('/{id}/edit', ['as' => 'atividadeAdministrativaAcd.edit', 'uses' => 'AtividadeAdministrativaAcdController@edit', 'middleware' => ['permission:gestao_atividade_administrativa_acd-edit']]);
+        Route::patch('/{id}', ['as' => 'atividadeAdministrativaAcd.update', 'uses' => 'AtividadeAdministrativaAcdController@update', 'middleware' => ['permission:gestao_atividade_administrativa-edit']]);
+        Route::delete('/{id}', ['as' => 'atividadeAdministrativaAcd.destroy', 'uses' => 'AtividadeAdministrativaAcdController@destroy', 'middleware' => ['permission:gestao_atividade_administrativa_acd-delete']]);
     });
 
-      //rotas de atividade projeto de extensao
-    Route::group(['prefix'=>'atividade_projeto_extensao','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'atividadeProjetoExtensao.index','uses'=>'AtividadeProjetoExtensaoController@index','middleware' => ['permission:gestao_atividade_projeto_extensao-list|gestao_aatividade_projeto_extensao-create|gestao_atividade_projeto_extensao-edit|gestao_atividade_projeto_extensao-delete']]);
-	Route::get('/create',['as'=>'atividadeProjetoExtensao.create','uses'=>'AtividadeProjetoExtensaoController@create','middleware' => ['permission:gestao_atividade_projeto_extensao-create']]);
-	Route::post('/create',['as'=>'atividadeProjetoExtensao.store','uses'=>'AtividadeProjetoExtensaoController@store','middleware' => ['permission:gestao_atividade_projeto_extensao-create']]);
-	Route::get('/{id}',['as'=>'atividadeProjetoExtensao.show','uses'=>'AtividadeProjetoExtensaoController@show']);
-	Route::get('/{id}/edit',['as'=>'atividadeProjetoExtensao.edit','uses'=>'AtividadeProjetoExtensaoController@edit','middleware' => ['permission:gestao_atividade_projeto_extensao-edit']]);
-	Route::patch('/{id}',['as'=>'atividadeProjetoExtensao.update','uses'=>'AtividadeProjetoExtensaoController@update','middleware' => ['permission:gestao_atividade_projeto_extensao-edit']]);
-    Route::delete('/{id}',['as'=>'atividadeProjetoExtensao.destroy','uses'=>'AtividadeProjetoExtensaoController@destroy','middleware' => ['permission:gestao_atividade_projeto_extensao-delete']]);
+
+    //rotas de atividade de pesquisa
+    Route::group(['prefix' => 'atividade_pesquisa', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'atividadePesquisa.index', 'uses' => 'AtividadePesquisaController@index', 'middleware' => ['permission:gestao_atividade_pesquisa-list|gestao_atividade_pesquisa-create|gestao_atividade_pesquisa-edit|gestao_atividade_pesquisa-delete']]);
+        Route::get('/create', ['as' => 'atividadePesquisa.create', 'uses' => 'AtividadePesquisaController@create', 'middleware' => ['permission:gestao_atividade_pesquisa-create']]);
+        Route::post('/create', ['as' => 'atividadePesquisa.store', 'uses' => 'AtividadePesquisaController@store', 'middleware' => ['permission:gestao_atividade_pesquisa-create']]);
+        Route::get('/{id}', ['as' => 'atividadePesquisa.show', 'uses' => 'AtividadePesquisaController@show']);
+        Route::get('/{id}/edit', ['as' => 'atividadePesquisa.edit', 'uses' => 'AtividadePesquisaController@edit', 'middleware' => ['permission:gestao_atividade_pesquisa-edit']]);
+        Route::patch('/{id}', ['as' => 'atividadePesquisa.update', 'uses' => 'AtividadePesquisaController@update', 'middleware' => ['permission:gestao_atividade_pesquisa-edit']]);
+        Route::delete('/{id}', ['as' => 'atividadePesquisa.destroy', 'uses' => 'AtividadePesquisaController@destroy', 'middleware' => ['permission:gestao_atividade_pesquisa-delete']]);
     });
-    
+
+    //rotas de atividade projeto de extensao
+    Route::group(['prefix' => 'atividade_projeto_extensao', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'atividadeProjetoExtensao.index', 'uses' => 'AtividadeProjetoExtensaoController@index', 'middleware' => ['permission:gestao_atividade_projeto_extensao-list|gestao_aatividade_projeto_extensao-create|gestao_atividade_projeto_extensao-edit|gestao_atividade_projeto_extensao-delete']]);
+        Route::get('/create', ['as' => 'atividadeProjetoExtensao.create', 'uses' => 'AtividadeProjetoExtensaoController@create', 'middleware' => ['permission:gestao_atividade_projeto_extensao-create']]);
+        Route::post('/create', ['as' => 'atividadeProjetoExtensao.store', 'uses' => 'AtividadeProjetoExtensaoController@store', 'middleware' => ['permission:gestao_atividade_projeto_extensao-create']]);
+        Route::get('/{id}', ['as' => 'atividadeProjetoExtensao.show', 'uses' => 'AtividadeProjetoExtensaoController@show']);
+        Route::get('/{id}/edit', ['as' => 'atividadeProjetoExtensao.edit', 'uses' => 'AtividadeProjetoExtensaoController@edit', 'middleware' => ['permission:gestao_atividade_projeto_extensao-edit']]);
+        Route::patch('/{id}', ['as' => 'atividadeProjetoExtensao.update', 'uses' => 'AtividadeProjetoExtensaoController@update', 'middleware' => ['permission:gestao_atividade_projeto_extensao-edit']]);
+        Route::delete('/{id}', ['as' => 'atividadeProjetoExtensao.destroy', 'uses' => 'AtividadeProjetoExtensaoController@destroy', 'middleware' => ['permission:gestao_atividade_projeto_extensao-delete']]);
+    });
+
     //rotas de curso
-    Route::group(['prefix'=>'curso','where'=>['id'=>'[0-9]+']], function(){
-    Route::get('',['as'=>'curso.index','uses'=>'CursoController@index','middleware' => ['permission:gestao_curso-list|gestao_curso-create|gestao_curso-edit|gestao_curso-delete']]);
-	Route::get('/create',['as'=>'curso.create','uses'=>'CursoController@create','middleware' => ['permission:gestao_curso-create']]);
-	Route::post('/create',['as'=>'curso.store','uses'=>'CursoController@store','middleware' => ['permission:gestao_curso-create']]);
-	Route::get('/{id}',['as'=>'curso.show','uses'=>'CursoController@show']);
-	Route::get('/{id}/edit',['as'=>'curso.edit','uses'=>'CursoController@edit','middleware' => ['permission:gestao_curso-edit']]);
-	Route::patch('/{id}',['as'=>'curso.update','uses'=>'CursoController@update','middleware' => ['permission:gestao_curso-edit']]);
-    Route::delete('/{id}',['as'=>'curso.destroy','uses'=>'CursoController@destroy','middleware' => ['permission:gestao_curso-delete']]);
+    Route::group(['prefix' => 'curso', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'curso.index', 'uses' => 'CursoController@index', 'middleware' => ['permission:gestao_curso-list|gestao_curso-create|gestao_curso-edit|gestao_curso-delete']]);
+        Route::get('/create', ['as' => 'curso.create', 'uses' => 'CursoController@create', 'middleware' => ['permission:gestao_curso-create']]);
+        Route::post('/create', ['as' => 'curso.store', 'uses' => 'CursoController@store', 'middleware' => ['permission:gestao_curso-create']]);
+        Route::get('/{id}', ['as' => 'curso.show', 'uses' => 'CursoController@show']);
+        Route::get('/{id}/edit', ['as' => 'curso.edit', 'uses' => 'CursoController@edit', 'middleware' => ['permission:gestao_curso-edit']]);
+        Route::patch('/{id}', ['as' => 'curso.update', 'uses' => 'CursoController@update', 'middleware' => ['permission:gestao_curso-edit']]);
+        Route::delete('/{id}', ['as' => 'curso.destroy', 'uses' => 'CursoController@destroy', 'middleware' => ['permission:gestao_curso-delete']]);
     });
     //rotas de orientação
-     Route::group(['prefix' => 'orientacao', 'where' => ['id' => '[0-9]+']], function() {
+    Route::group(['prefix' => 'orientacao', 'where' => ['id' => '[0-9]+']], function() {
         Route::get('', ['as' => 'orientacao.index', 'uses' => 'OrientacaoController@index', 'middleware' => ['permission:gestao_orientacao-list|gestao_orientacao-create|gestao_orientacao-edit|gestao_orientacao-delete']]);
         Route::get('/create', ['as' => 'orientacao.create', 'uses' => 'OrientacaoController@create', 'middleware' => ['permission:gestao_orientacao-create']]);
         Route::post('/create', ['as' => 'orientacao.store', 'uses' => 'OrientacaoController@store', 'middleware' => ['permission:gestao_orientacao-create']]);
@@ -263,49 +263,48 @@ Route::group(['middleware' => ['auth']], function() {
         Route::delete('/{id}', ['as' => 'orientacao.destroy', 'uses' => 'OrientacaoController@destroy', 'middleware' => ['permission:gestao_orientacao-delete']]);
     });
 //Rotas de orientação de projeto
-    Route::group(['prefix' => 'orientacao_projeto', 'where' => ['id' => '[0-9]+']], function(){
-    Route::get('', ['as' => 'orientacao_projeto.index', 'uses' => 'Orientacao_projetoController@index', 'middleware' => ['permission:gestao_orientacao_projeto-list|gestao_orientacao_projeto-create|gestao_orientacao_projeto-edit|gestao_orientacao_projeto-delete']]);
-    Route::get('/create', ['as' => 'orientacao_projeto.create', 'uses' => 'Orientacao_projetoController@create', 'middleware' => ['permission:gestao_orientacao_projeto-create']]);
-    Route::post('/create', ['as' => 'orientacao_projeto.store', 'uses' => 'Orientacao_projetoController@store', 'middleware' => ['permission:gestao_orientacao_projeto-create']]);
-    Route::get('/{id}', ['as' => 'orientacao_projeto.show', 'uses' => 'Orientacao_projetoController@show']);
-    Route::get('/{id}/edit', ['as' => 'orientacao_projeto.edit', 'uses' => 'Orientacao_projetoController@edit', 'middleware' => ['permission:gestao_orientacao_projeto-edit']]);
-    Route::patch('/{id}', ['as' => 'orientacao_projeto.update', 'uses' => 'Orientacao_projetoController@update', 'middleware' => ['permission:gestao_orientacao_projeto-edit']]);
-    Route::delete('/{id}', ['as' => 'orientacao_projeto.destroy', 'uses' => 'Orientacao_projetoController@destroy', 'middleware' => ['permission:gestao_orientacao_projeto-delete']]);
+    Route::group(['prefix' => 'orientacao_projeto', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'orientacao_projeto.index', 'uses' => 'Orientacao_projetoController@index', 'middleware' => ['permission:gestao_orientacao_projeto-list|gestao_orientacao_projeto-create|gestao_orientacao_projeto-edit|gestao_orientacao_projeto-delete']]);
+        Route::get('/create', ['as' => 'orientacao_projeto.create', 'uses' => 'Orientacao_projetoController@create', 'middleware' => ['permission:gestao_orientacao_projeto-create']]);
+        Route::post('/create', ['as' => 'orientacao_projeto.store', 'uses' => 'Orientacao_projetoController@store', 'middleware' => ['permission:gestao_orientacao_projeto-create']]);
+        Route::get('/{id}', ['as' => 'orientacao_projeto.show', 'uses' => 'Orientacao_projetoController@show']);
+        Route::get('/{id}/edit', ['as' => 'orientacao_projeto.edit', 'uses' => 'Orientacao_projetoController@edit', 'middleware' => ['permission:gestao_orientacao_projeto-edit']]);
+        Route::patch('/{id}', ['as' => 'orientacao_projeto.update', 'uses' => 'Orientacao_projetoController@update', 'middleware' => ['permission:gestao_orientacao_projeto-edit']]);
+        Route::delete('/{id}', ['as' => 'orientacao_projeto.destroy', 'uses' => 'Orientacao_projetoController@destroy', 'middleware' => ['permission:gestao_orientacao_projeto-delete']]);
     });
 
-     //rotas de solicitação
-    Route::group(['prefix'=>'solicitacao','where'=>['id'=>'[0-9]+']], function()
-    {
-        Route::get('',['as'=>'solicitacao.index','uses'=>'SolicitacaoController@index','middleware' => ['permission:gestao_solicitacao-list|gestao_solicitacao-create|gestao_solicitacao-edit|gestao_solicitacao-delete']]);
-        Route::get('/create',['as'=>'solicitacao.create','uses'=>'SolicitacaoController@create','middleware' => ['permission:gestao_solicitacao-create']]);
-        Route::post('/create',['as'=>'solicitacao.store','uses'=>'SolicitacaoController@store','middleware' => ['permission:gestao_solicitacao-create']]);
-        Route::get('/{id}',['as'=>'solicitacao.show','uses'=>'SolicitacaoController@show']);
+    //rotas de solicitação
+    Route::group(['prefix' => 'solicitacao', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'solicitacao.index', 'uses' => 'SolicitacaoController@index', 'middleware' => ['permission:gestao_solicitacao-list|gestao_solicitacao-create|gestao_solicitacao-edit|gestao_solicitacao-delete']]);
+        Route::get('/create', ['as' => 'solicitacao.create', 'uses' => 'SolicitacaoController@create', 'middleware' => ['permission:gestao_solicitacao-create']]);
+        Route::post('/create', ['as' => 'solicitacao.store', 'uses' => 'SolicitacaoController@store', 'middleware' => ['permission:gestao_solicitacao-create']]);
+        Route::get('/{id}', ['as' => 'solicitacao.show', 'uses' => 'SolicitacaoController@show']);
 
-        Route::get('/{id}/edit',['as'=>'solicitacao.edit','uses'=>'SolicitacaoController@edit','middleware' => ['permission:gestao_solicitacao-edit']]);
-        Route::get('/{id}/responder',['as'=>'solicitacao.responder','uses'=>'SolicitacaoController@responder','middleware' => ['permission:gestao_solicitacao-edit']]);        
+        Route::get('/{id}/edit', ['as' => 'solicitacao.edit', 'uses' => 'SolicitacaoController@edit', 'middleware' => ['permission:gestao_solicitacao-edit']]);
+        Route::get('/{id}/responder', ['as' => 'solicitacao.responder', 'uses' => 'SolicitacaoController@responder', 'middleware' => ['permission:gestao_solicitacao-edit']]);
 
-        Route::patch('/{id}/up',['as'=>'solicitacao.gravarResposta','uses'=>'SolicitacaoController@gravarResposta','middleware' => ['permission:gestao_solicitacao-edit']]);
+        Route::patch('/{id}/up', ['as' => 'solicitacao.gravarResposta', 'uses' => 'SolicitacaoController@gravarResposta', 'middleware' => ['permission:gestao_solicitacao-edit']]);
 
-        Route::patch('/{id}/gb',['as'=>'solicitacao.up','uses'=>'SolicitacaoController@update','middleware' => ['permission:gestao_solicitacao-edit']]);
+        Route::patch('/{id}/gb', ['as' => 'solicitacao.up', 'uses' => 'SolicitacaoController@update', 'middleware' => ['permission:gestao_solicitacao-edit']]);
 
-        Route::delete('/{id}',['as'=>'solicitacao.destroy','uses'=>'SolicitacaoController@destroy','middleware' => ['permission:gestao_solicitacao-delete']]);
+        Route::delete('/{id}', ['as' => 'solicitacao.destroy', 'uses' => 'SolicitacaoController@destroy', 'middleware' => ['permission:gestao_solicitacao-delete']]);
     });
 
-     //rotas de turmas
-    Route::group(['prefix'=>'turma','where'=>['id'=>'[0-9]+']], function()
-    {
-        Route::get('',['as'=>'turma.index','uses'=>'TurmaController@index','middleware' => ['permission:gestao_turma-list|gestao_turma-create|gestao_turma-edit|gestao_turma-delete']]);
-        Route::get('/create',['as'=>'turma.create','uses'=>'TurmaController@create','middleware' => ['permission:gestao_turma-create']]);
-        Route::post('/create',['as'=>'turma.store','uses'=>'TurmaController@store','middleware' => ['permission:gestao_turma-create']]);
-        Route::get('/{id}',['as'=>'turma.show','uses'=>'TurmaController@show']);
+    //rotas de turmas
+    Route::group(['prefix' => 'turma', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'turma.index', 'uses' => 'TurmaController@index', 'middleware' => ['permission:gestao_turma-list|gestao_turma-create|gestao_turma-edit|gestao_turma-delete']]);
+        Route::get('/create', ['as' => 'turma.create', 'uses' => 'TurmaController@create', 'middleware' => ['permission:gestao_turma-create']]);
+        Route::post('/create', ['as' => 'turma.store', 'uses' => 'TurmaController@store', 'middleware' => ['permission:gestao_turma-create']]);
+        Route::get('/{id}', ['as' => 'turma.show', 'uses' => 'TurmaController@show']);
 
-        Route::get('/{id}/edit',['as'=>'turma.edit','uses'=>'TurmaController@edit','middleware' => ['permission:gestao_turma-edit']]);
+        Route::get('/{id}/edit', ['as' => 'turma.edit', 'uses' => 'TurmaController@edit', 'middleware' => ['permission:gestao_turma-edit']]);
 
-        Route::patch('/{id}',['as'=>'turma.update','uses'=>'TurmaController@update','middleware' => ['permission:gestao_turma-edit']]);
-        Route::delete('/{id}',['as'=>'turma.destroy','uses'=>'TurmaController@destroy','middleware' => ['permission:gestao_turma-delete']]);
-         Route::get('/{id}',['as'=>'turma.gerar','uses'=>'TurmaController@gerar','middleware' => ['permission:gestao_turma-create']]);
+        Route::patch('/{id}', ['as' => 'turma.update', 'uses' => 'TurmaController@update', 'middleware' => ['permission:gestao_turma-edit']]);
+        Route::delete('/{id}', ['as' => 'turma.destroy', 'uses' => 'TurmaController@destroy', 'middleware' => ['permission:gestao_turma-delete']]);
+        Route::get('/{id}', ['as' => 'turma.gerar', 'uses' => 'TurmaController@gerar', 'middleware' => ['permission:gestao_turma-create']]);
     });
 
-}); 
+    //rotas para relatório
+    Route::get('/relatorioUsuario', ['as' => 'relatorio.usuario', 'uses' => 'RelatorioController@relatorioUsuario', 'middleware' => ['permission:relatorioUsuario']]);
+});
 
- 

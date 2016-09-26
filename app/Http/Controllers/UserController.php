@@ -59,7 +59,7 @@ class UserController extends Controller
         }
 
         return redirect()->route('users.index')
-                        ->with('success','User created successfully');
+                        ->with('success','Usuário cadastrado com sucesso');
     }
 
     /**
