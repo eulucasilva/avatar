@@ -12,7 +12,7 @@
         <div class="pull-left">
             <h2>Editar Professor</h2>
         </div>
-         @endsection 
+        @endsection 
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('professor.index') }}"> Voltar</a>
         </div>
@@ -112,6 +112,18 @@
         <div class="form-group">
             <strong>Usuario</strong>
             {!! Form::select('fk_usuario', $usuarios, null, array('class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Departamento:</strong>
+            {!! Form::select('fk_departamento', $departamentos, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Area:</strong>
+            {!! Form::select('fk_area', $areas, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
 

@@ -9,7 +9,7 @@
 	        </div>
             @endsection
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('itemCRUD2.index') }}"> Voltar</a>
+	            <a class="btn btn-primary" href="{{ route('periodoLetivo.index') }}"> Voltar</a>
 	        </div>
 	    </div>
 	</div>
