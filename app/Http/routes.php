@@ -305,6 +305,19 @@ Route::group(['middleware' => ['auth']], function() {
         Route::delete('/{id}',['as'=>'turma.destroy','uses'=>'TurmaController@destroy','middleware' => ['permission:gestao_turma-delete']]);
          Route::get('/{id}',['as'=>'turma.gerar','uses'=>'TurmaController@gerar','middleware' => ['permission:gestao_turma-create']]);
     });
+    
+     //rotas de pit
+    Route::group(['prefix'=>'pit','where'=>['id'=>'[0-9]+']], function()
+    {
+        Route::get('',['as'=>'pit.index','uses'=>'PitController@index','middleware' => ['permission:gestao_pit-list|gestao_pit-create|gestao_pit-edit|gestao_pit-delete']]);
+        Route::get('/create',['as'=>'pit.create','uses'=>'PitController@create','middleware' => ['permission:gestao_pit-create']]);
+        Route::post('/create',['as'=>'pit.store','uses'=>'PitController@store','middleware' => ['permission:gestao_pit-create']]);
+        Route::get('/{id}',['as'=>'pit.show','uses'=>'PitController@show']);
+        Route::get('/{id}/edit',['as'=>'pit.edit','uses'=>'PitController@edit','middleware' => ['permission:gestao_pit-edit']]);
+        Route::patch('/{id}',['as'=>'pit.update','uses'=>'PitController@update','middleware' => ['permission:gestao_pit-edit']]);
+        Route::delete('/{id}',['as'=>'pit.destroy','uses'=>'PitController@destroy','middleware' => ['permission:gestao_pit-delete']]);
+         Route::get('/{id}',['as'=>'pit.gerar','uses'=>'PitController@gerar','middleware' => ['permission:gestao_pit-create']]);
+    });
 
 }); 
 
