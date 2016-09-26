@@ -7,7 +7,12 @@
 	        <div class="pull-left">
 	            <h2>Administração de Usuários</h2>
 	        </div>
-	        @endsection	
+	        @endsection
+                <div class="pull-left">
+	        	@permission('relatorioUsuario')
+                        <a class="btn btn-default" href="{{ route('relatorio.usuario') }}">Gerar Relatório</a>
+	       		@endpermission
+	        </div>
 	        <div class="pull-right">
 	        	@permission('gestao_usuario-create')
 	            <a class="btn btn-success" href="{{ route('users.create') }}"> Criar Novo Usuário</a>
