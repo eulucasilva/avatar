@@ -46,9 +46,9 @@ class OrientacaoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'tipo_orientacao' => 'required',
-            'nivel_orientacao' => 'required',
-            'ch_orientacao' => 'required',
+            'tipo_orientacao' => 'required|max:200',
+            'nivel_orientacao' => 'required|max:45',
+            'ch_orientacao' => 'required|max:45',
             'fk_periodoLetivo' => 'required',
             'fk_professor' => 'required',
             'fk_alunos' => 'required',

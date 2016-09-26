@@ -28,7 +28,9 @@ class TurmaController extends Controller
     {
         $solicitacaos = Solicitacao::where('status_solicitacao', '=', 'Aprovada')->get();
         $turmas = Turma::orderBy('id','DESC')->paginate(5);
-        return view('turma.index',compact('turmas', 'solicitacaos'))
+        $professors = Professor::lists('nome_professor', 'id');
+
+        return view('turma.index',compact('turmas', 'solicitacaos', 'professors'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -125,7 +127,6 @@ class TurmaController extends Controller
                'fk_professor' => 'required',
                 'ch_semestral_turma' => 'required',
                 'ch_semanal_turma' => 'required',
-                'local_turma' => 'required',
             ]
         );
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Solicitacao extends Model
 {
       public $fillable = ['fk_colegiado','fk_departamento', 'fk_periodo_letivo','fk_curso',
-    'fk_area','fk_disciplina', 'status_solicitacao' ,'data_solicitacao', 'data_resultado', 'quant_aluno_teorica', 'quant_aluno_pratica', 'quant_aluno_estagio', 'quant_pratica_solicitada', 'quant_teorica_solicitada', 'quant_estagio_solicitada', 'quant_pratica_aprovada', 'quant_teorica_aprovada', 'quant_estagio_aprovada', 'creditacao_pratica', 'creditacao_teorica', 'creditacao_estagio', 'descricao_solicitacao'];
+    'fk_area','fk_disciplina', 'status_solicitacao' ,'data_solicitacao', 'data_resultado', 'quant_aluno_teorica', 'quant_aluno_pratica', 'quant_aluno_estagio', 'quant_pratica_solicitada', 'quant_teorica_solicitada', 'quant_estagio_solicitada', 'quant_pratica_aprovada', 'quant_teorica_aprovada', 'quant_estagio_aprovada', 'creditacao_pratica', 'creditacao_teorica', 'creditacao_estagio', 'observacoes_colegiado', 'observacoes_departamento'];
 
       public function colegiado() 
       {
