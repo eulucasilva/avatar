@@ -40,7 +40,7 @@
     @foreach ($pits as $key => $pit)
     <tr>
         
-        <td>{{ $pit->fk_periodoLetivo}}</td>
+        <td>{{ $pit->fk_periodo_letivo}}</td>
         <td>{{ $pit->fk_professor}}</td> 
         <td>{{ $pit->campo4}} </td>
         <td>{{ $pit->campo8}} </td>

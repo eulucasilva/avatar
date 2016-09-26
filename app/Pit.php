@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class pit extends Model
+class Pit extends Model
 {
     
     public $fillable = ['fk_periodo_letivo','fk_professor', 
