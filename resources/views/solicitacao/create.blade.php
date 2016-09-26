@@ -162,7 +162,7 @@
  <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Descrição da Solicitação:</strong>
-            {!! Form::textarea('descricao_solicitacao', null, array('placeholder' => 'Informe a descrição da Solicitação','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::textarea('observacoes_colegiado', null, array('placeholder' => 'Informe a descrição da Solicitação','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
 

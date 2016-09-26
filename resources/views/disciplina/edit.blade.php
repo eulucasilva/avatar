@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('main-content')
@@ -5,9 +6,9 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Cadastrar Disciplina</h2>
+            <h2>Editar Departamento</h2>
         </div>
-         @endsection
+        @endsection 
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('disciplina.index') }}">Voltar</a>
         </div>
@@ -22,8 +23,9 @@
     </ul>
 </div>
 @endif
-{!! Form::open(array('route' => 'disciplina.store','method'=>'POST')) !!}
+{!! Form::model($disciplina, ['method' => 'PATCH','route' => ['departamento.update', $disciplina->id]]) !!}
 <div class="row">
+   
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nome:</strong>
@@ -60,6 +62,7 @@
             {!! Form::select('fk_area',$area, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
+    
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>

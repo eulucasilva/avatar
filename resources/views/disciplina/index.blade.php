@@ -30,14 +30,16 @@
     </tr>
     @foreach ($disciplinas as $key => $disciplina)
     <tr>
-        <td>{{ $disciplina->nome }}</td>
-        <td>{{ $disciplina->codigo  }}</td>
-        <td>{{ $disciplina->ch_total}}</td>
-        <td>{{ $disciplina->natureza}}</td>
+        <td>{{ $disciplina->nome_disciplina }}</td>
+        <td>{{ $disciplina->codigo_disciplina  }}</td>
+        <td>{{ $disciplina->ch_total_disciplina}}</td>
+        <td>{{ $disciplina->natureza_disciplina}}</td>
+        <td>{{ $disciplina->fk_departamento}}</td>
+        <td>{{ $disciplina->fk_area}}</td>
         <td>
-            <a class="btn btn-info" href="{{ route('itemCRUD2.show',$disciplina->id) }}">Visualizar</a>
+            <a class="btn btn-info" href="{{ route('disciplina.show',$disciplina->id) }}">Visualizar</a>
             @permission('gestao_disciplina-edit')
-            <a class="btn btn-primary" href="{{ route('itemCRUD2.edit',$disciplina->id) }}">Editar</a>
+            <a class="btn btn-primary" href="{{ route('disciplina.edit',$disciplina->id) }}">Editar</a>
             @endpermission
             @permission('gestao_disciplina-delete')
             {!! Form::open(['method' => 'DELETE','route' => ['disciplina.destroy', $disciplina->id],'style'=>'display:inline']) !!}

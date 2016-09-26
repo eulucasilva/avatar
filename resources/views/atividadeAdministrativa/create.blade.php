@@ -9,10 +9,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-        @section('contentheader_title')
+            @section('contentheader_title')
             <h2>Criar Nova Atividade Administrativa</h2>
         </div>
-         @endsection  
+        @endsection  
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('atividadeAdministrativa.index') }}"> Voltar</a>
         </div>
@@ -42,20 +42,20 @@
         </div>
     </div>
 
-     <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Professor:</strong>
             {!! Form::select('fk_professor', $professores, null, array('class' => 'form-control')) !!}
-           
+
         </div>
     </div>
-    
-   
+
+
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Período Letivo</strong>
             {!! Form::select('fk_periodo_letivo', $periodo_letivos, null, array('class' => 'form-control')) !!}
-           
+
         </div>
     </div>
 
@@ -63,8 +63,10 @@
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
 </div>
+</div>
+
 {!! Form::close() !!}
-
-
+<script>
+</script>
 @endsection
 
