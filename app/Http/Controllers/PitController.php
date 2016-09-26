@@ -159,9 +159,4 @@ class PitController extends Controller {
                         ->with('success', 'Pit excluída com sucesso!');
     }
 
-    public function show($id) {
-        $pit = Pit::find($id);
-        return view('pit.show', compact('pit'));
-    }
-
 }
