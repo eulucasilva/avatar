@@ -117,13 +117,13 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Departamento:</strong>
-            {!! Form::select('fk_departamento', $departamento, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+            {!! Form::select('fk_departamento', $departamentos, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Area:</strong>
-            {!! Form::select('fk_area', $area, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+            {!! Form::select('fk_area', $areas, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
 
