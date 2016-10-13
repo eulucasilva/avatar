@@ -5,12 +5,12 @@
     <div class="col-lg-12 margin-tb">
          @section('contentheader_title')
         <div class="pull-left">
-            <h2>Administração de Orientação de Projetos</h2>
+            <h2>Administração de Pit</h2>
         </div>
          @endsection 
         <div class="pull-right">
-            @permission('gestao_orientacao_projeto-create')
-            <a class="btn btn-success" href="{{ route('orientacao_projeto.create') }}"> Criar Novo Projeto</a>
+            @permission('gestao_pit-create')
+            <a class="btn btn-success" href="{{ route('pit.create') }}"> Criar Novo Projeto</a>
             @endpermission
         </div>
     </div>
@@ -22,30 +22,45 @@
 @endif
 <table class="table table-bordered">
     <tr>
-
-        <th>Aluno</th>
-        <th>Projeto</th>
-        <th>Professor</th>
+       
         <th>Período Letivo</th>
+        <th>Professor</th>
+        <th>AEn</th>
+        <th>ASin</th>
+        <th>AAd</th>
+        <th>AAAc</th>
+        <th>APe</th>
+        <th>AEs</th>
+        <th>ECo</th>
+        <th>LSS</th>
+        <th>OA</th>
      
         <th width="280px">Ação</th>
     </tr>
-    @foreach ($orientacao_projetos as $key => $orientacao_projeto)
+    @foreach ($pits as $key => $pit)
     <tr>
-        <td>{{ $orientacao_projeto->aluno->nome_aluno }}</td>
-        <td>{{ $orientacao_projeto->projeto->nome_projeto}}</td>
-        <td>{{ $orientacao_projeto->professor->nome_professor}}</td> 
-        <td>{{ $orientacao_projeto->periodoLetivo->periodo_periodoLetivo}}</td>
+        
+        <td>{{ $pit->fk_periodo_letivo}}</td>
+        <td>{{ $pit->fk_professor}}</td> 
+        <td>{{ $pit->campo4}} </td>
+        <td>{{ $pit->campo8}} </td>
+        <td>{{ $pit->campo12}} </td>
+        <td>{{ $pit->campo25}} </td>
+        <td>{{ $pit->campo29}} </td>
+        <td>{{ $pit->campo32}} </td>
+        <td>{{ $pit->campo35}} </td>
+        <td>{{ $pit->campo39}} </td>
+        <td>{{ $pit->campo45}} </td>
 
-        <td>
-            @permission('gestao_orientacao_projeto-create')
-            <a class="btn btn-info" href="{{ route('orientacao_projeto.show',$orientacao_projeto->id) }}">Visualizar</a>
+       <td>
+            @permission('gestao_pit-create')
+            <a class="btn btn-info" href="{{ route('pit.show',$pit->id) }}">Visualizar</a>
             @endpermission
-            @permission('gestao_orientacao_projeto-edit')
-            <a class="btn btn-primary" href="{{ route('orientacao_projeto.edit',$orientacao_projeto->id) }}">Editar</a>
+            @permission('gestao_pit-edit')
+            <a class="btn btn-primary" href="{{ route('pit.edit',$pit->id) }}">Editar</a>
             @endpermission
-            @permission('gestao_orientacao_projeto-delete')
-            {!! Form::open(['method' => 'DELETE','route' => ['orientacao_projeto.destroy', $orientacao_projeto->id],'style'=>'display:inline']) !!}
+            @permission('gestao_pit-delete')
+            {!! Form::open(['method' => 'DELETE','route' => ['pit.destroy', $pit->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
             @endpermission
@@ -53,5 +68,5 @@
     </tr>
     @endforeach
 </table>
-{!! $orientacao_projetos->render() !!}
-@endsection
+{!! $pits->render() !!}
+@endsection	

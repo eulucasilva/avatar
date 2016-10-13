@@ -3,7 +3,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Area;
+use App\Pit;
 use Illuminate\Http\Request;
 use App\Professor;
 use App\PeriodoLetivo;
@@ -12,7 +12,7 @@ use App\PeriodoLetivo;
 class PitController extends Controller {
 
     public function index(Request $request) {
-        $areas = Pit::orderBy('id', 'DESC')->paginate(5);
+        $pits = Pit::orderBy('id', 'DESC')->paginate(5);
         return view('pit.index', compact('pits'))
                         ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -76,7 +76,7 @@ class PitController extends Controller {
             'campo46' => 'required',
         ]);
         
-        Pit::create($campos);
+        Pit::create($request->all());
 
         return redirect()->route('pit.index')
                         ->with('success', 'Pit cadastrado com sucesso!');
@@ -157,11 +157,6 @@ class PitController extends Controller {
         Pit::find($id)->delete();
         return redirect()->route('pit.index')
                         ->with('success', 'Pit excluída com sucesso!');
-    }
-
-    public function show($id) {
-        $pit = Pit::find($id);
-        return view('pit.show', compact('pit'));
     }
 
 }
