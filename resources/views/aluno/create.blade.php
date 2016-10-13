@@ -32,38 +32,38 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nome:</strong>
-            {!! Form::text('nome_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('nome_aluno', null, array('placeholder' => 'Digite o nome do aluno','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Matricula:</strong>
-            {!! Form::text('matricula_aluno', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px', 'id'=>'campoMatricula')) !!}
+            {!! Form::text('matricula_aluno', null, array('placeholder' => 'Digite o número de Matrícula','class' => 'form-control', 'style'=>'height:30px', 'id'=>'campoMatricula')) !!}
 
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Ano Ingresso:</strong>
-            {!! Form::text('ano_ingresso_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'campoAnoIngresso')) !!}
+            {!! Form::text('ano_ingresso_aluno', null, array('placeholder' => 'Digite o ano de ingresso','class' => 'form-control','style'=>'height:30px' , 'id' => 'campoAnoIngresso')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Email:</strong>
-            {!! Form::text('email_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:40px')) !!}
+            {!! Form::text('email_aluno', null, array('placeholder' => 'Digite o e-mail','class' => 'form-control','style'=>'height:40px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Telefone:</strong>
-            {!! Form::text('telefone_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px', 'id'=>'campoTelefone')) !!}
+            {!! Form::text('telefone_aluno', null, array('placeholder' => 'Digite o telefone','class' => 'form-control','style'=>'height:30px', 'id'=>'campoTelefone')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Endereço:</strong>
-            {!! Form::text('endereco_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            {!! Form::text('endereco_aluno', null, array('placeholder' => 'Digite o endereço','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
 
@@ -76,7 +76,7 @@
 <script>
 
 jQuery(function ($) {
-    $("#campoMatricula").mask("99999999");
+    $("#campoMatricula").mask("999999999");
 });
 
 jQuery(function ($) {
