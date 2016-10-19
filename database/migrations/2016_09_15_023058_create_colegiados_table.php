@@ -18,12 +18,12 @@ class CreateColegiadosTable extends Migration
             $table->string('sigla_colegiado', 10);
             $table->string('email_colegiado', 30);
             $table->string('campus_colegiado', 25);
-           
             $table->integer('fk_coordenador')->unsigned();
             $table->foreign('fk_coordenador')->references('id')-> on('professors');
-
             $table->integer('fk_secretario')->unsigned();
             $table->foreign('fk_secretario')->references('id')-> on('secretarios');
+            $table->integer('fk_usuario')->unsigned();
+            $table->foreign('fk_usuario')->references('id')->on('users');
             $table->timestamps();
         });
     }

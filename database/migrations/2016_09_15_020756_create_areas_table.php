@@ -16,6 +16,8 @@ class CreateAreasTable extends Migration {
             $table->string('nome', 45);
             $table->integer('fk_departamento')->unsigned();
             $table->foreign('fk_departamento')->references('id')->on('departamentos');
+            $table->integer('fk_usuario')->unsigned();
+            $table->foreign('fk_usuario')->references('id')->on('users');
             $table->timestamps();
         });
     }

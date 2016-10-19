@@ -20,6 +20,8 @@ class CreateDepartamentosTable extends Migration
             $table->string('campus', 25);
             $table->integer('fk_secretario')->unsigned();
             $table->foreign('fk_secretario')->references('id')-> on('secretarios');
+            $table->integer('fk_usuario')->unsigned();
+            $table->foreign('fk_usuario')->references('id')-> on('users');
             $table->timestamps();
         });
     }

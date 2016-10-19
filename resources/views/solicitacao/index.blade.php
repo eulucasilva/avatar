@@ -3,9 +3,11 @@
 @section('main-content')
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
+                @section('contentheader_title')
 	        <div class="pull-left">
 	            <h2>Solicitação de Turmas</h2>
 	        </div>
+                @endsection
 	        <div class="pull-right">
 	        	@permission('gestao_solicitacao-create')
 	            <a class="btn btn-success" href="{{ route('solicitacao.create') }}"> Solicitar turma</a>
