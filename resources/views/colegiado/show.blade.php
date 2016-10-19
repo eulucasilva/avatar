@@ -34,11 +34,11 @@
         </div>
         <div class="form-group">
             <strong>Nome do Coordenador:</strong>
-            {{ $colegiado->fk_coordenador }}
+            {{ $colegiado->coordenacao->professor->nome_professor }}
         </div>
         <div class="form-group">
             <strong>Nome do Secretário:</strong>
-            {{ $colegiado->fk_secretario }}
+            {{ $colegiado->secretario->nome_secretario }}
         </div>
     </div>
 </div>

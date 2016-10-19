@@ -33,37 +33,37 @@
 		<div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Nome do Curso:</strong>
-                        {!! Form::text('nome_curso', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+                        {!! Form::text('nome_curso', null, array('placeholder' => 'Digite o nome do curso','class' => 'form-control','style'=>'height:30px')) !!}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Regime</strong>
-                        {!! Form::text('regime_curso', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+                        {!!Form::select('regime_curso', array('Semestral' => 'Semestral', 'Anual' => 'Anual'), null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Campus:</strong>
-                        {!!Form::select('campus_curso', array('JQE' => 'Jequié', 'VCA' => 'Vitória da Conquista','ITP' => 'Itapetinga'), null, array('class' => 'form-control'))!!}
+                        {!!Form::select('campus_curso', array('JQE' => 'Jequié', 'VCA' => 'Vitória da Conquista','ITP' => 'Itapetinga'), null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Tipo</strong>
-                        {!! Form::text('tipo_curso', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+                       {!!Form::select('tipo_curso', array('Graduação' => 'Graduação', 'Especialização' => 'Especialização','Mestrado' => 'Mestrado'), null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Departamento:</strong>
-                         {!! Form::select('fk_departamento', $departamentos, null, array('class' => 'form-control')) !!}
+                         {!! Form::select('fk_departamento', $departamentos, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
                      </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Colegiado</strong>
-                         {!! Form::select('fk_colegiado', $colegiados, null, array('class' => 'form-control')) !!}
+                         {!! Form::select('fk_colegiado', $colegiados, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
                      </div>
                 </div>
                 

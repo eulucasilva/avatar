@@ -97,7 +97,7 @@ class AtividadeProjetoExtensaoController extends Controller
      */
     public function destroy($id)
     {
-        Atividade_projeto_extensao::find($id)->delete();
+        Atividade_extensao::find($id)->delete();
         return redirect()->route('atividadeProjetoExtensao.index')
                         ->with('success','Atividade excluída com sucesso!');
     }
