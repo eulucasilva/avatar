@@ -56,14 +56,14 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>fk_coordenador:</strong>
-            {!! Form::text('fk_coordenador', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            <strong>Coordenador:</strong>
+            {!! Form::select('fk_coordenador', $coordenador, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>  
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>fk_secretario:</strong>
-            {!! Form::text('fk_secretario', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+            <strong>Secretário:</strong>
+           {!! Form::select('fk_secretario', $secretario, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
 

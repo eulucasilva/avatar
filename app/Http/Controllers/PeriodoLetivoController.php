@@ -107,6 +107,7 @@ class periodoLetivoController extends Controller
      */
     public function destroy($id)
     {
+        
         PeriodoLetivo::find($id)->delete();
         return redirect()->route('periodoLetivo.index')
                         ->with('success','Periodo Letivo apagado com sucesso!');

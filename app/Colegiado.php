@@ -10,7 +10,7 @@ class Colegiado extends Model {
         'fk_coordenador', 'fk_secretario', 'fk_usuario'];
 
     public function coordenacao() {
-        return $this->belongsTo(Coordenador::class, 'fk_coordenador');
+        return $this->belongsTo(Coordenacao::class, 'fk_coordenador');
     }
 
     public function secretario() {

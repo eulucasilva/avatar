@@ -46,7 +46,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Campus:</strong>
-            {!! Form::text('campus', null, array('placeholder' => 'Digite a campus','class' => 'form-control')) !!}
+           {!!Form::select('campus', array('Itapetinga' => 'Itapetinga', 'Jequié' => 'Jequié', 'Vitória da Conquista' => 'Vitória da Conquista'),  null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">

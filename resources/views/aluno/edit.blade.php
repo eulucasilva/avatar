@@ -38,14 +38,14 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Matricula:</strong>
-            {!! Form::text('matricula_aluno', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px')) !!}
+            {!! Form::text('matricula_aluno', null, array('placeholder' => 'Digite o número de Matrícula','class' => 'form-control', 'style'=>'height:30px', 'id'=>'campoMatricula')) !!}
 
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Ano Ingresso:</strong>
-            {!! Form::text('ano_ingresso_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
+             {!! Form::text('ano_ingresso_aluno', null, array('placeholder' => 'Digite o ano de ingresso','class' => 'form-control','style'=>'height:30px' , 'id' => 'campoAnoIngresso')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -57,7 +57,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Telefone:</strong>
-            {!! Form::text('telefone_aluno', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+           {!! Form::text('telefone_aluno', null, array('placeholder' => 'Digite o telefone','class' => 'form-control','style'=>'height:30px', 'id'=>'campoTelefone')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -105,6 +105,18 @@ $(function ($) {
         monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 
     });
+});
+
+jQuery(function ($) {
+    $("#campoMatricula").mask("999999999");
+});
+
+jQuery(function ($) {
+    $("#campoAnoIngresso").mask("9999");
+});
+
+jQuery(function ($) {
+    $("#campoTelefone").mask("(99)9999-9999");
 });
 
 </script> 
