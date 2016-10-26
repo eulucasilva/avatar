@@ -35,7 +35,7 @@
 			<th>Data do Resultado</th>
 			
 
-			<th width="280px">Action</th>
+			<th width="280px">Ação</th>
 		</tr>
 		@foreach ($solicitacaos as $key => $solicitacao)
 			<tr>

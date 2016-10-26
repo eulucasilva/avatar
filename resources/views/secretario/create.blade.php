@@ -10,7 +10,7 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Criar Novo secretario</h2>
+            <h2>Cadastrar novo secretário</h2>
         </div>
         @endsection
         <div class="pull-right">
@@ -38,38 +38,38 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Matricula:</strong>
+            <strong>Matrícula:</strong>
             {!! Form::text('matricula_secretario', null, array('placeholder' => 'Digite a matrícula','class' => 'form-control', 'style'=>'height:30px')) !!}
 
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Inicio Mandato:</strong>
+            <strong>Inicio do mandato:</strong>
             {!! Form::text('inicio_mandato_secretario', null, array('placeholder' => 'Selecione o início do mandato','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Termino Mandato:</strong>
+            <strong>Término do mandato:</strong>
             {!! Form::text('termino_mandato_secretario', null, array('placeholder' => 'Selecione o término do mandato','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Telefone Secretario:</strong>
+            <strong>Telefone:</strong>
              {!! Form::text('telefone_secretario', null, array('placeholder' => 'Digite o telefone','class' => 'form-control','style'=>'height:30px', 'id'=>'campoTelefone')) !!}
         </div>
     </div>  
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Endereco Secretario:</strong>
+            <strong>Endereço:</strong>
             {!! Form::text('endereco_secretario', null, array('placeholder' => 'Digite o departamento','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Usuario</strong>
+            <strong>Usuário:</strong>
             {!! Form::select('fk_usuario', $usuarios, null, array('placeholder' => 'Selecione o usuário','class' => 'form-control')) !!}
         </div>
     </div>

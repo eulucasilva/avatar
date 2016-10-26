@@ -5,12 +5,12 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Administração do Secretario</h2>
+            <h2>Secretários</h2>
         </div>
         @endsection 
         <div class="pull-right">
             @permission('gestao_secretario-create')
-            <a class="btn btn-success" href="{{ route('secretario.create') }}"> Criar Novo secretario</a>
+            <a class="btn btn-success" href="{{ route('secretario.create') }}"> Cadastrar secretário</a>
             @endpermission
         </div>
     </div>
@@ -20,17 +20,18 @@
     <p>{{ $message }}</p>
 </div>
 @endif
+<br>
 <table class="table table-bordered">
     <tr>
         <th>No</th>
-        <th>nome_secretario</th>
-        <th>matricula_secretario</th>
-        <th>inicio_mandato_secretario</th>
-        <th>termino_mandato_secretario</th>
-        <th>telefone_secretario</th>
-        <th>endereco_secretario</th>
-        <th>fk_usuario</th>
-        <th width="280px">Action</th>
+        <th>Nome</th>
+        <th>Matrícula</th>
+        <th>Início do mandato</th>
+        <th>Término do mandato</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th>Usuário</th>
+        <th width="280px">Ação</th>
     </tr>
     @foreach ($secretarios as $key => $secretario)
     <tr>
@@ -41,7 +42,7 @@
         <td>{{ $secretario->termino_mandato_secretario }}</td>
         <td>{{ $secretario->telefone_secretario }}</td>
         <td>{{ $secretario->endereco_secretario }}</td>
-        <td>{{ $secretario->fk_usuario }}</td>
+        <td>{{ $secretario->usuario->name }}</td>
         <td>
             @permission('gestao_secretario-create')
             <a class="btn btn-info" href="{{ route('secretario.show',$secretario->id) }}">Visualizar</a>
@@ -60,6 +61,7 @@
 {!! $secretarios->render() !!}
 @endsection
 
+ @if(!empty($secretario))
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -79,3 +81,4 @@
         </div>
     </div>
 </div>
+ @endif

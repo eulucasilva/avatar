@@ -10,16 +10,19 @@
         @endsection
         <div class="pull-right">
             @permission('gestao_departamento-create')
-            <a class="btn btn-success" href="{{ route('departamento.create') }}">Cadastrar Departamento</a>
+            <a class="btn btn-success" href="{{ route('departamento.create') }}">Cadastrar departamento</a>
             @endpermission
         </div>
     </div>
 </div>
 @if ($message = Session::get('success'))
+<br>
 <div class="alert alert-success">
     <p>{{ $message }}</p>
 </div>
 @endif
+
+<br>
 <table class="table table-bordered">
     <tr>
         <th>Nome</th>
@@ -56,6 +59,7 @@
 {!! $departamentos->render() !!}
 @endsection
 
+ @if(!empty($departamento))
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -75,5 +79,5 @@
         </div>
     </div>
 </div>
-
+@endif
 

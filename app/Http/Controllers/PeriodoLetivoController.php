@@ -16,7 +16,7 @@ class periodoLetivoController extends Controller
     public function index(Request $request)
     {
         $periodos = PeriodoLetivo::orderBy('id','DESC')->paginate(5);
-        return view('periodoLetivo.index',compact('periodos'))
+        return view('periodoLetivo.index', compact('periodos'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -49,7 +49,7 @@ class periodoLetivoController extends Controller
         PeriodoLetivo::create($request->all());
 
         return redirect()->route('periodoLetivo.index')
-                        ->with('success','PeriodoLetivo criado com sucesso!');
+                        ->with('success','Período letivo criado com sucesso!');
     }
 
     /**

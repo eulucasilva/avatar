@@ -173,6 +173,6 @@ class TurmaController extends Controller
 
         $turmas = Turma::where('fk_professor', '=', null)->get();
 
-         return redirect()->route('turma.index')->with('success','Turmas geradas com sucesso!');
+         return redirect()->route('turma.index')->with('success', 'Turmas geradas com sucesso!');
     }
 } 

@@ -45,8 +45,8 @@ class DepartamentoController extends Controller {
         ]);
         
         $campos = $request->all();
-
-        if ($request->input('fk_coordenador') != null) {
+        //dd($request->input('fk_coordenador'));
+        if ($request->input('fk_coordenador') != "") {
             $campos = $request->all();
 
             //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
@@ -57,6 +57,7 @@ class DepartamentoController extends Controller {
 
             $campos['fk_coordenador'] = (string) $id_coordenacao[0];
         }
+       
         Departamento::create($campos);
 
         return redirect()->route('departamento.index')
