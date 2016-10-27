@@ -3,664 +3,590 @@
 use Illuminate\Database\Seeder;
 use App\Permission;
 
-class PermissionTableSeeder extends Seeder
-{
+class PermissionTableSeeder extends Seeder {
+
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
-       $permission = [
-        	[
-        		'name' => 'role-list',
-        		'display_name' => 'Display Role Listing',
-        		'description' => 'See only Listing Of Role'
-        	],
-        	[
-        		'name' => 'role-create',
-        		'display_name' => 'Create Role',
-        		'description' => 'Create New Role'
-        	],
-        	[
-        		'name' => 'role-edit',
-        		'display_name' => 'Edit Role',
-        		'description' => 'Edit Role'
-        	],
-        	[
-        		'name' => 'role-delete',
-        		'display_name' => 'Delete Role',
-        		'description' => 'Delete Role'
-        	],
-        	[
-        		'name' => 'item-list',
-        		'display_name' => 'Display Item Listing',
-        		'description' => 'See only Listing Of Item'
-        	],
-        	[
-        		'name' => 'item-create',
-        		'display_name' => 'Create Item',
-        		'description' => 'Create New Item'
-        	],
-        	[
-        		'name' => 'item-edit',
-        		'display_name' => 'Edit Item',
-        		'description' => 'Edit Item'
-        	],
-        	[
-        		'name' => 'item-delete',
-        		'display_name' => 'Delete Item',
-        		'description' => 'Delete Item'
-        	],
+    public function run() {
+        $permission = [
+            [
+                'name' => 'role-list',
+                'display_name' => 'Listagem de papeis',
+                'description' => 'Listar papeis'
+            ],
+            [
+                'name' => 'role-create',
+                'display_name' => 'Cadastrar papel',
+                'description' => 'Cadastrar novo papel'
+            ],
+            [
+                'name' => 'role-edit',
+                'display_name' => 'Editar papel',
+                'description' => 'Editar papel'
+            ],
+            [
+                'name' => 'role-delete',
+                'display_name' => 'Excluir papel',
+                'description' => 'Excluir papel'
+            ],
+            [
+                'name' => 'item-list',
+                'display_name' => 'Display Item Listing',
+                'description' => 'See only Listing Of Item'
+            ],
+            [
+                'name' => 'item-create',
+                'display_name' => 'Create Item',
+                'description' => 'Create New Item'
+            ],
+            [
+                'name' => 'item-edit',
+                'display_name' => 'Edit Item',
+                'description' => 'Edit Item'
+            ],
+            [
+                'name' => 'item-delete',
+                'display_name' => 'Delete Item',
+                'description' => 'Delete Item'
+            ],
             [
                 'name' => 'gestao_periodo_letivo-list',
-                'display_name' => 'Display Periodo Letivo Listing',
-                'description' => 'See only Listing Periodo Letivo'
+                'display_name' => 'Listagem dos períodos letivos',
+                'description' => 'Listar períodos letivos'
             ],
             [
                 'name' => 'gestao_periodo_letivo-create',
-                'display_name' => 'Create Periodo Letivo',
-                'description' => 'Create New Periodo Letivo'
+                'display_name' => 'Cadastrar período letivo',
+                'description' => 'Cadastrar novo período letivo'
             ],
             [
                 'name' => 'gestao_periodo_letivo-edit',
-                'display_name' => 'Edit Periodo Letivo',
-                'description' => 'Edit Periodo Letivo'
+                'display_name' => 'Editar período letivo',
+                'description' => 'Editar período letivo'
             ],
             [
                 'name' => 'gestao_periodo_letivo-delete',
-                'display_name' => 'Delete Periodo Letivo',
-                'description' => 'Delete Periodo Letivo'
+                'display_name' => 'Excluir período letivo',
+                'description' => 'Excluir período letivo'
             ],
             [
                 'name' => 'gestao_areas-list',
-                'display_name' => 'Display Area Listing',
-                'description' => 'See only Listing Area'
+                'display_name' => 'Listagem de áreas',
+                'description' => 'Listar áreas'
             ],
             [
                 'name' => 'gestao_areas-create',
-                'display_name' => 'Create Area',
-                'description' => 'Create New Area'
+                'display_name' => 'Cadastrar área',
+                'description' => 'Cadastrar nova área'
             ],
             [
                 'name' => 'gestao_areas-edit',
-                'display_name' => 'Edit Area',
-                'description' => 'Edit Area'
+                'display_name' => 'Editar área',
+                'description' => 'Editar área'
             ],
             [
                 'name' => 'gestao_areas-delete',
-                'display_name' => 'Delete Area',
-                'description' => 'Delete Area'
+                'display_name' => 'Excluir área',
+                'description' => 'Excluir área'
             ],
             [
                 'name' => 'gestao_usuario-list',
-                'display_name' => 'Display Usuario Listing',
-                'description' => 'See only Listing Usuario'
+                'display_name' => 'Listagem de usuários',
+                'description' => 'Listar usuários'
             ],
             [
                 'name' => 'gestao_usuario-create',
-                'display_name' => 'Create Usuario',
-                'description' => 'Create New Usuario'
+                'display_name' => 'Cadastrar usuário',
+                'description' => 'Cradastrar novo usuário'
             ],
             [
                 'name' => 'gestao_usuario-edit',
-                'display_name' => 'Edit Usuario',
-                'description' => 'Edit Usuario'
+                'display_name' => 'Editar usuário',
+                'description' => 'Editar usuário'
             ],
             [
                 'name' => 'gestao_usuario-delete',
-                'display_name' => 'Delete Usuario',
-                'description' => 'Delete Usuario'
+                'display_name' => 'Excluir usuário',
+                'description' => 'Excluir usuário'
             ],
             [
                 'name' => 'gestao_disciplina-list',
-                'display_name' => 'Display Disciplina Listing',
-                'description' => 'Create New Disciplina'
+                'display_name' => 'Listagem de disciplinas',
+                'description' => 'Listar disciplinas'
             ],
             [
                 'name' => 'gestao_disciplina-create',
-                'display_name' => 'Create Disciplina',
-                'description' => 'See only Listing Disciplina'
+                'display_name' => 'Cadastrar disciplina',
+                'description' => 'Cadastrar nova disciplina'
             ],
             [
                 'name' => 'gestao_disciplina-edit',
-                'display_name' => 'Edit Disciplina',
-                'description' => 'Edit Disciplina'
+                'display_name' => 'Editar disciplina',
+                'description' => 'Editar disciplina'
             ],
             [
                 'name' => 'gestao_disciplina-delete',
-                'display_name' => 'Delete Disciplina',
-                'description' => 'Delete Disciplina'
+                'display_name' => 'Excluir disciplina',
+                'description' => 'Excluir disciplina'
             ],
             [
                 'name' => 'gestao_projeto-list',
-                'display_name' => 'Display Projeto Listing',
-                'description' => 'See only Listing Projeto'
+                'display_name' => 'Listagem de projetos',
+                'description' => 'Listar projetos'
             ],
             [
                 'name' => 'gestao_projeto-create',
-                'display_name' => 'Create Projeto',
-                'description' => 'Create New Projeto'
+                'display_name' => 'Cadastar projeto',
+                'description' => 'Cadastrar novo projeto'
             ],
             [
                 'name' => 'gestao_projeto-edit',
-                'display_name' => 'Edit Projeto',
-                'description' => 'Edit Projeto'
+                'display_name' => 'Editar projeto',
+                'description' => 'Editar projeto'
             ],
             [
                 'name' => 'gestao_projeto-delete',
-                'display_name' => 'Delete Projeto',
-                'description' => 'Delete Projeto'
+                'display_name' => 'Excluir projeto',
+                'description' => 'Excluir projeto'
             ],
             [
                 'name' => 'gestao_atividade_administrativa-list',
-                'display_name' => 'Display Atividade Administrativa Listing',
-                'description' => 'See only Listing Atividade Administrativa'
+                'display_name' => 'Listagem de atividades administrativas',
+                'description' => 'Listar atividades administrativas'
             ],
             [
                 'name' => 'gestao_atividade_administrativa-create',
-                'display_name' => 'Create Atividade Administrativa',
-                'description' => 'Create New Atividade Administrativa'
+                'display_name' => 'Cadastrar atividade administrativa',
+                'description' => 'Cadastar nova atividade administrativa'
             ],
             [
                 'name' => 'gestao_atividade_administrativa-edit',
-                'display_name' => 'Edit Atividade Administrativa',
-                'description' => 'Edit Atividade Administrativa'
+                'display_name' => 'Editar atividade administrativa',
+                'description' => 'Editar atividade administrativa'
             ],
             [
                 'name' => 'gestao_atividade_administrativa-delete',
-                'display_name' => 'Delete Atividade Administrativa',
-                'description' => 'Delete Atividade Administrativa'
+                'display_name' => 'Excluir atividade administrativa',
+                'description' => 'Excluir atividade administrativa'
             ],
-
-
-
             [
                 'name' => 'gestao_atividade_ensino-list',
-                'display_name' => 'Display Atividade ensino Listing',
-                'description' => 'See only Listing Atividade ensino'
+                'display_name' => 'Listagem de atividades de ensino',
+                'description' => 'Listar atividades de ensino'
             ],
             [
                 'name' => 'gestao_atividade_ensino-create',
-                'display_name' => 'Create Atividade ensino',
-                'description' => 'Create New Atividade ensino'
+                'display_name' => 'Cadastrar atividade de ensino',
+                'description' => 'Cadastar nova atividade de ensino'
             ],
             [
                 'name' => 'gestao_atividade_ensino-edit',
-                'display_name' => 'Edit Atividade ensino',
-                'description' => 'Edit Atividade ensino'
+                'display_name' => 'Editar atividade de ensino',
+                'description' => 'Editar atividade de ensino'
             ],
             [
                 'name' => 'gestao_atividade_ensino-delete',
-                'display_name' => 'Delete Atividade ensino',
-                'description' => 'Delete Atividade ensino'
+                'display_name' => 'Excluir atividade de ensino',
+                'description' => 'Excluir atividade de ensino'
             ],
-
-
-
-
-
-  [
+            [
                 'name' => 'gestao_atividade_pesquisa-list',
-                'display_name' => 'Display Atividade pesquisa Listing',
-                'description' => 'See only Listing Atividade pesquisa'
+                'display_name' => 'Listagem de atividades de pesquisa',
+                'description' => 'Listar atividades de pesquisa'
             ],
             [
                 'name' => 'gestao_atividade_pesquisa-create',
-                'display_name' => 'Create Atividade pesquisa',
-                'description' => 'Create New Atividade pesquisa'
+                'display_name' => 'Cadastrar atividade de pesquisa',
+                'description' => 'Cadastrar nova atividade de pesquisa'
             ],
             [
                 'name' => 'gestao_atividade_pesquisa-edit',
-                'display_name' => 'Edit Atividade pesquisa',
-                'description' => 'Edit Atividade pesquisa'
+                'display_name' => 'Editar atividade de pesquisa',
+                'description' => 'Editar atividade de pesquisa'
             ],
             [
                 'name' => 'gestao_atividade_pesquisa-delete',
-                'display_name' => 'Delete Atividade pesquisa',
-                'description' => 'Delete Atividade pesquisa'
+                'display_name' => 'Excluir atividade de pesquisa',
+                'description' => 'Excluir atividade de pesquisa'
             ],
-
-
-
-
-
-              [
+            [
                 'name' => 'gestao_atividade_complementar-list',
-                'display_name' => 'Display Atividade complementar Listing',
-                'description' => 'See only Listing Atividade complementar'
+                'display_name' => 'Listagem de atividades complementares',
+                'description' => 'Listar atividades complementares'
             ],
             [
                 'name' => 'gestao_atividade_complementar-create',
-                'display_name' => 'Create Atividade complementar',
-                'description' => 'Create New Atividade complementar'
+                'display_name' => 'Cadastrar atividade complementar',
+                'description' => 'Cadastrar nova atividade complementar'
             ],
             [
                 'name' => 'gestao_atividade_complementar-edit',
-                'display_name' => 'Edit Atividade complementar',
-                'description' => 'Edit Atividade complementar'
+                'display_name' => 'Editar atividade complementar',
+                'description' => 'Editar atividade complementar'
             ],
             [
                 'name' => 'gestao_atividade_complementar-delete',
-                'display_name' => 'Delete Atividade complementar',
-                'description' => 'Delete Atividade complementar'
+                'display_name' => 'Excluir atividade complementar',
+                'description' => 'Excluir atividade complementar'
             ],
-
-
-             [
+            [
                 'name' => 'gestao_atividade_projeto_extensao-list',
-                'display_name' => 'Display Atividade projeto de extensao Listing',
-                'description' => 'See only Listing Atividade de projeto de extensao'
+                'display_name' => 'Listagem de atividades de extensão',
+                'description' => 'Listar atividades de extensão'
             ],
             [
                 'name' => 'gestao_atividade_projeto_extensao-create',
-                'display_name' => 'Create Atividade de projeto de extensao',
-                'description' => 'Create New Atividade de projeto de extensao'
+                'display_name' => 'Cadastrar atividade de extensão',
+                'description' => 'Cadastrar nova atividade de extensão'
             ],
             [
                 'name' => 'gestao_atividade_projeto_extensao-edit',
-                'display_name' => 'Edit Atividade de projeto de extensao',
-                'description' => 'Edit Atividade de projeto de extensao'
+                'display_name' => 'Editar atividade de extensão',
+                'description' => 'Editar atividade de extensão'
             ],
             [
                 'name' => 'gestao_atividade_projeto_extensao-delete',
-                'display_name' => 'Delete Atividade de projeto de extensao',
-                'description' => 'Delete Atividade de projeto de extensao'
+                'display_name' => 'Excluir atividade de extensão',
+                'description' => 'Excluir atividade de extensão'
             ],
-
             [
                 'name' => 'gestao_atividade_sindical-list',
-                'display_name' => 'Display Atividade Sindical Listing',
-                'description' => 'See only Listing Atividade Sindical'
+                'display_name' => 'Listagem de atividades sindicais',
+                'description' => 'Listar atividades sindicais'
             ],
             [
                 'name' => 'gestao_atividade_sindical-create',
-                'display_name' => 'Create Atividade Sindical',
-                'description' => 'Create New Atividade Sindical'
+                'display_name' => 'Cadastar atividade sindical',
+                'description' => 'Cadastar nova atividade sindical'
             ],
             [
                 'name' => 'gestao_atividade_sindical-edit',
-                'display_name' => 'Edit Atividade Sindical',
-                'description' => 'Edit Atividade Sindical'
+                'display_name' => 'Editar atividade sindical',
+                'description' => 'Editar atividade sindical'
             ],
-             [
+            [
                 'name' => 'gestao_atividade_sindical-delete',
-                'display_name' => 'Delete Atividade Sindical',
-                'description' => 'Delete Atividade Sindical'
+                'display_name' => 'Excluir atividade sindical',
+                'description' => 'Excluir atividade sindical'
             ],
             [
                 'name' => 'gestao_atividade_administrativa_acd-list',
-                'display_name' => 'Display Atividade Academica Listing',
-                'description' => 'See only Listing Atividade Academica'
+                'display_name' => 'Listagem de atividades acadêmicas',
+                'description' => 'Listar atividades acadêmicas'
             ],
             [
                 'name' => 'gestao_atividade_administrativa_acd-create',
-                'display_name' => 'Create Atividade Academica',
-                'description' => 'Create New Atividade Academica'
+                'display_name' => 'Cadastar atividade acadêmica',
+                'description' => 'Cadastrar nova atividade acadêmica'
             ],
             [
                 'name' => 'gestao_atividade_administrativa_acd-edit',
-                'display_name' => 'Edit Atividade Academica',
-                'description' => 'Edit Atividade Academica'
+                'display_name' => 'Editar atividade acadêmica',
+                'description' => 'Editar atividade acadêmica'
             ],
             [
                 'name' => 'gestao_atividade_administrativa_acd-delete',
-                'display_name' => 'Delete Atividade Academica',
-                'description' => 'Delete Atividade Academica'
+                'display_name' => 'Excluir atividade acadêmica',
+                'description' => 'Excluir atividade acadêmica'
             ],
             [
                 'name' => 'gestao_alocacao_professor-list',
-                'display_name' => 'Display Alocacao Professor Listing',
-                'description' => 'See only Listing Alocacao Professor'
+                'display_name' => 'Listagem de alocações',
+                'description' => 'Listar alocações'
             ],
             [
                 'name' => 'gestao_alocacao_professor-create',
-                'display_name' => 'Create Alocacao Professor',
-                'description' => 'Create New Alocacao Professor'
+                'display_name' => 'Alocar professor',
+                'description' => 'Alocar professor'
             ],
             [
                 'name' => 'gestao_alocacao_professor-edit',
-                'display_name' => 'Edit Alocacao Professor',
-                'description' => 'Edit Alocacao Professor'
+                'display_name' => 'Editar alocação',
+                'description' => 'Editar alocação'
             ],
             [
                 'name' => 'gestao_alocacao_professor-delete',
-                'display_name' => 'Delete Alocacao Professor',
-                'description' => 'Delete Alocacao Professor'
+                'display_name' => 'Excluir alocação',
+                'description' => 'Excluir alocação'
             ],
             [
                 'name' => 'gestao_aluno-list',
-                'display_name' => 'Display Aluno Listing',
-                'description' => 'See only Listing Aluno'
+                'display_name' => 'Listagem de alunos',
+                'description' => 'Listar alunos'
             ],
             [
                 'name' => 'gestao_aluno-create',
-                'display_name' => 'Create Aluno',
-                'description' => 'Create New Aluno'
+                'display_name' => 'Cadastrar aluno',
+                'description' => 'Cadastrar novo aluno'
             ],
             [
                 'name' => 'gestao_aluno-edit',
-                'display_name' => 'Edit Aluno',
-                'description' => 'Edit Aluno'
+                'display_name' => 'Editar aluno',
+                'description' => 'Editar aluno'
             ],
             [
                 'name' => 'gestao_aluno-delete',
-                'display_name' => 'Delete Aluno',
-                'description' => 'Delete Aluno'
-            ],
-            [
-                'name' => 'gestao_pit-list',
-                'display_name' => 'Display PIT Listing',
-                'description' => 'See only Listing PIT'
-            ],
-            [
-                'name' => 'gestao_pit-create',
-                'display_name' => 'Create PIT',
-                'description' => 'Create New PIT'
-            ],
-            [
-                'name' => 'gestao_pit-edit',
-                'display_name' => 'Edit PIT',
-                'description' => 'Edit PIT'
-            ],
-            [
-                'name' => 'gestao_pit-delete',
-                'display_name' => 'Delete PIT',
-                'description' => 'Delete PIT'
-            ],
-            [
-                'name' => 'gestao_rit-list',
-                'display_name' => 'Display RIT Listing',
-                'description' => 'See only Listing RIT'
-            ],
-            [
-                'name' => 'gestao_rit-create',
-                'display_name' => 'Create RIT',
-                'description' => 'Create New RIT'
-            ],
-            [
-                'name' => 'gestao_rit-edit',
-                'display_name' => 'Edit RIT',
-                'description' => 'Edit RIT'
-            ],
-            [
-                'name' => 'gestao_rit-delete',
-                'display_name' => 'Delete RIT',
-                'description' => 'Delete RIT'
+                'display_name' => 'Excluir aluno',
+                'description' => 'Excluir aluno'
             ],
             [
                 'name' => 'gestao_departamento-list',
-                'display_name' => 'Display Departamento Listing',
-                'description' => 'See only Listing Departamento'
+                'display_name' => 'Listagem de departamentos',
+                'description' => 'Listar departamentos'
             ],
             [
                 'name' => 'gestao_departamento-create',
-                'display_name' => 'Create Departamento',
-                'description' => 'Create New Departamento'
+                'display_name' => 'Cadastrar departamento',
+                'description' => 'Cadastrar novo departamento'
             ],
             [
                 'name' => 'gestao_departamento-edit',
-                'display_name' => 'Edit Departamento',
-                'description' => 'Edit Departamento'
+                'display_name' => 'Editar departamento',
+                'description' => 'Editar departamento'
             ],
             [
                 'name' => 'gestao_departamento-delete',
-                'display_name' => 'Delete Departamento',
-                'description' => 'Delete Departamento'
+                'display_name' => 'Excluir departamento',
+                'description' => 'Excluir departamento'
             ],
-             [
+            [
                 'name' => 'gestao_professor-list',
-                'display_name' => 'Display Professor Listing',
-                'description' => 'See only Listing Departamento'
+                'display_name' => 'Listagem de professor',
+                'description' => 'Listar professor'
             ],
             [
                 'name' => 'gestao_professor-create',
-                'display_name' => 'Create Professor',
-                'description' => 'Create New Professor'
+                'display_name' => 'Cadastrar professor',
+                'description' => 'Cadastrar novo professor'
             ],
             [
                 'name' => 'gestao_professor-edit',
-                'display_name' => 'Edit Professor',
-                'description' => 'Edit Professor'
+                'display_name' => 'Editar professor',
+                'description' => 'Editar professor'
             ],
             [
                 'name' => 'gestao_professor-delete',
-                'display_name' => 'Delete Professor',
-                'description' => 'Delete Professor'
+                'display_name' => 'Excluir professor',
+                'description' => 'Excluir professor'
             ],
             [
                 'name' => 'gestao_coordenacao-list',
-                'display_name' => 'Display Coordenador Listing',
-                'description' => 'See only Listing Coordenador'
+                'display_name' => 'Listagem de coordenadores',
+                'description' => 'Listar coordenadores'
             ],
             [
                 'name' => 'gestao_coordenacao-create',
-                'display_name' => 'Create Coordenador',
-                'description' => 'Create New Coordenador'
+                'display_name' => 'Cadastrar coordenador',
+                'description' => 'Cadastrar novo coordenador'
             ],
             [
                 'name' => 'gestao_coordenacao-edit',
-                'display_name' => 'Edit Coordenador',
-                'description' => 'Edit Coordenador'
+                'display_name' => 'Editar coordenador',
+                'description' => 'Editar coordenador'
             ],
             [
                 'name' => 'gestao_coordenacao-delete',
-                'display_name' => 'Delete Coordenador',
-                'description' => 'Delete Coordenador'
+                'display_name' => 'Excluir coordenador',
+                'description' => 'Excluir coordenador'
             ],
             [
                 'name' => 'gestao_colegiado-list',
-                'display_name' => 'Display Colegiado Listing',
-                'description' => 'See only Listing Colegiado'
+                'display_name' => 'Listagem de colegiados',
+                'description' => 'Listar colegiados'
             ],
             [
                 'name' => 'gestao_colegiado-create',
-                'display_name' => 'Create Colegiado',
-                'description' => 'Create New Colegiado'
+                'display_name' => 'Cadastrar colegiado',
+                'description' => 'Cadastrar novo colegiado'
             ],
             [
                 'name' => 'gestao_colegiado-edit',
-                'display_name' => 'Edit Colegiado',
-                'description' => 'Edit Colegiado'
+                'display_name' => 'Editar colegiado',
+                'description' => 'Editar colegiado'
             ],
             [
                 'name' => 'gestao_colegiado-delete',
-                'display_name' => 'Delete Colegiado',
-                'description' => 'Delete Colegiado'
+                'display_name' => 'Excluir colegiado',
+                'description' => 'Excluir colegiado'
             ],
             [
                 'name' => 'gestao_secretario-list',
-                'display_name' => 'Display Secretario Listing',
-                'description' => 'See only Listing Secretario'
+                'display_name' => 'Listagem de secretários',
+                'description' => 'Listar secretários'
             ],
             [
                 'name' => 'gestao_secretario-create',
-                'display_name' => 'Create Secretario',
-                'description' => 'Create New Secretario'
+                'display_name' => 'Cadastrar secretário',
+                'description' => 'Cadastrar novo secretário'
             ],
             [
                 'name' => 'gestao_secretario-edit',
-                'display_name' => 'Edit Secretario',
-                'description' => 'Edit Secretario'
+                'display_name' => 'Editar secretário',
+                'description' => 'Editar secretário'
             ],
             [
                 'name' => 'gestao_secretario-delete',
-                'display_name' => 'Delete Secretario',
-                'description' => 'Delete Secretario'
+                'display_name' => 'Excluir secretário',
+                'description' => 'Excluir Secretario'
             ],
             [
                 'name' => 'gestao_substituicao-list',
-                'display_name' => 'Display substituicao Listing',
-                'description' => 'See only Listing substituicao'
+                'display_name' => 'Listagem de substituições',
+                'description' => 'Listar substituições'
             ],
             [
                 'name' => 'gestao_substituicao-create',
-                'display_name' => 'Create substituicao',
-                'description' => 'Create New substituicao'
+                'display_name' => 'Cadastrar substituição',
+                'description' => 'Cadastrar nova substituição'
             ],
             [
                 'name' => 'gestao_substituicao-edit',
-                'display_name' => 'Edit substituicao',
-                'description' => 'Edit substituicao'
+                'display_name' => 'Editar substituição',
+                'description' => 'Editar substituição'
             ],
             [
                 'name' => 'gestao_substituicao-delete',
-                'display_name' => 'Delete substituicao',
-                'description' => 'Delete substituicao'
-            ],          
+                'display_name' => 'Excluir substituição',
+                'description' => 'Excluir substituição'
+            ],
             [
                 'name' => 'gestao_orientacao-list',
-                'display_name' => 'Display orientacao Listing',
-                'description' => 'See only Listing orientacao'
+                'display_name' => 'Listagem de orientações',
+                'description' => 'Listar orientações'
             ],
             [
                 'name' => 'gestao_orientacao-create',
-                'display_name' => 'Create orientacao',
-                'description' => 'Create New orientacao'
+                'display_name' => 'Cadastrar orientação',
+                'description' => 'Cadastrar nova orientação'
             ],
             [
                 'name' => 'gestao_orientacao-edit',
-                'display_name' => 'Edit orientacao',
-                'description' => 'Edit orientacao'
+                'display_name' => 'Editar orientação',
+                'description' => 'Editar orientação'
             ],
             [
                 'name' => 'gestao_orientacao-delete',
-                'display_name' => 'Delete orientacao',
-                'description' => 'Delete orientacao'
+                'display_name' => 'Excluir orientação',
+                'description' => 'Excluir orientacao'
             ],
-           
             [
                 'name' => 'gestao_orientacao_projeto-list',
-                'display_name' => 'Display orientacao projeto Listing',
-                'description' => 'See only Listing orientacao projeto'
+                'display_name' => 'Listagem de orientações de projeto',
+                'description' => 'Listar orientações de projeto'
             ],
             [
                 'name' => 'gestao_orientacao_projeto-create',
-                'display_name' => 'Create orientacao projeto',
-                'description' => 'Create New orientacao'
+                'display_name' => 'Cadastrar orientação de projeto',
+                'description' => 'Cadastrar nova orientação de projeto'
             ],
             [
                 'name' => 'gestao_orientacao_projeto-edit',
-                'display_name' => 'Edit orientaca oprojeto',
-                'description' => 'Edit orientacao projeto'
+                'display_name' => 'Editar orientação de projeto',
+                'description' => 'Editar orientação de projeto'
             ],
             [
                 'name' => 'gestao_orientacao_projeto-delete',
-                'display_name' => 'Delete orientacao projeto',
-                'description' => 'Delete orientacao projeto'
+                'display_name' => 'Excluir orientação de projeto',
+                'description' => 'Excluir orientação de projeto'
             ],
-           
-            //curso
-            ['name' => 'gestao_curso-list',
-                'display_name' => 'Display curso Listing',
-                'description' => 'See only Listing curso'
+            [   'name' => 'gestao_curso-list',
+                'display_name' => 'Listagem de cursos',
+                'description' => 'Listar cursos'
             ],
             [
                 'name' => 'gestao_curso-create',
-                'display_name' => 'Create curso',
-                'description' => 'Create New curso'
+                'display_name' => 'Cadastrar curso',
+                'description' => 'Cadastrar novo curso'
             ],
             [
                 'name' => 'gestao_curso-edit',
-                'display_name' => 'Edit curso',
-                'description' => 'Edit curso'
+                'display_name' => 'Editar curso',
+                'description' => 'Editar curso'
             ],
             [
                 'name' => 'gestao_curso-delete',
-                'display_name' => 'Delete curso',
-                'description' => 'Delete curso'
+                'display_name' => 'Excluir curso',
+                'description' => 'Excluir curso'
             ],
-
-             //turma
+            //turma
             ['name' => 'gestao_turma-list',
-                'display_name' => 'Display Turma Listing',
-                'description' => 'See only Listing Turma'
+                'display_name' => 'Listagem de turmas',
+                'description' => 'Listar turmas'
             ],
             [
                 'name' => 'gestao_turma-create',
-                'display_name' => 'Create Turma',
-                'description' => 'Create New Turma'
+                'display_name' => 'Cadastrar turma',
+                'description' => 'Cadastrar nova turma'
             ],
             [
                 'name' => 'gestao_turma-edit',
-                'display_name' => 'Edit Turma',
-                'description' => 'Edit Turma'
+                'display_name' => 'Editar turma',
+                'description' => 'Editar nova turma'
             ],
             [
                 'name' => 'gestao_turma-delete',
-                'display_name' => 'Delete Turma',
+                'display_name' => 'Excluir turma',
                 'description' => 'Delete Turma'
             ],
-
             //solicitação
-              ['name' => 'gestao_solicitacao-list',
-                'display_name' => 'Display  Solicitação',
-                'description' => 'See only Listing Solicitação'
+            ['name' => 'gestao_solicitacao-list',
+                'display_name' => 'Listagem de solicitações de disciplinas',
+                'description' => 'Listar de solicitações de disciplinas'
             ],
             [
                 'name' => 'gestao_solicitacao-create',
-                'display_name' => 'Create Solicitação',
-                'description' => 'Create New Solicitação'
+                'display_name' => 'Solicitar disciplina',
+                'description' => 'Solicitar nova disciplina'
             ],
             [
                 'name' => 'gestao_solicitacao-edit',
-                'display_name' => 'Edit Solicitação',
-                'description' => 'Edit Solicitação'
+                'display_name' => 'Editar solicitação',
+                'description' => 'Editar solicitação'
             ],
             [
                 'name' => 'gestao_solicitacao-delete',
-                'display_name' => 'Delete Solicitação',
-                'description' => 'Delete Solicitação'
+                'display_name' => 'Excluir solicitação',
+                'description' => 'Excluir solicitação'
             ],
-
-
             // Telas iniciais
             [
-                'name' => 'viewTelaSecretarioDepartamento',
-                'display_name' => 'Ver Tela Secretario Departamento',
-                'description' => 'Ver Tela do Secretario Departamento'
+                'name' => 'viewTelaDepartamento',
+                'display_name' => 'Tela de departamento',
+                'description' => 'Tela de departamento'
             ],
             [
-                'name' => 'viewTelaSecretarioColegiado',
-                'display_name' => 'Ver Tela Secretario Colegiado',
-                'description' => 'Ver Tela do Secretario Colegiado'
+                'name' => 'viewTelaColegiado',
+                'display_name' => 'Tela de colegiado',
+                'description' => 'Tela de colegiado'
             ],
             [
-                'name' => 'viewTelaCoordenadorDepartamento',
-                'display_name' => 'Ver Tela Coordenador Departamento',
-                'description' => 'Ver Tela do Coordenador Departamento'
-            ],
-            [
-                'name' => 'viewTelaCoordenadorColegiado',
-                'display_name' => 'Ver Tela Coordenador Colegiado',
-                'description' => 'Ver Tela do Coordenador Colegiado'
-            ],
-            [
-                'name' => 'viewTelaCoordenadorArea',
-                'display_name' => 'Ver Tela Coordenador Area',
-                'description' => 'Ver Tela do Coordenador Area'
+                'name' => 'viewTelaArea',
+                'display_name' => 'Tela de área',
+                'description' => 'Tela de área'
             ],
             [
                 'name' => 'viewTelaProfessor',
-                'display_name' => 'Ver Tela Professor',
-                'description' => 'Ver Tela do Professor'
+                'display_name' => 'Tela de professor',
+                'description' => 'Tela de professor'
             ],
             [
                 'name' => 'viewTelaAdministradorDoSistema',
-                'display_name' => 'Ver Tela Administrador Sistema',
-                'description' => 'Ver Tela do Administrador Sistema'
+                'display_name' => 'Tela de administrador do sistema',
+                'description' => 'Tela de administrador do sistema'
             ],
-           
-           [
+            [
                 'name' => 'relatorioUsuario',
-                'display_name' => 'Ver relatório de usuários',
-                'description' => 'Ver relatório de usuários'
+                'display_name' => 'Gerar relatório de usuários',
+                'description' => 'Gerar relatório de usuários'
             ]
         ];
 
         foreach ($permission as $key => $value) {
-        	Permission::create($value);
+            Permission::create($value);
         }
     }
+
 }
