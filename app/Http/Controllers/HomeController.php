@@ -29,20 +29,19 @@ class HomeController extends Controller
     { //return view('home');
 
        $user = Auth::user();
-       $role;
+      
 
-       if(!empty($user->roles)){
+       if(!empty($user->roles)){ 
+                $role;
                 foreach($user->roles as $v){
                     $role = $v->name ;
                 }
 
-            if($role == "Administrador Sistema"){ return view('telasIniciais.TelaInicialAdministrador');} 
-            else if($role == "Coordenador Colegiado"){ return view('telasIniciais.TelaInicialCoordenadoColegiado');}
-            else if($role == "Coordenador Área"){ return view('telasIniciais.TelaInicialCoordenadorArea');}
-            else if($role == "Coordenador Departamento"){ return view('telasIniciais.TelaInicialCoordenadorDepartamento');}
+            if($role == "Administrador"){ return view('telasIniciais.TelaInicialAdministrador');} 
+            else if($role == "Colegiado"){ return view('telasIniciais.TelaInicialColegiado');}
+            else if($role == "Área"){ return view('telasIniciais.TelaInicialArea');}
+            else if($role == "Departamento"){ return view('telasIniciais.TelaInicialDepartamento');}
             else if($role == "Professor"){ return view('telasIniciais.TelaInicialProfessor');}
-            else if($role == "Secretario Colegiado"){ return view('telasIniciais.TelaInicialSecretarioColegiado');}
-            else if($role == "Secretario Departamento"){ return view('telasIniciais.TelaInicialSecretarioDepartamento');}
             else{return view('home');}
         }
         else{

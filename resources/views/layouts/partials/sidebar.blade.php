@@ -9,7 +9,7 @@
         @if (! Auth::guest())
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{asset('/img/logo_uesb.jpg')}}" class="img-circle" alt="User Image" />
+                <img src="{{asset('/img/icon-user.png')}}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->name }}</p>
@@ -57,28 +57,33 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-link' data-toggle="dropdown"></i> <span> GERENCIAR </span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">          
-                    <li><a href="{{ route('users.index') }}">USUARIOS</a></li>
-                    <li><a href="{{ route('roles.index') }}">ROLES</a></li>
-                    <li><a href="{{ route('periodoLetivo.index') }}">PERIODO LETIVO</a></li>
+                    <li><a href="{{ route('users.index') }}">USUÁRIOS</a></li>
+                    <li><a href="{{ route('roles.index') }}">PAPEIS</a></li>
+                    <li><a href="{{ route('periodoLetivo.index') }}">PERÍODO LETIVO</a></li>
                     <li><a href="{{ route('professor.index') }}">PROFESSOR</a></li>
                     <li><a href="{{ route('aluno.index') }}">ALUNO</a></li>
                     <li><a href="{{ route('coordenacao.index') }}">COORDENAÇÃO</a></li>
-                    <li><a href="{{ route('secretario.index') }}">SECRETARIO</a></li>
+                    <li><a href="{{ route('secretario.index') }}">SECRETÁRIO</a></li>
                     <li><a href="{{ route('colegiado.index') }}">COLEGIADO</a></li>
-                    <li><a href="{{ route('area.index') }}">AREA</a></li>
+                    <li><a href="{{ route('area.index') }}">ÁREA</a></li>
                     <li><a href="{{ route('departamento.index') }}">DEPARTAMENTO</a></li>
                     <li><a href="{{ route('disciplina.index') }}">DISCIPLINA</a></li>
                     <li><a href="{{ route('projeto.index') }}">PROJETO</a></li>
                     <li><a href="{{ route('substituicao.index') }}">SUBSTITUIÇÃO</a></li>
                     <li><a href="{{ route('curso.index') }}">CURSO</a></li>
-                    <li><a href="{{ route('atividadeComplementar.index') }}">ATIVIDADE COMPLEMENTAR</a></li>
-                    <li><a href="{{ route('atividadePesquisa.index') }}">ATIVIDADE DE PESQUISA</a></li>
-                    <li><a href="{{ route('atividadeEnsino.index') }}">ATIVIDADE DE ENSINO</a></li>
-                    <li><a href="{{ route('atividadeAdministrativa.index') }}">ATIVIDADE ADMINISRATIVA</a></li>
-                    <li><a href="{{ route('atividadeAdministrativaAcd.index') }}">ATVIDADE ADMINISTRATIVA ACÂDEMICA</a></li>
-                    <li><a href="{{ route('atividadeProjetoExtensao.index') }}">ATIVIDADE DE PROJETO DE EXTENSÃO</a></li>
-                    <li><a href="{{ route('orientacao.index') }}">ORIENTAÇÃO</a></li>
-                    <li><a href="{{ route('orientacao_projeto.index') }}">ORIENTAÇÃO DE PROJETO</a></li>
+                    <li><li class="treeview">
+                        <a href="#"><i data-toggle="dropdown"></i> <span>ATIVIDADES</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu"> 
+                            <li><a href="{{ route('atividadeComplementar.index') }}">COMPLEMENTAR</a></li>
+                            <li><a href="{{ route('atividadePesquisa.index') }}">PESQUISA</a></li>
+                            <li><a href="{{ route('atividadeEnsino.index') }}">ENSINO</a></li>
+                            <li><a href="{{ route('atividadeAdministrativa.index') }}">ADMINISRATIVA</a></li>
+                            <li><a href="{{ route('atividadeAdministrativaAcd.index') }}">ADMIN. ACÂDEMICA</a></li>
+                            <li><a href="{{ route('atividadeProjetoExtensao.index') }}">EXTENSÃO</a></li>
+                            <li><a href="{{ route('orientacao.index') }}">ORIENTAÇÃO</a></li>
+                            <li><a href="{{ route('orientacao_projeto.index') }}">ORIENTAÇÃO DE PROJETO</a></li>
+                        </ul>
+                    </li></li>
                 </ul>
             </li>
             <li><a href="#"><i class='fa fa-link'></i> <span>SOBRE</span></a></li>

@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <title> E-SARE - @yield('htmlheader_title', 'Sistema de Alocação e Relatórios Eletrônicos') </title>
+    <title> e-SARE - @yield('htmlheader_title', 'Sistema de Alocação e Relatórios Eletrônicos') </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
