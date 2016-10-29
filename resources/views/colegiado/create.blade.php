@@ -10,7 +10,7 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Criar Novo colegiado</h2>
+            <h2>Cadastrar colegiado</h2>
         </div>
         @endsection 
         <div class="pull-right">
@@ -28,47 +28,57 @@
 </div>
 @endif
 {!! Form::open(array('route' => 'colegiado.store','method'=>'POST')) !!}
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Nome Colegiado:</strong>
-            {!! Form::text('nome_colegiado', null, array('placeholder' => 'Digite o nome do colegiado','class' => 'form-control','style'=>'height:30px')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Sigla Colegiado:</strong>
-            {!! Form::text('sigla_colegiado', null, array('placeholder' => 'Digite a sigla do colegiado','class' => 'form-control', 'style'=>'height:30px')) !!}
+<br>
+<div class="box box-primary">
+    <div class="row">
+        <div class="box-body">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Nome:</strong>
+                    {!! Form::text('nome_colegiado', null, array('placeholder' => 'Digite o nome do colegiado','class' => 'form-control','style'=>'height:30px')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Sigla:</strong>
+                    {!! Form::text('sigla_colegiado', null, array('placeholder' => 'Digite a sigla do colegiado','class' => 'form-control', 'style'=>'height:30px')) !!}
 
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Email:</strong>
+                    {!! Form::text('email_colegiado', null, array('placeholder' => 'Digite o email do colegiado','class' => 'form-control','style'=>'height:30px')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Campus:</strong>
+                    {!!Form::select('campus_colegiado', array('Itapetinga' => 'Itapetinga', 'Jequié' => 'Jequié', 'Vitória da Conquista' => 'Vitória da Conquista'),  null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Coordenador:</strong>
+                    {!! Form::select('fk_coordenador', $coordenador, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+                </div>
+            </div>  
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Secretário:</strong>
+                    {!! Form::select('fk_secretario', $secretario, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Usuário:</strong>
+                    {!! Form::select('fk_usuario', $usuarios, null, array('placeholder' => '--Selecione--','class' => 'form-control')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Email:</strong>
-            {!! Form::text('email_colegiado', null, array('placeholder' => 'Digite o email do colegiado','class' => 'form-control','style'=>'height:30px')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Campus Colegiado:</strong>
-          {!!Form::select('campus_colegiado', array('Itapetinga' => 'Itapetinga', 'Jequié' => 'Jequié', 'Vitória da Conquista' => 'Vitória da Conquista'),  null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Coordenador:</strong>
-            {!! Form::select('fk_coordenador', $coordenador, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
-        </div>
-    </div>  
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Secretario:</strong>
-           {!! Form::select('fk_secretario', $secretario, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
 </div>
 {!! Form::close() !!}

@@ -9,19 +9,17 @@ use App\Role;
 use DB;
 use Hash;
 
-class UserController extends Controller
-{
+class UserController extends Controller {
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
-        $data = User::orderBy('id','DESC')->paginate(5);
-        return view('users.index',compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+    public function index(Request $request) {
+        $data = User::orderBy('id', 'DESC')->paginate(5);
+        return view('users.index', compact('data'))
+                        ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -29,10 +27,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $roles = Role::lists('display_name','id');
-        return view('users.create',compact('roles'));
+    public function create() {
+        $roles = Role::lists('display_name', 'id');
+        return view('users.create', compact('roles'));
     }
 
     /**
@@ -41,8 +38,7 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
@@ -54,12 +50,13 @@ class UserController extends Controller
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);
-        foreach ($request->input('fk_role') as $key => $value) {
-            $user->attachRole($value);
-        }
+        //dd($request->input('fk_role'));
+
+        $user->attachRole($request->input('fk_role'));
+
 
         return redirect()->route('users.index')
-                        ->with('success','Usuário cadastrado com sucesso');
+                        ->with('success', 'Usuário cadastrado com sucesso');
     }
 
     /**
@@ -68,10 +65,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         $user = User::find($id);
-        return view('users.show',compact('user'));
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -80,13 +76,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         $user = User::find($id);
-        $roles = Role::lists('display_name','id');
-        $userRole = $user->roles->lists('id','id')->toArray();
+        $roles = Role::lists('display_name', 'id');
+        $userRole = $user->roles->lists('id', 'id')->toArray();
 
-        return view('users.edit',compact('user','roles','userRole'));
+        return view('users.edit', compact('user', 'roles', 'userRole'));
     }
 
     /**
@@ -96,33 +91,32 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'same:confirm-password',
             'fk_role' => 'required'
         ]);
 
         $input = $request->all();
-        if(!empty($input['password'])){ 
+        if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
-        }else{
-            $input = array_except($input,array('password'));    
+        } else {
+            $input = array_except($input, array('password'));
         }
 
         $user = User::find($id);
         $user->update($input);
-        DB::table('role_user')->where('user_id',$id)->delete();
+        DB::table('role_user')->where('user_id', $id)->delete();
 
-        
+
         foreach ($request->input('fk_role') as $key => $value) {
             $user->attachRole($value);
         }
 
         return redirect()->route('users.index')
-                        ->with('success','Usuário atualizado com sucesso');
+                        ->with('success', 'Usuário atualizado com sucesso');
     }
 
     /**
@@ -131,10 +125,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','Usuário excluído com sucesso');
+                        ->with('success', 'Usuário excluído com sucesso');
     }
+
 }

@@ -52,7 +52,7 @@ class coordenacaoController extends Controller
         coordenacao::create($request->all());
 
         return redirect()->route('coordenacao.index')
-                        ->with('success','coordenacao cadastrado com sucesso!');
+                        ->with('success','Coordenador cadastrado com sucesso!');
     }
 
     /**
@@ -101,7 +101,7 @@ class coordenacaoController extends Controller
         coordenacao::find($id)->update($request->all());
 
         return redirect()->route('coordenacao.index')
-                        ->with('success','coordenacao atualizado com sucesso');
+                        ->with('success','Coordenador atualizado com sucesso!');
     }
 
     /**
@@ -114,6 +114,6 @@ class coordenacaoController extends Controller
     {
         coordenacao::find($id)->delete();
         return redirect()->route('coordenacao.index')
-                        ->with('success','coordenacao apagado com sucesso!');
+                        ->with('success','Coordenador excluído com sucesso!');
     }
 }

@@ -3,7 +3,7 @@
 @section('main-content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
-         @section('contentheader_title')
+        @section('contentheader_title')
         <div class="pull-left">
             <h2>Editar Área</h2>
         </div>
@@ -22,34 +22,39 @@
     </ul>
 </div>
 @endif
-{!! Form::model($area, ['method' => 'PATCH','route' => ['area.update', $area->id]]) !!}
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Nome:</strong>
-            {!! Form::text('nome', null, array('placeholder' => 'Digite o nome','class' => 'form-control')) !!}
+<br>
+<div class="box box-primary">
+    {!! Form::model($area, ['method' => 'PATCH','route' => ['area.update', $area->id]]) !!}
+    <div class="row">
+        <div class="box-body">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Nome:</strong>
+                    {!! Form::text('nome', null, array('placeholder' => 'Digite o nome','class' => 'form-control')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Departamento</strong>
+                    {!! Form::select('fk_departamento', $departamentos, null, array('class' => 'form-control')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Coordenador:</strong>
+                    {!! Form::select('fk_coordenador', $coordenador, null, array('class' => 'form-control')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Usuário:</strong>
+                    {!! Form::select('fk_usuario', $usuarios, null, array('placeholder' => '--Selecione--','class' => 'form-control')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Departamento</strong>
-            {!! Form::select('fk_departamento', $departamentos, null, array('class' => 'form-control')) !!}
-        </div>
-    </div>
-     <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Coordenador:</strong>
-            {!! Form::select('fk_coordenador', $coordenador, null, array('class' => 'form-control')) !!}
-        </div>
-    </div>
-     <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Usuário:</strong>
-            {!! Form::select('fk_usuario', $usuarios, null, array('placeholder' => '--Selecione--','class' => 'form-control')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
 </div>
 {!! Form::close() !!}

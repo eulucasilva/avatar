@@ -29,81 +29,86 @@
 </div>
 @endif
 {!! Form::open(array('route' => 'secretario.store','method'=>'POST')) !!}
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Nome:</strong>
-            {!! Form::text('nome_secretario', null, array('placeholder' => 'Digite o nome','class' => 'form-control','style'=>'height:30px')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Matrícula:</strong>
-            {!! Form::text('matricula_secretario', null, array('placeholder' => 'Digite a matrícula','class' => 'form-control', 'style'=>'height:30px')) !!}
+<br>
+<div class="box box-primary">
+    <div class="row">
+        <div class="box-body">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Nome:</strong>
+                    {!! Form::text('nome_secretario', null, array('placeholder' => 'Digite o nome','class' => 'form-control','style'=>'height:30px')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Matrícula:</strong>
+                    {!! Form::text('matricula_secretario', null, array('placeholder' => 'Digite a matrícula','class' => 'form-control', 'style'=>'height:30px')) !!}
 
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Inicio do mandato:</strong>
+                    {!! Form::text('inicio_mandato_secretario', null, array('placeholder' => 'Selecione o início do mandato','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Término do mandato:</strong>
+                    {!! Form::text('termino_mandato_secretario', null, array('placeholder' => 'Selecione o término do mandato','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Telefone:</strong>
+                    {!! Form::text('telefone_secretario', null, array('placeholder' => 'Digite o telefone','class' => 'form-control','style'=>'height:30px', 'id'=>'campoTelefone')) !!}
+                </div>
+            </div>  
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Endereço:</strong>
+                    {!! Form::text('endereco_secretario', null, array('placeholder' => 'Digite o departamento','class' => 'form-control','style'=>'height:30px')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Inicio do mandato:</strong>
-            {!! Form::text('inicio_mandato_secretario', null, array('placeholder' => 'Selecione o início do mandato','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Término do mandato:</strong>
-            {!! Form::text('termino_mandato_secretario', null, array('placeholder' => 'Selecione o término do mandato','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Telefone:</strong>
-             {!! Form::text('telefone_secretario', null, array('placeholder' => 'Digite o telefone','class' => 'form-control','style'=>'height:30px', 'id'=>'campoTelefone')) !!}
-        </div>
-    </div>  
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Endereço:</strong>
-            {!! Form::text('endereco_secretario', null, array('placeholder' => 'Digite o departamento','class' => 'form-control','style'=>'height:30px')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
 </div>
 {!! Form::close() !!}
 
 <script>
 jQuery(function ($) {
-$("#campoPeriodo").mask("9999.9");
+    $("#campoPeriodo").mask("9999.9");
 });
 jQuery(function ($) {
-$("#campoAno").mask("9999");
+    $("#campoAno").mask("9999");
 });
 $(function ($) {
-$("#dataInicio").datepicker({
-   dateFormat: 'dd/mm/yy',
-   dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
-   dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-   dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-   monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-   monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
-});
+    $("#dataInicio").datepicker({
+        dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+        dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+        dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+        monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+        monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+    });
 });
 $(function ($) {
-$("#dataFim").datepicker({
-   dateFormat: 'dd/mm/yy',
-   dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
-   dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-   dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
-   monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-   monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+    $("#dataFim").datepicker({
+        dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+        dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+        dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+        monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+        monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 
-});
+    });
 });
 
 jQuery(function ($) {
-$("#campoTelefone").mask("(99)9999-9999");
+    $("#campoTelefone").mask("(99)9999-9999");
 });
 
 </script> 

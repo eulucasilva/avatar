@@ -10,14 +10,15 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Criar Novo Período Letivo</h2>
+            <h2>Cadastrar período letivo</h2>
         </div>
-         @endsection 
+        @endsection 
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('periodoLetivo.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
+
 @if (count($errors) > 0)
 <div class="alert alert-danger">
     <ul>
@@ -28,40 +29,45 @@
 </div>
 @endif
 {!! Form::open(array('route' => 'periodoLetivo.store','method'=>'POST')) !!}
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Periodo Letivo:</strong>
-            {!! Form::text('periodo_periodoLetivo', null, array('placeholder' => 'Digite o período','class' => 'form-control', 'id' => 'campoPeriodo')) !!}
+<br> 
+<div class="box box-primary">
+    <div class="row">
+        <div class="box-body">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Periodo Letivo:</strong>
+                    {!! Form::text('periodo_periodoLetivo', null, array('placeholder' => 'Digite o período','class' => 'form-control', 'id' => 'campoPeriodo')) !!}
 
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Ano Periodo Letivo:</strong>
+                    {!! Form::text('ano_periodoLetivo', null, array('placeholder' => 'Digite o ano','class' => 'form-control','style'=>'height:30px', 'id' => 'campoAno')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Modalidade Periodo Letivo:</strong>
+                    {!!Form::select('modalidade_periodoLetivo', array('Anual' => 'Anual', 'Semestral' => 'Semestral'),null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Inicio Periodo Letivo:</strong>
+                    {!! Form::text('inicio_periodoLetivo', null, array('placeholder' => 'Selecione a data de início','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Termino Periodo Letivo:</strong>
+                    {!! Form::text('termino_periodoLetivo', null, array('placeholder' => 'Selecione a data de término','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
         </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Ano Periodo Letivo:</strong>
-            {!! Form::text('ano_periodoLetivo', null, array('placeholder' => 'Digite o ano','class' => 'form-control','style'=>'height:30px', 'id' => 'campoAno')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Modalidade Periodo Letivo:</strong>
-            {!!Form::select('modalidade_periodoLetivo', array('Anual' => 'Anual', 'Semestral' => 'Semestral'),null, array('placeholder'=>'--Selecione--','class' => 'form-control'))!!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Inicio Periodo Letivo:</strong>
-            {!! Form::text('inicio_periodoLetivo', null, array('placeholder' => 'Selecione a data de início','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Termino Periodo Letivo:</strong>
-            {!! Form::text('termino_periodoLetivo', null, array('placeholder' => 'Selecione a data de término','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
 </div>
 {!! Form::close() !!}

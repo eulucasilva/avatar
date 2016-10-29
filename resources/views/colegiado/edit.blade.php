@@ -27,17 +27,20 @@
     </ul>
 </div>
 @endif
+<br>
+<div class="box box-primary">
 {!! Form::model($colegiado, ['method' => 'PATCH','route' => ['colegiado.update', $colegiado->id]]) !!}
 <div class="row">
+    <div class="box-body">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Nome Colegiado:</strong>
+            <strong>Nome:</strong>
             {!! Form::text('nome_colegiado', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Sigla Colegiado:</strong>
+            <strong>Sigla:</strong>
             {!! Form::text('sigla_colegiado', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px')) !!}
 
         </div>
@@ -50,7 +53,7 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Campus Colegiado:</strong>
+            <strong>Campus:</strong>
             {!! Form::text('campus_colegiado', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
         </div>
     </div>
@@ -63,10 +66,15 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Secretário:</strong>
-           {!! Form::select('fk_secretario', $secretario, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+            {!! Form::select('fk_secretario', $secretario, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
-
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Usuário:</strong>
+            {!! Form::select('fk_usuario', $usuarios, null, array('placeholder' => '--Selecione--','class' => 'form-control')) !!}
+        </div>
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>

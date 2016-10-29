@@ -23,7 +23,7 @@
 @endif
 <br>
 <div class="box">
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover dataTable">
         <tr>
             <th>No</th>
             <th>Nome</th>

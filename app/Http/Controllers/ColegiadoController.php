@@ -7,8 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Colegiado;
 use App\Professor;
 use App\Secretario;
-use App\Coordenacao;
-use DB;
+use App\User;
 
 class colegiadoController extends Controller {
 
@@ -33,7 +32,8 @@ class colegiadoController extends Controller {
                 ->where('coordenacaos.tipo_coordenacao', '=', 'Colegiado')
                 ->lists('professors.nome_professor', 'professors.id');
         $secretario = Secretario::lists('nome_secretario', 'id');
-        return view('colegiado.create', compact('coordenador', 'secretario'));
+        $usuarios = User::lists('name', 'id');
+        return view('colegiado.create', compact('coordenador', 'secretario', 'usuarios'));
     }
 
     /**
@@ -50,6 +50,7 @@ class colegiadoController extends Controller {
             'campus_colegiado' => 'required|max:25',
             'fk_coordenador' => 'required',
             'fk_secretario' => 'required',
+            'fk_usuario' => 'required'
         ]);
 
         colegiado::create($request->all());
@@ -81,7 +82,8 @@ class colegiadoController extends Controller {
                        ->where('coordenacaos.tipo_coordenacao', '=', 'Colegiado')
                        ->lists('professors.nome_professor', 'professors.id');
         $secretario = Secretario::lists('nome_secretario', 'id');
-        return view('colegiado.edit', compact('colegiado', 'secretario', 'coordenador'));
+        $usuarios = User::lists('name', 'id');
+        return view('colegiado.edit', compact('colegiado', 'secretario', 'coordenador', 'usuarios'));
     }
 
     /**
@@ -99,12 +101,13 @@ class colegiadoController extends Controller {
             'campus_colegiado' => 'required',
             'fk_coordenador' => 'required',
             'fk_secretario' => 'required',
+            'fk_usuario' => 'required'
         ]);
 
         colegiado::find($id)->update($request->all());
 
         return redirect()->route('colegiado.index')
-                        ->with('success', 'Colegiado atualizado com sucesso');
+                        ->with('success', 'Colegiado atualizado com sucesso!');
     }
 
     /**
