@@ -47,14 +47,14 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+            'fk_role' => 'required'
         ]);
 
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
 
         $user = User::create($input);
-        foreach ($request->input('roles') as $key => $value) {
+        foreach ($request->input('fk_role') as $key => $value) {
             $user->attachRole($value);
         }
 
@@ -102,7 +102,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
-            'roles' => 'required'
+            'fk_role' => 'required'
         ]);
 
         $input = $request->all();
@@ -117,12 +117,12 @@ class UserController extends Controller
         DB::table('role_user')->where('user_id',$id)->delete();
 
         
-        foreach ($request->input('roles') as $key => $value) {
+        foreach ($request->input('fk_role') as $key => $value) {
             $user->attachRole($value);
         }
 
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+                        ->with('success','Usuário atualizado com sucesso');
     }
 
     /**
@@ -135,6 +135,6 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+                        ->with('success','Usuário excluído com sucesso');
     }
 }

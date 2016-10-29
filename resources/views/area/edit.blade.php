@@ -42,6 +42,12 @@
             {!! Form::select('fk_coordenador', $coordenador, null, array('class' => 'form-control')) !!}
         </div>
     </div>
+     <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Usuário:</strong>
+            {!! Form::select('fk_usuario', $usuarios, null, array('placeholder' => '--Selecione--','class' => 'form-control')) !!}
+        </div>
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>

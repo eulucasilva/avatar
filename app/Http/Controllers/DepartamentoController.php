@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use App\Departamento;
 use App\Secretario;
 use App\Professor;
+use App\User;
 use DB;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,8 @@ class DepartamentoController extends Controller {
         $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
                 ->where('coordenacaos.tipo_coordenacao', '=', 'Departamento')
                 ->lists('professors.nome_professor', 'professors.id');
-        return view('departamento.create', compact('secretario', 'coordenador'));
+        $usuarios = User::lists('name', 'id');
+        return view('departamento.create', compact('secretario', 'coordenador', 'usuarios'));
     }
 
     public function store(Request $request) {
@@ -41,23 +43,25 @@ class DepartamentoController extends Controller {
             'sigla' => 'required|max:10',
             'email' => 'required|email|unique:users,email|max:30',
             'campus' => 'required',
-            'fk_secretario' => 'required'
+            'fk_secretario' => 'required',
+            'fk_usuario' => 'required'
         ]);
-        
+
         $campos = $request->all();
-        //dd($request->input('fk_coordenador'));
-        if ($request->input('fk_coordenador') != "") {
+        $campos['fk_coordenador'] = null;
+
+        if ($request->input('fk_coordenador') != null) {
             $campos = $request->all();
 
             //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
             $id_coordenacao = DB::table('professors')->join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
-                                                    ->select('coordenacaos.id')
-                                                    ->where('coordenacaos.fk_professor', '=', $request->input('fk_coordenador'))
-                                                    ->lists('id');
+                    ->select('coordenacaos.id')
+                    ->where('coordenacaos.fk_professor', '=', $request->input('fk_coordenador'))
+                    ->lists('id');
 
             $campos['fk_coordenador'] = (string) $id_coordenacao[0];
         }
-       
+
         Departamento::create($campos);
 
         return redirect()->route('departamento.index')
@@ -69,8 +73,9 @@ class DepartamentoController extends Controller {
         $coordenador = Professor::join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
                 ->where('coordenacaos.tipo_coordenacao', '=', 'Departamento')
                 ->lists('professors.nome_professor', 'professors.id');
+        $usuarios = User::lists('name', 'id');
         $departamento = Departamento::find($id);
-        return view('departamento.edit', compact('departamento', 'secretario', 'coordenador'));
+        return view('departamento.edit', compact('departamento', 'secretario', 'coordenador', 'usuarios'));
     }
 
     public function update(Request $request, $id) {
@@ -79,19 +84,20 @@ class DepartamentoController extends Controller {
             'sigla' => 'required|max:10',
             'email' => 'required|max:30',
             'campus' => 'required',
-            'fk_secretario' => 'required'
+            'fk_secretario' => 'required',
+            'fk_usuario' => 'required'
         ]);
-        
+
         $campos = $request->all();
+        if ($request->input('fk_coordenador') != null) {
+            //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
+            $id_coordenacao = DB::table('professors')->join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
+                    ->select('coordenacaos.id')
+                    ->where('coordenacaos.fk_professor', '=', $request->input('fk_coordenador'))
+                    ->lists('id');
 
-        //busca a chave da coordenaçção, comparando as chaves do professor com a chave estrangeira de professor na tabela coordenação
-        $id_coordenacao = DB::table('professors')->join('coordenacaos', 'professors.id', '=', 'coordenacaos.fk_professor')
-                ->select('coordenacaos.id')
-                ->where('coordenacaos.fk_professor', '=', $request->input('fk_coordenador'))
-                ->lists('id');
-
-        $campos['fk_coordenador'] = (string) $id_coordenacao[0];
-
+            $campos['fk_coordenador'] = (string) $id_coordenacao[0];
+        }
         Departamento::find($id)->update($campos);
 
         return redirect()->route('departamento.index')
@@ -99,8 +105,8 @@ class DepartamentoController extends Controller {
     }
 
     public function destroy($id) {
-        try{
-             Departamento::find($id)->delete();
+        try {
+            Departamento::find($id)->delete();
         } catch (QueryException $ex) {
             
         }

@@ -30,6 +30,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    
+     <link href="{{ asset('/css/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
@@ -40,7 +42,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
 </head>
 
-<body data-spy="scroll" data-offset="0" data-target="#navigation">
+<body data-spy="scroll" data-offset="0" data-target="#navigation" class="skin-blue-light">
 
 <!-- Fixed navbar -->
 <div id="navigation" class="navbar navbar-default navbar-fixed-top">

@@ -5,7 +5,7 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Edit Role</h2>
+            <h2>Editar papel</h2>
         </div>
         @endsection
         <div class="pull-right">

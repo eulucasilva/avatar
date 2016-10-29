@@ -13,10 +13,6 @@ class Coordenacao extends Model
         return $this->belongsTo(Professor::class, 'fk_professor');
     }
 
-    public function usuario() {
-        return $this->belongsTo(User::class, 'fk_usuario');
-    }
-
     public function colegiado() {
         return $this->hasOne(Colegiado::class);
     }

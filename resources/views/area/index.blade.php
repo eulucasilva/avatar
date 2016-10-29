@@ -24,6 +24,7 @@
     <tr>
         <th>Nome</th>
         <th>Departamento</th>
+        <th>Usuário</th>
         <th>Coordenador</th>
         <th width="280px">Ação</th>
     </tr>
@@ -31,6 +32,7 @@
     <tr>
         <td>{{$area->nome}}</td>
         <td>{{$area->departamento->nome}}</td>
+        <td>{{$area->usuario->name }}</td>
         @if(!empty($area->coordenacao->professor->nome_professor))
         <td>{{$area->coordenacao->professor->nome_professor}}</td>
         @else

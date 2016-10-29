@@ -6,7 +6,7 @@
     <div class="col-lg-12 margin-tb">
          @section('contentheader_title')
         <div class="pull-left">
-            <h2>Cadastrar Departamento</h2>
+            <h2>Cadastrar departamento</h2>
         </div>
          @endsection 
         <div class="pull-right">
@@ -59,6 +59,12 @@
         <div class="form-group">
             <strong>Coordenador:</strong>
             {!! Form::select('fk_coordenador', $coordenador, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Usuário:</strong>
+            {!! Form::select('fk_usuario', $usuarios, null, array('placeholder' => '--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

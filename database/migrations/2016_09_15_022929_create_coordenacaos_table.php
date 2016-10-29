@@ -22,8 +22,6 @@ class CreateCoordenacaosTable extends Migration
             $table->integer('fk_professor')->unsigned();
             $table->foreign('fk_professor')->references('id')-> on('professors');
 
-            $table->integer('fk_usuario')->unsigned();
-            $table->foreign('fk_usuario')->references('id')-> on('users');
             $table->timestamps();
         });
     }

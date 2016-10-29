@@ -28,8 +28,7 @@ class secretarioController extends Controller
      */
     public function create()
     {
-        $usuarios = User::lists('name', 'id');
-        return view('secretario.create', compact('usuarios'));
+        return view('secretario.create');
     }
 
     /**
@@ -47,14 +46,13 @@ class secretarioController extends Controller
             'nome_secretario' => 'required',
             'telefone_secretario' => 'required',
             'endereco_secretario' => 'required',
-            'fk_usuario' => 'required',
-            
+ 
         ]);
 
         secretario::create($request->all());
 
         return redirect()->route('secretario.index')
-                        ->with('success','secretario cadastrado com sucesso!');
+                        ->with('success','Secretário cadastrado com sucesso!');
     }
 
     /**
@@ -77,7 +75,6 @@ class secretarioController extends Controller
      */
     public function edit($id)
     {
-        $usuarios = User::lists('name', 'id');
         $secretario = secretario::find($id);
         return view('secretario.edit',compact('secretario', 'usuarios'));
     }
@@ -98,13 +95,12 @@ class secretarioController extends Controller
             'nome_secretario' => 'required',
             'telefone_secretario' => 'required',
             'endereco_secretario' => 'required',
-            'fk_usuario' => 'required',
         ]);
 
         secretario::find($id)->update($request->all());
 
         return redirect()->route('secretario.index')
-                        ->with('success','secretario atualizado com sucesso');
+                        ->with('success','Secretário atualizado com sucesso');
     }
 
     /**
@@ -117,6 +113,6 @@ class secretarioController extends Controller
     {
         secretario::find($id)->delete();
         return redirect()->route('secretario.index')
-                        ->with('success','secretario apagado com sucesso!');
+                        ->with('success','Secretário excluído com sucesso!');
     }
 }

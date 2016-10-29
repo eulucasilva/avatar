@@ -30,7 +30,6 @@ class coordenacaoController extends Controller
     public function create()
     {
         $professores = Professor::lists('nome_professor', 'id');
-        $usuarios = User::lists('name', 'id');
         return view('coordenacao.create', compact('professores','usuarios'));
     }
 
@@ -48,7 +47,6 @@ class coordenacaoController extends Controller
             'inicio_mandato_coordenacao' => 'required',
             'termino_mandato_coordenacao' => 'required',
             'fk_professor' => 'required',
-            'fk_usuario' => 'required',
         ]);
 
         coordenacao::create($request->all());
@@ -80,7 +78,6 @@ class coordenacaoController extends Controller
         
          $coordenacao = coordenacao::find($id);
          $professores = Professor::lists('nome_professor', 'id');
-         $usuarios = User::lists('name', 'id');
          return view('coordenacao.edit', compact('coordenacao','professores','usuarios'));
     }
 
@@ -99,7 +96,6 @@ class coordenacaoController extends Controller
             'inicio_mandato_coordenacao' => 'required',
             'termino_mandato_coordenacao' => 'required',
             'fk_professor' => 'required',
-            'fk_usuario' => 'required',
         ]);
 
         coordenacao::find($id)->update($request->all());

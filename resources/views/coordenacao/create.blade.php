@@ -56,12 +56,6 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Usuário:</strong>
-            {!! Form::select('fk_usuario', $usuarios, null, array('placeholder'=>'Selecione o usuário','class' => 'form-control')) !!}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
             <strong>Professor:</strong>
             {!! Form::select('fk_professor', $professores, null, array('placeholder'=>'Selecione o professor','class' => 'form-control')) !!}
         </div>

@@ -49,7 +49,7 @@ class periodoLetivoController extends Controller
         PeriodoLetivo::create($request->all());
 
         return redirect()->route('periodoLetivo.index')
-                        ->with('success','Período letivo criado com sucesso!');
+                        ->with('success','Período letivo cadastrado com sucesso!');
     }
 
     /**

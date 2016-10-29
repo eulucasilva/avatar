@@ -28,7 +28,6 @@
         <th>Início do mandato</th>
         <th>Término do mandato</th>
         <th>Professor</th>
-        <th>fk_usuário</th>
         <th width="280px">Ação</th>
     </tr>
     @foreach ($coordenacaos as $key => $coordenacao)
@@ -39,7 +38,6 @@
         <td>{{ $coordenacao->inicio_mandato_coordenacao }}</td>
         <td>{{ $coordenacao->termino_mandato_coordenacao }}</td>
         <td>{{ $coordenacao->professor->nome_professor }}</td>
-        <td>{{ $coordenacao->fk_usuario }}</td>
         <td>
             @permission('gestao_coordenacao-create')
             <a class="btn btn-info" href="{{ route('coordenacao.show',$coordenacao->id) }}">Visualizar</a>

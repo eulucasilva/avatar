@@ -22,9 +22,6 @@ class CreateSecretariosTable extends Migration
             $table->string('nome_secretario', 45);
             $table->string('telefone_secretario', 15);
             $table->string('endereco_secretario', 100);
-           
-            $table->integer('fk_usuario')->unsigned();
-            $table->foreign('fk_usuario')->references('id')-> on('users');
         });
     }
 

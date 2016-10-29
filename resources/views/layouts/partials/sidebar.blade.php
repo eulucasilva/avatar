@@ -12,9 +12,10 @@
                 <img src="{{asset('/img/icon-user.png')}}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
+                <br>
                 <p>{{ Auth::user()->name }}</p>
                 <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('adminlte_lang::message.online') }}</a>
+               <!-- <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('adminlte_lang::message.online') }}</a>-->
             </div>
         </div>
         @endif
@@ -35,7 +36,7 @@
             <!--<li class="header">{{ trans('adminlte_lang::message.header') }}</li>-->
             <!-- Optionally, you can add icons to the links -->
             <!--<li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>-->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>INÍCIO</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>INÍCIO</span></a></li>
             <?php /*
               <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
               <li class="treeview">
@@ -55,24 +56,23 @@
             @permission('viewTelaAdministradorDoSistema')
 
             <li class="treeview">
-                <a href="#"><i class='fa fa-link' data-toggle="dropdown"></i> <span> GERENCIAR </span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class="fa fa-cog" data-toggle="dropdown"></i> <span> GERENCIAR </span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">          
-                    <li><a href="{{ route('users.index') }}">USUÁRIOS</a></li>
-                    <li><a href="{{ route('roles.index') }}">PAPEIS</a></li>
-                    <li><a href="{{ route('periodoLetivo.index') }}">PERÍODO LETIVO</a></li>
-                    <li><a href="{{ route('professor.index') }}">PROFESSOR</a></li>
-                    <li><a href="{{ route('aluno.index') }}">ALUNO</a></li>
-                    <li><a href="{{ route('coordenacao.index') }}">COORDENAÇÃO</a></li>
-                    <li><a href="{{ route('secretario.index') }}">SECRETÁRIO</a></li>
-                    <li><a href="{{ route('colegiado.index') }}">COLEGIADO</a></li>
-                    <li><a href="{{ route('area.index') }}">ÁREA</a></li>
-                    <li><a href="{{ route('departamento.index') }}">DEPARTAMENTO</a></li>
-                    <li><a href="{{ route('disciplina.index') }}">DISCIPLINA</a></li>
-                    <li><a href="{{ route('projeto.index') }}">PROJETO</a></li>
-                    <li><a href="{{ route('substituicao.index') }}">SUBSTITUIÇÃO</a></li>
-                    <li><a href="{{ route('curso.index') }}">CURSO</a></li>
-                    <li><li class="treeview">
-                        <a href="#"><i data-toggle="dropdown"></i> <span>ATIVIDADES</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <li><a href="{{ route('users.index') }}"><i class="fa fa-users" aria-hidden="true"></i> USUÁRIOS</a></li>
+                    <li><a href="{{ route('roles.index') }}"><i class="fa fa-tasks" aria-hidden="true"></i>PAPEIS</a></li>
+                    <li><a href="{{ route('periodoLetivo.index') }}"><i class="fa fa-calendar" aria-hidden="true"></i>PERÍODO LETIVO</a></li>
+                    <li><a href="{{ route('professor.index') }}"><i class="fa fa-pencil" aria-hidden="true"></i>PROFESSOR</a></li>
+                    <li><a href="{{ route('aluno.index') }}"><i class="fa fa-graduation-cap" aria-hidden="true"></i>ALUNO</a></li>
+                    <li><a href="{{ route('coordenacao.index') }}"><i class="fa fa-sitemap" aria-hidden="true"></i>COORDENAÇÃO</a></li>
+                    <li><a href="{{ route('secretario.index') }}"><i class="fa fa-user" aria-hidden="true"></i>SECRETÁRIO</a></li>
+                    <li><a href="{{ route('colegiado.index') }}"><i class="fa fa-clipboard" aria-hidden="true"></i>COLEGIADO</a></li>
+                    <li><a href="{{ route('area.index') }}"><i class="fa fa-retweet" aria-hidden="true"></i>ÁREA</a></li>
+                    <li><a href="{{ route('departamento.index') }}"><i class="fa fa-folder-open" aria-hidden="true"></i>DEPARTAMENTO</a></li>
+                    <li><a href="{{ route('disciplina.index') }}"><i class="fa fa-th-list" aria-hidden="true"></i>DISCIPLINA</a></li>
+                    <li><a href="{{ route('projeto.index') }}"><i class="fa fa-line-chart" aria-hidden="true"></i>PROJETO</a></li>
+                    <li><a href="{{ route('substituicao.index') }}"><i class="fa fa-refresh" aria-hidden="true"></i>SUBSTITUIÇÃO</a></li>
+                    <li><a href="{{ route('curso.index') }}"><i class="fa fa-university" aria-hidden="true"></i>CURSO</a></li>
+                    <li><a href="#"><i class="fa fa-th" aria-hidden="true" data-toggle="dropdown"></i> <span> ATIVIDADES </span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu"> 
                             <li><a href="{{ route('atividadeComplementar.index') }}">COMPLEMENTAR</a></li>
                             <li><a href="{{ route('atividadePesquisa.index') }}">PESQUISA</a></li>
@@ -83,20 +83,15 @@
                             <li><a href="{{ route('orientacao.index') }}">ORIENTAÇÃO</a></li>
                             <li><a href="{{ route('orientacao_projeto.index') }}">ORIENTAÇÃO DE PROJETO</a></li>
                         </ul>
-                    </li></li>
+                    </li>
                 </ul>
             </li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>SOBRE</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>MANUAL</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>LOGS</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>SOLICITAÇÕES</span></a></li>
+            <li><a href="#"><i class='fa fa-exclamation-circle'></i> <span>SOLICITAÇÕES</span></a></li>
+            <li><a href="#"><i class='fa fa-cogs'></i> <span>LOGS</span></a></li>
 
             @endpermission
 
             @permission('viewTelaColegiado')
-
-            <li><a href="#"><i class='fa fa-link'></i> <span>SOBRE</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>MANUAL</span></a></li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link' data-toggle="dropdown"></i> <span> SOLICITAÇÕES </span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu"> 
@@ -125,9 +120,6 @@
                     <li><a href="#">SINDICAIS</a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>SOBRE</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>MANUAL</span></a></li>
-
             @endpermission
 
             @permission('viewTelaArea')
@@ -137,10 +129,6 @@
             <li><a href="{{ route('turma.index') }}"><i class='fa fa-link'></i>ALOCAR TURMAS</a></li>
             <li><a href="{{ route('substituicao.index') }}"><i class='fa fa-link'></i> <span>REGISTRAR SUBSTITUIÇÃO</span></a></li>
             <li><a href="#"><i class='fa fa-link'></i> <span>DISTRIBUIR ATIVIDADES</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>PERFIL</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>ACOMPANHAMENTO</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>SOBRE</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>MANUAL</span></a></li>
             @endpermission
 
 
@@ -153,9 +141,6 @@
             <li><a href="{{ route('curso.index') }}"><i class='fa fa-link'></i><span>CURSO</span></a></li>
             <li><a href="{{ route('professor.index') }}"><i class='fa fa-link'></i><span>PROFESSORES</span></a></li>
             <li><a href="{{ route('disciplina.index') }}"><i class='fa fa-link'></i><span>DISCIPLINA</span></a></li>       
-            <li><a href="#"><i class='fa fa-link'></i><span>SOBRE</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i><span>MANUAL</span></a></li>
-
             @endpermission
 
         </ul><!-- /.sidebar-menu -->
