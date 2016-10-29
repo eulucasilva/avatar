@@ -6,7 +6,7 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Editar Departamento</h2>
+            <h2>Editar departamento</h2>
         </div>
         @endsection 
         <div class="pull-right">

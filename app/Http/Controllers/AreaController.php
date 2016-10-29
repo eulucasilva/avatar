@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Professor;
 use App\Departamento;
+use App\USer;
 
 /**
  * Description of AreaController

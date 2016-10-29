@@ -5,59 +5,64 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Administração do coordenacao</h2>
+            <h2>Coordenadores</h2>
         </div>
         @endsection
         <div class="pull-right">
             @permission('gestao_coordenacao-create')
-            <a class="btn btn-success" href="{{ route('coordenacao.create') }}"> Criar Novo coordenacao</a>
+            <a class="btn btn-primary" href="{{ route('coordenacao.create') }}"><span class="glyphicon glyphicon-plus"></span> Cadastrar coordenador</a>
             @endpermission
         </div>
     </div>
 </div>
+<br>
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
     <p>{{ $message }}</p>
 </div>
 @endif
-<table class="table table-bordered">
-    <tr>
-        <th>No</th>
-        <th>Tipo</th>
-        <th>Portaria de nomeação</th>
-        <th>Início do mandato</th>
-        <th>Término do mandato</th>
-        <th>Professor</th>
-        <th width="280px">Ação</th>
-    </tr>
-    @foreach ($coordenacaos as $key => $coordenacao)
-    <tr>
-        <td>{{ ++$i }}</td>
-        <td>{{ $coordenacao->tipo_coordenacao }}</td>
-        <td>{{ $coordenacao->portaria_nomeacao_coordenacao }}</td>
-        <td>{{ $coordenacao->inicio_mandato_coordenacao }}</td>
-        <td>{{ $coordenacao->termino_mandato_coordenacao }}</td>
-        <td>{{ $coordenacao->professor->nome_professor }}</td>
-        <td>
-            @permission('gestao_coordenacao-create')
-            <a class="btn btn-info" href="{{ route('coordenacao.show',$coordenacao->id) }}">Visualizar</a>
-            @endpermission
-            @permission('gestao_coordenacao-edit')
-            <a class="btn btn-primary" href="{{ route('coordenacao.edit',$coordenacao->id) }}">Editar</a>
-            @endpermission
-            @permission('gestao_coordenacao-delete')
-            <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Excluir</a>
 
-            @endpermission
-        </td>
-    </tr>
-    @endforeach
-</table>
+<br>
+<div class="box">
+    <table class="table table-bordered">
+        <tr>
+            <th>No</th>
+            <th>Tipo</th>
+            <th>Portaria de nomeação</th>
+            <th>Início do mandato</th>
+            <th>Término do mandato</th>
+            <th>Professor</th>
+            <th width="280px">Ação</th>
+        </tr>
+        @foreach ($coordenacaos as $key => $coordenacao)
+        <tr>
+            <td>{{ ++$i }}</td>
+            <td>{{ $coordenacao->tipo_coordenacao }}</td>
+            <td>{{ $coordenacao->portaria_nomeacao_coordenacao }}</td>
+            <td>{{ $coordenacao->inicio_mandato_coordenacao }}</td>
+            <td>{{ $coordenacao->termino_mandato_coordenacao }}</td>
+            <td>{{ $coordenacao->professor->nome_professor }}</td>
+            <td>
+                @permission('gestao_coordenacao-create')
+                <a class="btn btn-info" href="{{ route('coordenacao.show',$coordenacao->id) }}">Visualizar</a>
+                @endpermission
+                @permission('gestao_coordenacao-edit')
+                <a class="btn btn-primary" href="{{ route('coordenacao.edit',$coordenacao->id) }}">Editar</a>
+                @endpermission
+                @permission('gestao_coordenacao-delete')
+                <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Excluir</a>
+
+                @endpermission
+            </td>
+        </tr>
+        @endforeach
+    </table>
+</div>
 {!! $coordenacaos->render() !!}
 @endsection
 
 
- @if(!empty($coordenacao))
+@if(!empty($coordenacao))
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -77,5 +82,6 @@
         </div>
     </div>
 </div>
+
 @endif
 

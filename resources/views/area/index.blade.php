@@ -10,52 +10,56 @@
         @endsection
         <div class="pull-right">
             @permission('gestao_areas-create')
-            <a class="btn btn-success" href="{{ route('area.create') }}">Cadastrar Área</a>
+            <a class="btn btn-primary" href="{{ route('area.create') }}"><span class="glyphicon glyphicon-plus"></span> Cadastrar área</a>
             @endpermission
         </div>
     </div>
 </div>
+<br>
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
     <p>{{ $message }}</p>
 </div>
 @endif
-<table class="table table-bordered">
-    <tr>
-        <th>Nome</th>
-        <th>Departamento</th>
-        <th>Usuário</th>
-        <th>Coordenador</th>
-        <th width="280px">Ação</th>
-    </tr>
-    @foreach ($areas as $key => $area)
-    <tr>
-        <td>{{$area->nome}}</td>
-        <td>{{$area->departamento->nome}}</td>
-        <td>{{$area->usuario->name }}</td>
-        @if(!empty($area->coordenacao->professor->nome_professor))
-        <td>{{$area->coordenacao->professor->nome_professor}}</td>
-        @else
-        <td>{{"-"}}</td>
-        @endif
-        <td>
-            <a class="btn btn-info" href="{{ route('area.show',$area->id) }}">Visualizar</a>
-            @permission('gestao_areas-edit')
-            <a class="btn btn-primary" href="{{ route('area.edit',$area->id) }}">Editar</a>
-            @endpermission
-            @permission('gestao_areas-delete')
-            <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Excluir</a>
+<br>
+<div class="box">
+    <table class="table table-bordered">
+        <tr>
+            <th>Nome</th>
+            <th>Departamento</th>
+            <th>Usuário</th>
+            <th>Coordenador</th>
+            <th width="280px">Ação</th>
+        </tr>
+        @foreach ($areas as $key => $area)
+        <tr>
+            <td>{{$area->nome}}</td>
+            <td>{{$area->departamento->nome}}</td>
+            <td>{{$area->usuario->name }}</td>
+            @if(!empty($area->coordenacao->professor->nome_professor))
+            <td>{{$area->coordenacao->professor->nome_professor}}</td>
+            @else
+            <td>{{"-"}}</td>
+            @endif
+            <td>
+                <a class="btn btn-info" href="{{ route('area.show',$area->id) }}">Visualizar</a>
+                @permission('gestao_areas-edit')
+                <a class="btn btn-primary" href="{{ route('area.edit',$area->id) }}">Editar</a>
+                @endpermission
+                @permission('gestao_areas-delete')
+                <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Excluir</a>
 
-            @endpermission
-        </td>
-    </tr>
-    @endforeach
-</table>
+                @endpermission
+            </td>
+        </tr>
+        @endforeach
+    </table>
+</div>
 {!! $areas->render() !!}
 @endsection
 
 
- @if(!empty($area))
+@if(!empty($area))
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -75,4 +79,4 @@
         </div>
     </div>
 </div>
- @endif
+@endif
