@@ -5,7 +5,7 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Solicitação de Turmas</h2>
+            <h2>Turmas solicitadas</h2>
         </div>
         @endsection
         <div class="pull-right">
@@ -15,13 +15,14 @@
         </div>
     </div>
 </div>
+<br>
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
     <p>{{ $message }}</p>
 </div>
 @endif
 <br>
-<div class="box box-primary">
+<div class="box">
     <table class="table table-bordered table-hover dataTable">
         <tr>
             <th>No</th>

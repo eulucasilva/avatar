@@ -38,38 +38,41 @@ class DisciplinaController extends Controller {
         $this->validate($request, [
             'nome_disciplina' => 'required|max:100',
             'codigo_disciplina' => 'required|max:6',
-            'ch_total_disciplina' => 'required',
-            'creditacao_pratica' => 'required',
             'creditacao_teorica' => 'required',
+            'creditacao_pratica' => 'required',
             'creditacao_estagio' => 'required',
-            'natureza_disciplina' => 'required|max:100',
             'fk_area' => 'required',
-            'fk_departamento' => 'required'
+            'fk_departamento' => 'required',
+            'ch_teorica' => 'required',
+            'ch_pratica' => 'required',
+            'ch_estagio' => 'required',
+            'ch_total_disciplina' => 'required',
         ]);
 
         Disciplina::create($request->all());
 
         return redirect()->route('disciplina.index')
-                        ->with('success', 'Disciplina criada com sucesso');
+                        ->with('success', 'Disciplina criada com sucesso!');
     }
 
     public function show($id) {
         $disciplina = disciplina::find($id);
         return view('disciplina.show', compact('disciplina'));
     }
-    
-    
+
     public function update(Request $request, $id) {
-         $this->validate($request, [
+        $this->validate($request, [
             'nome_disciplina' => 'required|max:100',
             'codigo_disciplina' => 'required|max:6',
-            'ch_total_disciplina' => 'required',
-            'creditacao_pratica' => 'required',
             'creditacao_teorica' => 'required',
+            'creditacao_pratica' => 'required',
             'creditacao_estagio' => 'required',
-            'natureza_disciplina' => 'required|max:100',
             'fk_area' => 'required',
-            'fk_departamento' => 'required'
+            'fk_departamento' => 'required',
+            'ch_teorica' => 'required',
+            'ch_pratica' => 'required',
+            'ch_estagio' => 'required',
+            'ch_total_disciplina' => 'required',
         ]);
 
         Disciplina::find($id)->update($request->all());
@@ -77,9 +80,7 @@ class DisciplinaController extends Controller {
         return redirect()->route('disciplina.index')
                         ->with('success', 'Disciplina atualizada com sucesso!');
     }
-    
-    
-    
+
     public function edit($id) {
 
         $disciplina = disciplina::find($id);

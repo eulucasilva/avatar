@@ -1,8 +1,4 @@
 @extends('layouts.app')
-<script src = "{{ asset('js/jquery-3.1.0.js') }}" type = "text/javascript" ></script>
-<script src = "{{ asset('js/jquery.maskedinput.js') }}" type = "text/javascript" ></script>
-<script src = "{{ asset('js/jquery-ui-1.12.0/jquery-ui.js') }}" type = "text/javascript" ></script>
-<link href="{{ asset('js/jquery-ui-themes-1.12.0/themes/base/jquery-ui.css') }}" rel="stylesheet">
 
 @section('main-content')
 <div class="row">
@@ -27,7 +23,7 @@
 @endif
 <br>
 <div class="box">
-    <table class="table table-bordered table-hover dataTable" role="grid">
+    <table id="table" class="table table-bordered table-hover dataTable" role="grid">
         <tr>
             <th>No</th>
             <th>Período</th>

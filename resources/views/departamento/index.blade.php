@@ -24,7 +24,7 @@
 
 <br>
 <div class="box">
-    <table class="table table-bordered table-hover dataTable">
+    <table id="table" class="table table-bordered table-hover dataTable" role="grid">
         <tr>
             <th>Nome</th>
             <th>Sigla</th>

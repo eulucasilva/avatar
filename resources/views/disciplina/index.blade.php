@@ -28,7 +28,7 @@
         <tr>
             <th>Nome</th>
             <th>Código</th>
-            <th>Carga Horária Total</th>
+            <th>Carga horária total</th>
             <th>Natureza</th>
             <th>Departamento</th>
             <th>Área</th>

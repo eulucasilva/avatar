@@ -56,7 +56,7 @@ class UserController extends Controller {
 
 
         return redirect()->route('users.index')
-                        ->with('success', 'Usuário cadastrado com sucesso');
+                        ->with('success', 'Usuário cadastrado com sucesso!');
     }
 
     /**
@@ -116,7 +116,7 @@ class UserController extends Controller {
         }
 
         return redirect()->route('users.index')
-                        ->with('success', 'Usuário atualizado com sucesso');
+                        ->with('success', 'Usuário atualizado com sucesso!');
     }
 
     /**
@@ -128,7 +128,7 @@ class UserController extends Controller {
     public function destroy($id) {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success', 'Usuário excluído com sucesso');
+                        ->with('success', 'Usuário excluído com sucesso!');
     }
 
 }
