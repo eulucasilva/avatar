@@ -50,9 +50,9 @@ class CreateSolicitacaoTable extends Migration
             $table->string('quant_teorica_aprovada', 300)->nullable();
             $table->string('quant_estagio_aprovada', 300)->nullable();
 
-            $table->string('creditacao_estagio', 300);
-            $table->string('creditacao_pratica', 300);
-            $table->string('creditacao_teorica', 300);
+            $table->integer('creditacao_estagio');
+            $table->integer('creditacao_pratica');
+            $table->integer('creditacao_teorica');
             $table->string('observacoes_colegiado', 300)->nullable();;
             $table->string('observacoes_departamento', 300)->nullable();;
         });

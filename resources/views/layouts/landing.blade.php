@@ -37,6 +37,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
     <script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('/plugins/select2/select2.full.min.js') }}"></script>
+    <script src="{{ asset('/plugins/select2/select2.min.css') }}"></script>
     <script src="{{ asset('/js/smoothscroll.js') }}"></script>
 
 

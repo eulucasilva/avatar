@@ -7,6 +7,7 @@
  */
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Departamento;
@@ -19,27 +20,28 @@ use App\Disciplina;
  * @author Lucas
  */
 class DisciplinaController extends Controller {
-    
-    
+
     public function index(Request $request) {
         $disciplinas = Disciplina::orderBy('id', 'DESC')->paginate(5);
-         return view('disciplina.index',compact('disciplinas'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        return view('disciplina.index', compact('disciplinas'))
+                        ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
-    public function create(){
-        
+    public function create() {
+
         $departamento = Departamento::lists('nome', 'id');
-        $area = Area::lists('nome','id');
+        $area = Area::lists('nome', 'id');
         return view('disciplina.create', compact('departamento', 'area'));
     }
-    
-    public function store(Request $request)
-    {
+
+    public function store(Request $request) {
         $this->validate($request, [
             'nome_disciplina' => 'required|max:100',
             'codigo_disciplina' => 'required|max:6',
             'ch_total_disciplina' => 'required',
+            'creditacao_pratica' => 'required',
+            'creditacao_teorica' => 'required',
+            'creditacao_estagio' => 'required',
             'natureza_disciplina' => 'required|max:100',
             'fk_area' => 'required',
             'fk_departamento' => 'required'
@@ -48,28 +50,48 @@ class DisciplinaController extends Controller {
         Disciplina::create($request->all());
 
         return redirect()->route('disciplina.index')
-                        ->with('success','Disciplina criada com sucesso');
+                        ->with('success', 'Disciplina criada com sucesso');
     }
-     public function show($id)
-    {
+
+    public function show($id) {
         $disciplina = disciplina::find($id);
-        return view('disciplina.show',compact('disciplina'));
+        return view('disciplina.show', compact('disciplina'));
     }
     
-       public function edit($id)
-    {
-        
-         $disciplina = disciplina::find($id);
-         $departamento = Departamento::lists('nome', 'id');
-         $area = Area::lists('nome', 'id');
-         return view('disciplina.edit', compact('disciplina','departamento','area'));
+    
+    public function update(Request $request, $id) {
+         $this->validate($request, [
+            'nome_disciplina' => 'required|max:100',
+            'codigo_disciplina' => 'required|max:6',
+            'ch_total_disciplina' => 'required',
+            'creditacao_pratica' => 'required',
+            'creditacao_teorica' => 'required',
+            'creditacao_estagio' => 'required',
+            'natureza_disciplina' => 'required|max:100',
+            'fk_area' => 'required',
+            'fk_departamento' => 'required'
+        ]);
+
+        Disciplina::find($id)->update($request->all());
+
+        return redirect()->route('disciplina.index')
+                        ->with('success', 'Disciplina atualizada com sucesso!');
     }
     
-        public function destroy($id)
-    {
+    
+    
+    public function edit($id) {
+
+        $disciplina = disciplina::find($id);
+        $departamento = Departamento::lists('nome', 'id');
+        $area = Area::lists('nome', 'id');
+        return view('disciplina.edit', compact('disciplina', 'departamento', 'area'));
+    }
+
+    public function destroy($id) {
         disciplina::find($id)->delete();
         return redirect()->route('disciplina.index')
-                        ->with('success','Disciplina excluída com sucesso!');
+                        ->with('success', 'Disciplina excluída com sucesso!');
     }
-   
+
 }

@@ -25,7 +25,7 @@
 @endif
 {!! Form::model($disciplina, ['method' => 'PATCH','route' => ['departamento.update', $disciplina->id]]) !!}
 <div class="row">
-   
+
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Nome:</strong>
@@ -44,7 +44,27 @@
             {!! Form::number('ch_total_disciplina', null, array('placeholder' => 'Digite a carga horária total','class' => 'form-control')) !!}
         </div>
     </div>
-      <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Crédito prático</strong>
+            {!! Form::number('creditacao_pratica', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Crédito teórico</strong>
+            {!! Form::number('creditacao_teorica', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Crédito de estágio</strong>
+            {!! Form::number('creditacao_estagio', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Natureza:</strong>
             {!! Form::text('natureza_disciplina', null, array('placeholder' => 'Digite a natureza da disciplina','class' => 'form-control')) !!}
@@ -62,7 +82,7 @@
             {!! Form::select('fk_area',$area, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
         </div>
     </div>
-    
+
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>

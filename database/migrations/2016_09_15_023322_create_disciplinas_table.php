@@ -18,6 +18,9 @@ class CreateDisciplinasTable extends Migration
             $table->string('codigo_disciplina', 6);
             $table->integer('ch_total_disciplina');
             $table->string('natureza_disciplina', 100);
+            $table->integer('creditacao_estagio');
+            $table->integer('creditacao_pratica');
+            $table->integer('creditacao_teorica');
             $table->integer('fk_area')->unsigned();
             $table->foreign('fk_area')->references('id')-> on('areas');
             $table->integer('fk_departamento')->unsigned();
