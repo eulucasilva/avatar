@@ -29,7 +29,6 @@
             <th>Nome</th>
             <th>Código</th>
             <th>Carga horária total</th>
-            <th>Natureza</th>
             <th>Departamento</th>
             <th>Área</th>
             <th width="280px">Ação</th>
@@ -39,7 +38,6 @@
             <td>{{ $disciplina->nome_disciplina }}</td>
             <td>{{ $disciplina->codigo_disciplina  }}</td>
             <td>{{ $disciplina->ch_total_disciplina}}</td>
-            <td>{{ $disciplina->natureza_disciplina}}</td>
             <td>{{ $disciplina->departamento->nome}}</td>
             <td>{{ $disciplina->area->nome}}</td>
             <td>

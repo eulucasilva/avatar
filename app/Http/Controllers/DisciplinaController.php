@@ -43,13 +43,15 @@ class DisciplinaController extends Controller {
             'creditacao_estagio' => 'required',
             'fk_area' => 'required',
             'fk_departamento' => 'required',
-            'ch_teorica' => 'required',
-            'ch_pratica' => 'required',
-            'ch_estagio' => 'required',
             'ch_total_disciplina' => 'required',
         ]);
 
-        Disciplina::create($request->all());
+        $campos = $request->all();
+        $campos['ch_teorica'] = $campos['creditacao_teorica'] * 15;
+        $campos['ch_pratica'] = $campos['creditacao_pratica'] * 30;
+        $campos['ch_estagio'] = $campos['creditacao_estagio'] * 45;
+        
+        Disciplina::create($campos);
 
         return redirect()->route('disciplina.index')
                         ->with('success', 'Disciplina criada com sucesso!');
@@ -69,13 +71,16 @@ class DisciplinaController extends Controller {
             'creditacao_estagio' => 'required',
             'fk_area' => 'required',
             'fk_departamento' => 'required',
-            'ch_teorica' => 'required',
-            'ch_pratica' => 'required',
-            'ch_estagio' => 'required',
             'ch_total_disciplina' => 'required',
         ]);
-
-        Disciplina::find($id)->update($request->all());
+        
+        $campos = $request->all();
+        $campos['ch_teorica'] = $campos['creditacao_teorica'] * 15;
+        $campos['ch_pratica'] = $campos['creditacao_pratica'] * 30;
+        $campos['ch_estagio'] = $campos['creditacao_estagio'] * 45;
+        
+        
+        Disciplina::find($id)->update($campos);
 
         return redirect()->route('disciplina.index')
                         ->with('success', 'Disciplina atualizada com sucesso!');

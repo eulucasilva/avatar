@@ -48,7 +48,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Inicio do mandato:</strong>
+                    <strong>Início do mandato:</strong>
                     {!! Form::text('inicio_mandato_secretario', null, array('placeholder' => 'Selecione o início do mandato','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Endereço:</strong>
-                    {!! Form::text('endereco_secretario', null, array('placeholder' => 'Digite o departamento','class' => 'form-control','style'=>'height:30px')) !!}
+                    {!! Form::text('endereco_secretario', null, array('placeholder' => 'Digite o endereço','class' => 'form-control','style'=>'height:30px')) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

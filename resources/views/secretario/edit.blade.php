@@ -42,32 +42,32 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Matricula:</strong>
+                    <strong>Matrícula:</strong>
                     {!! Form::text('matricula_secretario', null, array('placeholder' => '','class' => 'form-control', 'style'=>'height:30px')) !!}
 
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Inicio Mandato:</strong>
+                    <strong>Início do mandato:</strong>
                     {!! Form::text('inicio_mandato_secretario', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Termino Mandato:</strong>
+                    <strong>Término do mandato:</strong>
                     {!! Form::text('termino_mandato_secretario', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Telefone Secretario:</strong>
+                    <strong>Telefone:</strong>
                     {!! Form::text('telefone_secretario', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
                 </div>
             </div>  
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Endereco Secretario:</strong>
+                    <strong>Endereço:</strong>
                     {!! Form::text('endereco_secretario', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px')) !!}
                 </div>
             </div>

@@ -34,32 +34,32 @@
         <div class="box-body">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Periodo Letivo:</strong>
+                    <strong>Período letivo:</strong>
                     {!! Form::text('periodo_periodoLetivo', null, array('placeholder' => '','class' => 'form-control', 'id' => 'campoPeriodo')) !!}
 
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Ano Periodo Letivo:</strong>
+                    <strong>Ano do período letivo:</strong>
                     {!! Form::text('ano_periodoLetivo', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px', 'id' => 'campoAno')) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Modalidade Periodo Letivo:</strong>
+                    <strong>Modalidade do período letivo:</strong>
                     {!! Form::select('modalidade_periodoLetivo', array('Anual' => 'Anual', 'Semestral' => 'Semestral'), null, array('class' => 'form-control'))!!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Inicio Periodo Letivo:</strong>
+                    <strong>Início do período letivo:</strong>
                     {!! Form::text('inicio_periodoLetivo', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataInicio')) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Termino Periodo Letivo:</strong>
+                    <strong>Término do período letivo:</strong>
                     {!! Form::text('termino_periodoLetivo', null, array('placeholder' => '','class' => 'form-control','style'=>'height:30px' , 'id' => 'dataFim')) !!}
                 </div>
             </div>
