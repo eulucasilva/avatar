@@ -5,6 +5,7 @@
 <script src = "{{ asset('js/jquery-ui-1.12.0/jquery-ui.js') }}" type = "text/javascript" ></script>
 <link href="{{ asset('js/jquery-ui-themes-1.12.0/themes/base/jquery-ui.css') }}" rel="stylesheet">
 
+
 @section('main-content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
@@ -120,13 +121,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Departamento:</strong>
-                    {!! Form::select('fk_departamento', $departamentos, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+                    {!! Form::select('fk_departamento', $departamentos, null, array('placeholder'=>'--Selecione--','class' => 'form-control', 'id' => 'departamento')) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Área:</strong>
-                    {!! Form::select('fk_area', $areas, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+                    {!! Form::select('fk_area', ['placeholder'=>'--Selecione--'], null,  array('class' => 'form-control', 'id' => 'area')) !!}
                 </div>
             </div>
 
@@ -144,35 +145,40 @@
 
 
 jQuery(function ($) {
-    $("#campoAno").mask("9999");
+$("#campoAno").mask("9999");
 });
-
 jQuery(function ($) {
-    $("#telefoneProfessor").mask("(99)99999-9999");
+$("#telefoneProfessor").mask("(99)99999-9999");
 });
-
-
 $(function ($) {
-    $("#dataInicio").datepicker({
-        dateFormat: 'dd/mm/yy',
+$("#dataInicio").datepicker({
+dateFormat: 'dd/mm/yy',
         dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
         dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
         dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
         monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
         monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 
-    });
+        });
 });
-
 $(function ($) {
-    $("#dataFim").datepicker({
-        dateFormat: 'dd/mm/yy',
+$("#dataFim").datepicker({
+dateFormat: 'dd/mm/yy',
         dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
         dayNamesMin: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
         dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
         monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
         monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 
+        });
+});
+$("#departamento").change(function () {
+    var id_dep = $(this).val();
+    $.get('/areas/' + id_dep, function (response, departamento){
+        $("#area").empty();
+        for(i=0; i<response.length; i++){
+            $("#area").append("<option value='"+response[i].id+"'> "+response[i].nome+"</option>");
+        }
     });
 });
 

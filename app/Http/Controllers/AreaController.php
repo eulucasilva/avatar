@@ -22,6 +22,8 @@ use App\User;
  */
 class AreaController extends Controller {
 
+    private $departamentoModel;
+
     public function index(Request $request) {
         $areas = Area::orderBy('id', 'DESC')->paginate(5);
         return view('area.index', compact('areas'))
@@ -106,6 +108,13 @@ class AreaController extends Controller {
     public function show($id) {
         $area = Area::find($id);
         return view('area.show', compact('area'));
+    }
+
+    public function getAreas($id) {
+
+        $areas = Area::areas($id);
+      
+        return \Response::json($areas);
     }
 
 }

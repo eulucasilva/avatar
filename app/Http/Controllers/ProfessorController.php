@@ -32,9 +32,9 @@ class professorController extends Controller
     {
        
             $departamentos = Departamento::lists('nome', 'id');
-            $areas = Area::lists('nome', 'id');
+            //$areas = Area::lists('nome', 'id');
             $usuarios = User::lists('name', 'id');
-            return view('professor.create', compact('departamentos','areas','usuarios'));
+            return view('professor.create', compact('departamentos','usuarios'));
     }
 
     /**
@@ -93,9 +93,9 @@ class professorController extends Controller
     {
         $professor = Professor::find($id);
         $departamentos = Departamento::lists('nome', 'id');
-        $areas = Area::lists('nome', 'id');
+        //$areas = Area::lists('nome', 'id');
         $usuarios = User::lists('name', 'id');
-        return view('professor.edit',compact('professor','departamentos','areas','usuarios' ));
+        return view('professor.edit',compact('professor','departamentos','usuarios' ));
     }
 
     /**

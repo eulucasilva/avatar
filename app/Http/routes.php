@@ -18,6 +18,7 @@ Route::auth();
 Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/home', 'HomeController@index');
+    Route::get('/areas/{id}', 'AreaController@getAreas');
 
     //rotas de users
     Route::group(['prefix' => 'users', 'where' => ['id' => '[0-9]+']], function() {
@@ -151,6 +152,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::delete('/{id}', ['as' => 'area.destroy', 'uses' => 'AreaController@destroy', 'middleware' => ['permission:gestao_areas-delete']]);
     });
 
+
     //rotas de projeto
     Route::group(['prefix' => 'projeto', 'where' => ['id' => '[0-9]+']], function() {
         Route::get('', ['as' => 'projeto.index', 'uses' => 'ProjetoController@index', 'middleware' => ['permission:gestao_projeto-list|gestao_projeto-create|gestao_projeto-edit|gestao_projeto-delete']]);
@@ -161,6 +163,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::patch('/{id}', ['as' => 'projeto.update', 'uses' => 'ProjetoController@update', 'middleware' => ['permission:gestao_projeto-edit']]);
         Route::delete('/{id}', ['as' => 'projeto.destroy', 'uses' => 'ProjetoController@destroy', 'middleware' => ['permission:gestao_projeto-delete']]);
     });
+    
 
 
     //rotas de substituicao
@@ -303,18 +306,17 @@ Route::group(['middleware' => ['auth']], function() {
         Route::delete('/{id}', ['as' => 'turma.destroy', 'uses' => 'TurmaController@destroy', 'middleware' => ['permission:gestao_turma-delete']]);
         Route::get('/{id}', ['as' => 'turma.gerar', 'uses' => 'TurmaController@gerar', 'middleware' => ['permission:gestao_turma-create']]);
     });
-    
-     //rotas de pit
-    Route::group(['prefix'=>'pit','where'=>['id'=>'[0-9]+']], function()
-    {
-        Route::get('',['as'=>'pit.index','uses'=>'PitController@index','middleware' => ['permission:gestao_pit-list|gestao_pit-create|gestao_pit-edit|gestao_pit-delete']]);
-        Route::get('/create',['as'=>'pit.create','uses'=>'PitController@create','middleware' => ['permission:gestao_pit-create']]);
-        Route::post('/create',['as'=>'pit.store','uses'=>'PitController@store','middleware' => ['permission:gestao_pit-create']]);
-        Route::get('/{id}',['as'=>'pit.show','uses'=>'PitController@show']);
-        Route::get('/{id}/edit',['as'=>'pit.edit','uses'=>'PitController@edit','middleware' => ['permission:gestao_pit-edit']]);
-        Route::patch('/{id}',['as'=>'pit.update','uses'=>'PitController@update','middleware' => ['permission:gestao_pit-edit']]);
-        Route::delete('/{id}',['as'=>'pit.destroy','uses'=>'PitController@destroy','middleware' => ['permission:gestao_pit-delete']]);
-         Route::get('/{id}',['as'=>'pit.gerar','uses'=>'PitController@gerar','middleware' => ['permission:gestao_pit-create']]);
+
+    //rotas de pit
+    Route::group(['prefix' => 'pit', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'pit.index', 'uses' => 'PitController@index', 'middleware' => ['permission:gestao_pit-list|gestao_pit-create|gestao_pit-edit|gestao_pit-delete']]);
+        Route::get('/create', ['as' => 'pit.create', 'uses' => 'PitController@create', 'middleware' => ['permission:gestao_pit-create']]);
+        Route::post('/create', ['as' => 'pit.store', 'uses' => 'PitController@store', 'middleware' => ['permission:gestao_pit-create']]);
+        Route::get('/{id}', ['as' => 'pit.show', 'uses' => 'PitController@show']);
+        Route::get('/{id}/edit', ['as' => 'pit.edit', 'uses' => 'PitController@edit', 'middleware' => ['permission:gestao_pit-edit']]);
+        Route::patch('/{id}', ['as' => 'pit.update', 'uses' => 'PitController@update', 'middleware' => ['permission:gestao_pit-edit']]);
+        Route::delete('/{id}', ['as' => 'pit.destroy', 'uses' => 'PitController@destroy', 'middleware' => ['permission:gestao_pit-delete']]);
+        Route::get('/{id}', ['as' => 'pit.gerar', 'uses' => 'PitController@gerar', 'middleware' => ['permission:gestao_pit-create']]);
     });
 
     //rotas para relatório

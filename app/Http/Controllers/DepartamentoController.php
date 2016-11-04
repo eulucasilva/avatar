@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Departamento;
 use App\Secretario;
+use App\Area;
 use App\Professor;
 use App\User;
 use DB;
@@ -119,5 +120,8 @@ class DepartamentoController extends Controller {
         $departamento = Departamento::find($id);
         return view('departamento.show', compact('departamento'));
     }
+    
+    
+   
 
 }

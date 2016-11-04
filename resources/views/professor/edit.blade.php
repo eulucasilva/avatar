@@ -120,13 +120,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Departamento:</strong>
-                    {!! Form::select('fk_departamento', $departamentos, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+                    {!! Form::select('fk_departamento', $departamentos, null, array('placeholder'=>'--Selecione--','class' => 'form-control', 'id' => 'departamento')) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Área:</strong>
-                    {!! Form::select('fk_area', $areas, null, array('placeholder'=>'--Selecione--','class' => 'form-control')) !!}
+                    {!! Form::select('fk_area', ['placeholder'=>'--Selecione--'], null,  array('class' => 'form-control', 'id' => 'area')) !!}
                 </div>
             </div>
 
@@ -169,6 +169,16 @@ $(function ($) {
         monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
         monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 
+    });
+});
+
+$("#departamento").change(function () {
+    var id_dep = $(this).val();
+    $.get('/areas/' + id_dep, function (response, departamento) {
+        $("#area").empty();
+        for (i = 0; i < response.length; i++) {
+            $("#area").append("<option value='" + response[i].id + "'> " + response[i].nome + "</option>");
+        }
     });
 });
 

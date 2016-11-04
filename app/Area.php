@@ -30,4 +30,8 @@ class Area extends Model
     public function usuario() {
         return $this->belongsTo(User::class, 'fk_usuario');
     }
+    
+    public static function areas($id){
+        return Area::where('fk_departamento', '=', $id)->get();
+    }
 }
