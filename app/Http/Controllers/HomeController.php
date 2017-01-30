@@ -38,9 +38,8 @@ class HomeController extends Controller
                 }
 
             if($role == "Administrador"){ return view('telasIniciais.TelaInicialAdministrador');} 
-            else if($role == "Colegiado"){ return view('telasIniciais.TelaInicialColegiado');}
-            else if($role == "Área"){ return view('telasIniciais.TelaInicialArea');}
-            else if($role == "Departamento"){ return view('telasIniciais.TelaInicialDepartamento');}
+            else if($role == "Coordenador"){ return view('telasIniciais.TelaInicialCoordenador');}
+            else if($role == "Secretaria"){ return view('telasIniciais.TelaInicialSecretaria');}
             else if($role == "Professor"){ return view('telasIniciais.TelaInicialProfessor');}
             else{return view('home');}
         }
