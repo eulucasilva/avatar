@@ -26,8 +26,8 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Titulo:</strong>
-            {!! Form::text('titulo', null, array('placeholder' => 'Digite o Titulo do Projeto','class' => 'form-control')) !!}
+            <strong>Nome:</strong>
+            {!! Form::text('nome', null, array('placeholder' => 'Digite seu Nome Completo','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -37,46 +37,70 @@
         </div>
     </div>
    
-    <div class="col-xs-12 col-sm-12 col-md-12">
+     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Professor Coordenador:</strong>
-            {!! Form::select('fk_professor', $professors, null, array('class' => 'form-control')) !!}
+            <strong>Matricula:</strong>
+            {!! Form::text('matricula', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Objetivo Especifico:</strong>
-            {!! Form::text('objetivoEspec', null, array('placeholder' => '','class' => 'form-control')) !!}
+            <strong>Email:</strong>
+            {!! Form::text('email', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Resultados Esperados:</strong>
-            {!! Form::text('resultadosEsperados', null, array('placeholder' => '','class' => 'form-control')) !!}
+            <strong>Telefone:</strong>
+            {!! Form::text('telefone', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Financiamento:</strong>
-            {!! Form::text('financimento', null, array('placeholder' => '','class' => 'form-control')) !!}
+            <strong>Área de Atuação:</strong>
+            {!! Form::text('areaDeAtuacao', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Tipo de Pesquisa:</strong>
-            {!! Form::text('tipoPesquisa', null, array('placeholder' => '','class' => 'form-control')) !!}
+            <strong>Titulação:</strong>
+            {!! Form::text('titulacao', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Fonte de Financiamento:</strong>
+            <strong>Classe:</strong>
             {!! Form::text('fonteFinancimanto', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Grupo de Pesquisa do Projeto:</strong>
-            {!! Form::text('grupoPesquisaProjeto', null, array('placeholder' => '','class' => 'form-control')) !!}
+            <strong>Regime de Trabalho:</strong>
+            {!! Form::text('regimeDeTrabalho', null, array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Tipo de Vinculo:</strong>
+            {!! Form::text('tipoVincluo', null, array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Data Nascimento:</strong>
+            {!! Form::date('dataNasc', null, array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Departamento:</strong>
+            {!! Form::select('fk_departamento', $departamentos, null, array('class' => 'form-control')) !!}
+        </div>
+    </div>
+     <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Curso:</strong>
+            {!! Form::select('fk_curso', $cursos, null, array('class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
