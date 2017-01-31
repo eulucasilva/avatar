@@ -73,7 +73,6 @@ class PermissionTableSeeder extends Seeder {
                 'display_name' => 'Excluir local',
                 'description' => 'Excluir local'
             ],
-            //sala
             [
                 'name' => 'sala-list',
                 'display_name' => 'Listagem das salas',
@@ -93,22 +92,6 @@ class PermissionTableSeeder extends Seeder {
                 'name' => 'sala-delete',
                 'display_name' => 'Excluir sala',
                 'description' => 'Excluir sala'
-            ],
-            //professor
-         [
-                'name' => 'professor-create',
-                'display_name' => 'Cadastrar professor',
-                'description' => 'Cadastrar professor'
-            ],
-            [
-                'name' => 'professor-edit',
-                'display_name' => 'Editar professor',
-                'description' => 'Editar professor'
-            ],
-            [
-                'name' => 'professor-delete',
-                'display_name' => 'Excluir professor',
-                'description' => 'Excluir professor'
             ],
             // Telas iniciais
             
