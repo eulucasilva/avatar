@@ -27,6 +27,7 @@
         <tr>
             <th>No</th>
             <th>Nome</th>
+            <th>Local</th>
             <th width="280px">Ação</th>
         </tr>
 
@@ -34,6 +35,7 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $sala->nome_sala }}</td>
+            <td>{{ $sala->local->nome_local }}</td>
             <td>
                 @permission('sala-create')
                 <a class="btn btn-info" href="{{ route('sala.show',$sala->id) }}">Visualizar</a>
