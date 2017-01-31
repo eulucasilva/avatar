@@ -70,20 +70,20 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/create', ['as' => 'sala.create', 'uses' => 'SalaController@create', 'middleware' => ['permission:sala-create']]);
         Route::post('/create', ['as' => 'sala.store', 'uses' => 'SalaController@store', 'middleware' => ['permission:sala-create']]);
         Route::get('/{id}', ['as' => 'sala.show', 'uses' => 'SalaController@show']);
-        Route::get('/{id}/edit', ['as' => 'sala.edit', 'uses' => 'SalaController@edit', 'middleware' => ['permission:sala-edit']]);
+        Route::get('/{id}/edit', ['as' => 'sala .edit', 'uses' => 'SalaController@edit', 'middleware' => ['permission:sala-edit']]);
         Route::patch('/{id}', ['as' => 'sala.update', 'uses' => 'SalaController@update', 'middleware' => ['permission:sala-edit']]);
         Route::delete('/{id}', ['as' => 'sala.destroy', 'uses' => 'SalaController@destroy', 'middleware' => ['permission:sala-delete']]);
     });
 
-    //rotas de aluno
-    Route::group(['prefix' => 'aluno', 'where' => ['id' => '[0-9]+']], function() {
-        Route::get('', ['as' => 'aluno.index', 'uses' => 'AlunoController@index', 'middleware' => ['permission:gestao_aluno-list|gestao_aluno-create|gestao_aluno-edit|gestao_aluno-delete']]);
-        Route::get('/create', ['as' => 'aluno.create', 'uses' => 'AlunoController@create', 'middleware' => ['permission:gestao_aluno-create']]);
-        Route::post('/create', ['as' => 'aluno.store', 'uses' => 'AlunoController@store', 'middleware' => ['permission:gestao_aluno-create']]);
-        Route::get('/{id}', ['as' => 'aluno.show', 'uses' => 'AlunoController@show']);
-        Route::get('/{id}/edit', ['as' => 'aluno.edit', 'uses' => 'AlunoController@edit', 'middleware' => ['permission:gestao_aluno-edit']]);
-        Route::patch('/{id}', ['as' => 'aluno.update', 'uses' => 'AlunoController@update', 'middleware' => ['permission:gestao_aluno-edit']]);
-        Route::delete('/{id}', ['as' => 'aluno.destroy', 'uses' => 'AlunoController@destroy', 'middleware' => ['permission:gestao_aluno-delete']]);
+    //rotas de reservaSala
+    Route::group(['prefix' => 'reservaSala', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'reservasala.index', 'uses' => 'ReservaSalaController@index', 'middleware' => ['permission:reservasala-list|reservasala-create|reservasala-edit|reservasala-delete']]);
+        Route::get('/create', ['as' => 'reservasala.create', 'uses' => 'ReservaSalaController@create', 'middleware' => ['permission:reservasala-create']]);
+        Route::post('/create', ['as' => 'reservasala.store', 'uses' => 'ReservaSalaController@store', 'middleware' => ['permission:reservasala-create']]);
+        Route::get('/{id}', ['as' => 'reservasala.show', 'uses' => 'ReservaSalaController@show']);
+        Route::get('/{id}/edit', ['as' => 'reservasala.edit', 'uses' => 'ReservaSalaController@edit', 'middleware' => ['permission:reservasala-edit']]);
+        Route::patch('/{id}', ['as' => 'reservasala.update', 'uses' => 'ReservaSalaController@update', 'middleware' => ['permission:reservasala-edit']]);
+        Route::delete('/{id}', ['as' => 'reservasala.destroy', 'uses' => 'ReservaSalaController@destroy', 'middleware' => ['permission:reservasala-delete']]);
     });
 
     //rotas de coordenação

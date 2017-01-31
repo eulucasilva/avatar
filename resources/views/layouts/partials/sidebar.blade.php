@@ -65,6 +65,7 @@
                         <ul class="treeview-menu">
                              <li><a href="{{ route('local.index') }}"><i class="fa fa-home" aria-hidden="true"></i>LOCAL</a></li>
                              <li><a href="{{ route('sala.index') }}"><i class="fa fa-home" aria-hidden="true"></i>SALA</a></li>
+                              <li><a href="{{ route('reservasala.index') }}"><i class="fa fa-home" aria-hidden="true"></i>RESERVAR SALA</a></li>
                         </ul>
                 </ul>
             </li>

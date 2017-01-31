@@ -93,6 +93,26 @@ class PermissionTableSeeder extends Seeder {
                 'display_name' => 'Excluir sala',
                 'description' => 'Excluir sala'
             ],
+            [
+                'name' => 'reservasala-list',
+                'display_name' => 'Listagem das reservas de salas',
+                'description' => 'Listar reservas de salas'
+            ],
+            [
+                'name' => 'reservasala-create',
+                'display_name' => 'Cadastrar reserva',
+                'description' => 'Cadastrar reserva'
+            ],
+            [
+                'name' => 'reservasala-edit',
+                'display_name' => 'Editar reserva',
+                'description' => 'Editar reserva'
+            ],
+            [
+                'name' => 'reservasala-delete',
+                'display_name' => 'Excluir reserva',
+                'description' => 'Excluir reserva'
+            ],
             // Telas iniciais
             
             [
