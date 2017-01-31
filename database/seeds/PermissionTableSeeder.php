@@ -21,7 +21,7 @@ class PermissionTableSeeder extends Seeder {
             [
                 'name' => 'gestao_usuario-create',
                 'display_name' => 'Cadastrar usuário',
-                'description' => 'Cradastrar novo usuário'
+                'description' => 'Cadastrar novo usuário'
             ],
             [
                 'name' => 'gestao_usuario-edit',
@@ -54,24 +54,24 @@ class PermissionTableSeeder extends Seeder {
                 'description' => 'Excluir papel'
             ],
             [
-                'name' => 'item-list',
-                'display_name' => 'Display Item Listing',
-                'description' => 'See only Listing Of Item'
+                'name' => 'local-list',
+                'display_name' => 'Listagem dos locais',
+                'description' => 'Listar locais'
             ],
             [
-                'name' => 'item-create',
-                'display_name' => 'Create Item',
-                'description' => 'Create New Item'
+                'name' => 'local-create',
+                'display_name' => 'Cadastrar local',
+                'description' => 'Cadastrar local'
             ],
             [
-                'name' => 'item-edit',
-                'display_name' => 'Edit Item',
-                'description' => 'Edit Item'
+                'name' => 'local-edit',
+                'display_name' => 'Editar local',
+                'description' => 'Editar local'
             ],
             [
-                'name' => 'item-delete',
-                'display_name' => 'Delete Item',
-                'description' => 'Delete Item'
+                'name' => 'local-delete',
+                'display_name' => 'Excluir local',
+                'description' => 'Excluir local'
             ],
             
             // Telas iniciais

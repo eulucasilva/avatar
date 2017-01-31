@@ -53,15 +53,15 @@ Route::group(['middleware' => ['auth']], function() {
         Route::delete('/{id}', ['as' => 'itemCRUD2.destroy', 'uses' => 'ItemCRUD2Controller@destroy', 'middleware' => ['permission:item-delete']]);
     });
 
-    //rotas de periodo letivo
-    Route::group(['prefix' => 'periodoLetivo', 'where' => ['id' => '[0-9]+']], function() {
-        Route::get('', ['as' => 'periodoLetivo.index', 'uses' => 'PeriodoLetivoController@index', 'middleware' => ['permission:gestao_periodo_letivo-list|gestao_periodo_letivo-create|gestao_periodo_letivo-edit|gestao_periodo_letivo-delete']]);
-        Route::get('/create', ['as' => 'periodoLetivo.create', 'uses' => 'PeriodoLetivoController@create', 'middleware' => ['permission:gestao_periodo_letivo-create']]);
-        Route::post('/create', ['as' => 'periodoLetivo.store', 'uses' => 'PeriodoLetivoController@store', 'middleware' => ['permission:gestao_periodo_letivo-create']]);
-        Route::get('/{id}', ['as' => 'periodoLetivo.show', 'uses' => 'PeriodoLetivoController@show']);
-        Route::get('/{id}/edit', ['as' => 'periodoLetivo.edit', 'uses' => 'PeriodoLetivoController@edit', 'middleware' => ['permission:gestao_periodo_letivo-edit']]);
-        Route::patch('/{id}', ['as' => 'periodoLetivo.update', 'uses' => 'PeriodoLetivoController@update', 'middleware' => ['permission:gestao_periodo_letivo-edit']]);
-        Route::delete('/{id}', ['as' => 'periodoLetivo.destroy', 'uses' => 'PeriodoLetivoController@destroy', 'middleware' => ['permission:gestao_periodo_letivo-delete']]);
+    //rotas de local
+    Route::group(['prefix' => 'local', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'local.index', 'uses' => 'LocalController@index', 'middleware' => ['permission:local-list|local-create|local-edit|local-delete']]);
+        Route::get('/create', ['as' => 'local.create', 'uses' => 'LocalController@create', 'middleware' => ['permission:local-create']]);
+        Route::post('/create', ['as' => 'local.store', 'uses' => 'LocalController@store', 'middleware' => ['permission:local-create']]);
+        Route::get('/{id}', ['as' => 'local.show', 'uses' => 'LocalController@show']);
+        Route::get('/{id}/edit', ['as' => 'local.edit', 'uses' => 'LocalController@edit', 'middleware' => ['permission:local-edit']]);
+        Route::patch('/{id}', ['as' => 'local.update', 'uses' => 'LocalController@update', 'middleware' => ['permission:local-edit']]);
+        Route::delete('/{id}', ['as' => 'local.destroy', 'uses' => 'LocalController@destroy', 'middleware' => ['permission:local-delete']]);
     });
 
     //rotas de professor

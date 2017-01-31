@@ -60,11 +60,16 @@
                 <ul class="treeview-menu">          
                     <li><a href="{{ route('users.index') }}"><i class="fa fa-users" aria-hidden="true"></i> USUÁRIOS</a></li>
                     <li><a href="{{ route('roles.index') }}"><i class="fa fa-tasks" aria-hidden="true"></i>PAPEIS</a></li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-cog" data-toggle="dropdown"></i> <span>SALA</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                             <li><a href="{{ route('local.index') }}"><i class="fa fa-home" aria-hidden="true"></i>LOCAL</a></li>
+                        </ul>
                 </ul>
             </li>
             @endpermission
 
-            @permission('viewTelaColegiado')
+            @permission('viewTelaCoordenador')
             <li class="treeview">
                 <a href="#"><i class='fa fa-link' data-toggle="dropdown"></i> <span> SOLICITAÇÕES </span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu"> 
@@ -95,7 +100,7 @@
             </li>
             @endpermission
 
-            @permission('viewTelaArea')
+            @permission('viewTelaSecretaria')
             <li><a href="#"><i class='fa fa-link'></i> <span>CADASTRAR</span></a></li>
             <li><a href="#"><i class='fa fa-link'></i> <span>PIT</span></a></li>
             <li><a href="#"><i class='fa fa-link'></i> <span>RIT</span></a></li>
@@ -105,16 +110,7 @@
             @endpermission
 
 
-            @permission('viewTelaDepartamento')
 
-            <li><a href="#"><i class='fa fa-link'></i><span>PERFIL</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i><span>PIT</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i><span>RIT</span></a></li>
-            <li><a href="{{ route('projeto.index') }}"><i class='fa fa-link'></i><span>PROJETO</span></a></li>
-            <li><a href="{{ route('curso.index') }}"><i class='fa fa-link'></i><span>CURSO</span></a></li>
-            <li><a href="{{ route('professor.index') }}"><i class='fa fa-link'></i><span>PROFESSORES</span></a></li>
-            <li><a href="{{ route('disciplina.index') }}"><i class='fa fa-link'></i><span>DISCIPLINA</span></a></li>       
-            @endpermission
 
         </ul><!-- /.sidebar-menu -->
     </section>
