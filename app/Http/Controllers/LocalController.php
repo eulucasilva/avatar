@@ -50,4 +50,10 @@ class LocalController extends Controller
         return redirect()->route('local.index')
                         ->with('success','Local atualizado com sucesso!');
     }
+    
+    public function show($id)
+    {
+        $local = Local::find($id);
+        return view('local.show',compact('local'));
+    }
 }
