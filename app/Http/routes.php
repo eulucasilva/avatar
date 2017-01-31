@@ -70,7 +70,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/create', ['as' => 'sala.create', 'uses' => 'SalaController@create', 'middleware' => ['permission:sala-create']]);
         Route::post('/create', ['as' => 'sala.store', 'uses' => 'SalaController@store', 'middleware' => ['permission:sala-create']]);
         Route::get('/{id}', ['as' => 'sala.show', 'uses' => 'SalaController@show']);
-        Route::get('/{id}/edit', ['as' => 'sala .edit', 'uses' => 'SalaController@edit', 'middleware' => ['permission:sala-edit']]);
+        Route::get('/{id}/edit', ['as' => 'sala.edit', 'uses' => 'SalaController@edit', 'middleware' => ['permission:sala-edit']]);
         Route::patch('/{id}', ['as' => 'sala.update', 'uses' => 'SalaController@update', 'middleware' => ['permission:sala-edit']]);
         Route::delete('/{id}', ['as' => 'sala.destroy', 'uses' => 'SalaController@destroy', 'middleware' => ['permission:sala-delete']]);
     });

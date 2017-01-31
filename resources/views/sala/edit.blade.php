@@ -32,7 +32,7 @@
 <div class="box box-primary">
     <div class="row">
         <div class="box-body">
-            <<div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Sala:</strong>
                     {!! Form::text('nome_sala', null, array('placeholder' => 'Digite o nome da sala','class' => 'form-control')) !!}
@@ -43,6 +43,9 @@
                     <strong>Local:</strong>
                     {!! Form::select('fk_local', $locais, null, array('class' => 'form-control')) !!}
                 </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
             </div>
         </div>
         {!! Form::close() !!}

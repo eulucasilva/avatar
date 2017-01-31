@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\ReservaSala;
+use App\Sala;
 
 class ReservaSalaController extends Controller
 {
