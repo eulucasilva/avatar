@@ -8,7 +8,7 @@
             <h2>Editar Projeto</h2>
         </div>
         @endsection   
-        <div class="pull-right">
+         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('projetos.index') }}"> Voltar</a>
         </div>
     </div>
