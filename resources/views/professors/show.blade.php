@@ -9,7 +9,7 @@
 	        </div>
 	        @endsection 
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('projetos.index') }}"> Voltar</a>
+	             <a class="btn btn-primary" href="{{ route('projetos.index') }}"> Voltar</a>
 	        </div>
 	    </div>
 	</div>

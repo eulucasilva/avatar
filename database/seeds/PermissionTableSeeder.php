@@ -13,7 +13,7 @@ class PermissionTableSeeder extends Seeder {
     public function run() {
         
         $permission = [
-            [
+            [ 
                 'name' => 'gestao_usuario-list',
                 'display_name' => 'Listagem de usuários',
                 'description' => 'Listar usuários'
