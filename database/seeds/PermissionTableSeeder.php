@@ -93,6 +93,31 @@ class PermissionTableSeeder extends Seeder {
                 'display_name' => 'Excluir sala',
                 'description' => 'Excluir sala'
             ],
+            
+            
+            //funcionario
+             [
+                'name' => 'funcionario-list',
+                'display_name' => 'Listagem dos Funcionarios',
+                'description' => 'Listar Funcionarios'
+            ],
+            [
+                'name' => 'funcionario-create',
+                'display_name' => 'Cadastrar funcionario',
+                'description' => 'Cadastrar funcionario'
+            ],
+            [
+                'name' => 'funcionario-edit',
+                'display_name' => 'Editar funcionario',
+                'description' => 'Editar funcionario'
+            ],
+            [
+                'name' => 'funcionario-delete',
+                'display_name' => 'Excluir funcionario',
+                'description' => 'Excluir funcionario'
+            ],//fim funcionario
+            
+            
             // Telas iniciais
             
             [

@@ -66,6 +66,7 @@
                              <li><a href="{{ route('local.index') }}"><i class="fa fa-home" aria-hidden="true"></i>LOCAL</a></li>
                              <li><a href="{{ route('sala.index') }}"><i class="fa fa-home" aria-hidden="true"></i>SALA</a></li>
                         </ul>
+                     <li><a href="{{ route('funcionario.index') }}"><i class="fa fa-tasks" aria-hidden="true"></i>FUNCIONÁRIO</a></li>
                 </ul>
             </li>
             @endpermission

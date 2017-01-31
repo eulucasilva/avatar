@@ -74,6 +74,17 @@ Route::group(['middleware' => ['auth']], function() {
         Route::patch('/{id}', ['as' => 'sala.update', 'uses' => 'SalaController@update', 'middleware' => ['permission:sala-edit']]);
         Route::delete('/{id}', ['as' => 'sala.destroy', 'uses' => 'SalaController@destroy', 'middleware' => ['permission:sala-delete']]);
     });
+    
+    //rotas de funcionario
+    Route::group(['prefix' => 'funcionario', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'funcionario.index', 'uses' => 'FuncionarioController@index', 'middleware' => ['permission:funcionario-list|funcionario-create|funcionario-edit|funcionario-delete']]);
+        Route::get('/create', ['as' => 'funcionario.create', 'uses' => 'FuncionarioController@create', 'middleware' => ['permission:funcionario-create']]);
+        Route::post('/create', ['as' => 'funcionario.store', 'uses' => 'FuncionarioController@store', 'middleware' => ['permission:funcionario-create']]);
+        Route::get('/{id}', ['as' => 'funcionario.show', 'uses' => 'FuncionarioController@show']);
+        Route::get('/{id}/edit', ['as' => 'funcionario.edit', 'uses' => 'FuncionarioController@edit', 'middleware' => ['permission:funcionario-edit']]);
+        Route::patch('/{id}', ['as' => 'funcionario.update', 'uses' => 'FuncionarioController@update', 'middleware' => ['permission:funcionario-edit']]);
+        Route::delete('/{id}', ['as' => 'funcionario.destroy', 'uses' => 'FuncionarioController@destroy', 'middleware' => ['permission:funcionario-delete']]);
+    });
 
     //rotas de aluno
     Route::group(['prefix' => 'aluno', 'where' => ['id' => '[0-9]+']], function() {
