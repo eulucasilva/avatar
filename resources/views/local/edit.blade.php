@@ -34,7 +34,7 @@
         <div class="box-body">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Nome do local:</strong>
+                    <strong>Local:</strong>
                     {!! Form::text('nome_local', null, array('placeholder' => 'Digite o nome do local','class' => 'form-control')) !!}
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-primary">Salvar</button>

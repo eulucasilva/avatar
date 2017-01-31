@@ -1,2 +1,1 @@
-# e-sare
-O sistema solicitado foi designado para compor a gestão departamental da Universidade Estadual do Sudoeste da Bahia (UESB), de forma a contribuir com o aprimoramento das funções deste setor. O e-SARE será composto por dois módulos importantes para o gerenciamento das informações departamentais. O primeiro diz respeito a alocação de encargos docentes, que envolve diversas solicitações do colegiado, bem como a distribuição de áreas, cargas horárias e disciplinas. O segundo módulo refere-se a elaboração do Plano Individual de Trabalho e a geração do Relatório Individual de Trabalho (PIT/RIT), que são os relatórios semestrais preenchidos pelos docentes.
+# Avatar

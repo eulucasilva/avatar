@@ -10,11 +10,11 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Cadastrar local</h2>
+            <h2>Cadastrar sala</h2>
         </div>
         @endsection 
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('local.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('sala.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
@@ -28,15 +28,21 @@
     </ul>
 </div>
 @endif
-{!! Form::open(array('route' => 'local.store','method'=>'POST')) !!}
+{!! Form::open(array('route' => 'sala.store','method'=>'POST')) !!}
 <br> 
 <div class="box box-primary">
     <div class="row">
         <div class="box-body">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Sala:</strong>
+                    {!! Form::text('nome_sala', null, array('placeholder' => 'Digite o nome da sala','class' => 'form-control')) !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Local:</strong>
-                    {!! Form::text('nome_local', null, array('placeholder' => 'Digite o nome do local','class' => 'form-control')) !!}
+                    {!! Form::select('fk_local', $locais, null, array('class' => 'form-control')) !!}
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

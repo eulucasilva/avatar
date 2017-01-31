@@ -64,15 +64,15 @@ Route::group(['middleware' => ['auth']], function() {
         Route::delete('/{id}', ['as' => 'local.destroy', 'uses' => 'LocalController@destroy', 'middleware' => ['permission:local-delete']]);
     });
 
-    //rotas de professor
-    Route::group(['prefix' => 'professor', 'where' => ['id' => '[0-9]+']], function() {
-        Route::get('', ['as' => 'professor.index', 'uses' => 'ProfessorController@index', 'middleware' => ['permission:gestao_professor-list|gestao_professor-create|gestao_professor-edit|gestao_professor-delete']]);
-        Route::get('/create', ['as' => 'professor.create', 'uses' => 'ProfessorController@create', 'middleware' => ['permission:gestao_professor-create']]);
-        Route::post('/create', ['as' => 'professor.store', 'uses' => 'ProfessorController@store', 'middleware' => ['permission:gestao_professor-create']]);
-        Route::get('/{id}', ['as' => 'professor.show', 'uses' => 'ProfessorController@show']);
-        Route::get('/{id}/edit', ['as' => 'professor.edit', 'uses' => 'ProfessorController@edit', 'middleware' => ['permission:gestao_professor-edit']]);
-        Route::patch('/{id}', ['as' => 'professor.update', 'uses' => 'ProfessorController@update', 'middleware' => ['permission:gestao_professor-edit']]);
-        Route::delete('/{id}', ['as' => 'professor.destroy', 'uses' => 'ProfessorController@destroy', 'middleware' => ['permission:gestao_professor-delete']]);
+    //rotas de sala
+    Route::group(['prefix' => 'sala', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'sala.index', 'uses' => 'SalaController@index', 'middleware' => ['permission:sala-list|sala-create|sala-edit|sala-delete']]);
+        Route::get('/create', ['as' => 'sala.create', 'uses' => 'SalaController@create', 'middleware' => ['permission:sala-create']]);
+        Route::post('/create', ['as' => 'sala.store', 'uses' => 'SalaController@store', 'middleware' => ['permission:sala-create']]);
+        Route::get('/{id}', ['as' => 'sala.show', 'uses' => 'SalaController@show']);
+        Route::get('/{id}/edit', ['as' => 'sala.edit', 'uses' => 'SalaController@edit', 'middleware' => ['permission:sala-edit']]);
+        Route::patch('/{id}', ['as' => 'sala.update', 'uses' => 'SalaController@update', 'middleware' => ['permission:sala-edit']]);
+        Route::delete('/{id}', ['as' => 'sala.destroy', 'uses' => 'SalaController@destroy', 'middleware' => ['permission:sala-delete']]);
     });
 
     //rotas de aluno

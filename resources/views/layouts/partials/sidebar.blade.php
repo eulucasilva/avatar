@@ -64,6 +64,7 @@
                         <a href="#"><i class="fa fa-cog" data-toggle="dropdown"></i> <span>SALA</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
                              <li><a href="{{ route('local.index') }}"><i class="fa fa-home" aria-hidden="true"></i>LOCAL</a></li>
+                             <li><a href="{{ route('sala.index') }}"><i class="fa fa-home" aria-hidden="true"></i>SALA</a></li>
                         </ul>
                 </ul>
             </li>

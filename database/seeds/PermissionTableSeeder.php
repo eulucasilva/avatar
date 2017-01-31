@@ -73,7 +73,26 @@ class PermissionTableSeeder extends Seeder {
                 'display_name' => 'Excluir local',
                 'description' => 'Excluir local'
             ],
-            
+            [
+                'name' => 'sala-list',
+                'display_name' => 'Listagem das salas',
+                'description' => 'Listar salas'
+            ],
+            [
+                'name' => 'sala-create',
+                'display_name' => 'Cadastrar sala',
+                'description' => 'Cadastrar sala'
+            ],
+            [
+                'name' => 'sala-edit',
+                'display_name' => 'Editar sala',
+                'description' => 'Editar sala'
+            ],
+            [
+                'name' => 'sala-delete',
+                'display_name' => 'Excluir sala',
+                'description' => 'Excluir sala'
+            ],
             // Telas iniciais
             
             [
