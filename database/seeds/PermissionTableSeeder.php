@@ -11,9 +11,9 @@ class PermissionTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        
+
         $permission = [
-            [ 
+            [
                 'name' => 'gestao_usuario-list',
                 'display_name' => 'Listagem de usuários',
                 'description' => 'Listar usuários'
@@ -114,6 +114,45 @@ class PermissionTableSeeder extends Seeder {
                 'display_name' => 'Excluir reserva',
                 'description' => 'Excluir reserva'
             ],
+            [
+                'name' => 'area-list',
+                'display_name' => 'Listagem das áreas de atuação',
+                'description' => 'Listar áreas de atuação'
+            ],
+            [
+                'name' => 'area-create',
+                'display_name' => 'Cadastrar área de atuação',
+                'description' => 'Cadastrar área de atuação'
+            ],
+            [
+                'name' => 'area-edit',
+                'display_name' => 'Editar área de atuação',
+                'description' => 'Editar área de atuação'
+            ],
+            [
+                'name' => 'area-delete',
+                'display_name' => 'Excluir área de atuação',
+                'description' => 'Excluir área de atuação'
+            ],
+            [
+                'name' => 'grupo-list',
+                'display_name' => 'Listagem dos grupos de pesquisa',
+                'description' => 'Listar grupos de pesquisa'
+            ],
+            [
+                'name' => 'grupo-create',
+                'display_name' => 'Cadastrar grupo de pesquisa',
+                'description' => 'Cadastrar grupo de pesquisa'
+            ],
+            [
+                'name' => 'grupo-edit',
+                'display_name' => 'Editar grupo de pesquisa',
+                'description' => 'Editar grupo de pesquisa'
+            ],
+            [
+                'name' => 'grupo-delete',
+                'display_name' => 'Excluir grupo de pesquisa',
+                'description' => 'Excluir grupo de pesquisa'
             //projeto
             [   
                 'name' => 'projeto-list',
@@ -159,7 +198,7 @@ class PermissionTableSeeder extends Seeder {
             //aluno
             
             [
-				'name' => 'aluno-list',
+                'name' => 'aluno-list',
                 'display_name' => 'Listagem das reservas de salas',
                 'description' => 'Listar reservas de salas'
             ],
@@ -178,8 +217,49 @@ class PermissionTableSeeder extends Seeder {
                 'display_name' => 'Excluir reserva',
                 'description' => 'Excluir reserva'
             ],
+             //curso
+             [
+                'name' => 'curso-list',
+                'display_name' => 'Listagem das reservas de salas',
+                'description' => 'Listar reservas de salas'
+            ],
+            [
+                'name' => 'curso-create',
+                'display_name' => 'Cadastrar reserva',
+                'description' => 'Cadastrar reserva'
+            ],
+            [
+                'name' => 'curso-edit',
+                'display_name' => 'Editar reserva',
+                'description' => 'Editar reserva'
+            ],
+            [
+                'name' => 'curso-delete',
+                'display_name' => 'Excluir reserva',
+                'description' => 'Excluir reserva'
+            ],
+                //visitante
+                			[
+                'name' => 'visitante-list',
+                'display_name' => 'Listagem das reservas de salas',
+                'description' => 'Listar reservas de salas'
+            ],
+            [
+                'name' => 'visitante-create',
+                'display_name' => 'Cadastrar reserva',
+                'description' => 'Cadastrar reserva'
+            ],
+            [
+                'name' => 'visitante-edit',
+                'display_name' => 'Editar reserva',
+                'description' => 'Editar reserva'
+            ],
+            [
+                'name' => 'visitante-delete',
+                'display_name' => 'Excluir reserva',
+                'description' => 'Excluir reserva'
+            ],
             // Telas iniciais
-            
             [
                 'name' => 'viewTelaCoordenador',
                 'display_name' => 'Tela de coordenador',
