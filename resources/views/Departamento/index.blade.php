@@ -5,12 +5,12 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Frequencia</h2>
+            <h2>Departamento</h2>
         </div>
         @endsection 
         <div class="pull-right">
-            @permission('frequencia-create')
-            <a class="btn btn-primary" href="{{ route('frequencia.create') }}"><span class="glyphicon glyphicon-plus"></span> Cadastrar frequência</a>
+            @permission('departamento-create')
+            <a class="btn btn-primary" href="{{ route('departamento.create') }}"><span class="glyphicon glyphicon-plus"></span> Cadastrar frequência</a>
             @endpermission
         </div>
     </div>
@@ -33,22 +33,22 @@
             <th width="280px">Ação</th>
         </tr>
 
-        @foreach ($frequencias as $key => $frequencia)
+        @foreach ($departamentos as $key => $departamento)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $frequencia->funcionario->nome_funcionario }}</td>
-            <td>{{ $frequencia->horaentrada_frequencia }}</td>
-            <td>{{ $frequencia->horasainda_frequencia }}</td>
-            <td>{{ $frequencia->status_frequencia }}</td>
+            <td>{{ $departamento->funcionario->nome_funcionario }}</td>
+            <td>{{ $departamento->horaentrada_frequencia }}</td>
+            <td>{{ $departamento->horasainda_frequencia }}</td>
+            <td>{{ $departamento->status_frequencia }}</td>
 
             <td>
-                @permission('frequencia-create')
-                <a class="btn btn-info" href="{{ route('frequencia.show',$frequencia->id) }}">Visualizar</a>
+                @permission('departamento-create')
+                <a class="btn btn-info" href="{{ route('departamento.show',$departamento->id) }}">Visualizar</a>
                 @endpermission
-                @permission('frequencia-edit')
-                <a class="btn btn-primary" href="{{ route('frequencia.edit',$frequencia->id) }}">Editar</a>
+                @permission('departamento-edit')
+                <a class="btn btn-primary" href="{{ route('departamento.edit',$departamento->id) }}">Editar</a>
                 @endpermission
-                @permission('frequencia-delete')
+                @permission('departamento-delete')
                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Excluir</a>
                 @endpermission
             </td>
@@ -56,10 +56,10 @@
         @endforeach
     </table>
 </div>
-{!! $frequencias->render() !!}
+{!! $departamentos->render() !!}
 @endsection
 
-@if(!empty($frequencia))
+@if(!empty($departamento))
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -72,7 +72,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                {!! Form::open(['method' => 'DELETE','route' => ['frequencia.destroy', $frequencia->id],'style'=>'display:inline']) !!}
+                {!! Form::open(['method' => 'DELETE','route' => ['departamento.destroy', $departamento->id],'style'=>'display:inline']) !!}
                 {!! Form::submit('OK', ['class' => 'btn btn-primary']) !!}
                 {!! Form::close() !!}
             </div>

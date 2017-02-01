@@ -5,11 +5,11 @@
     <div class="col-lg-12 margin-tb">
          @section('contentheader_title')
         <div class="pull-left">
-            <h2>Cadastrar usuário</h2>
+            <h2>Cadastrar Aluno</h2>
         </div>
          @endsection  
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('aluno.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
@@ -22,38 +22,46 @@
     </ul>
 </div>
 @endif
-{!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
+{!! Form::open(array('route' => 'aluno.store','method'=>'POST')) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Nome completo:</strong>
-            {!! Form::text('name', null, array('placeholder' => 'Digite seu nome completo','class' => 'form-control')) !!}
+            <strong>Nome:</strong>
+            {!! Form::text('nome', null, array('placeholder' => 'Digite o Nome do Aluno','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Email:</strong>
-            {!! Form::text('email', null, array('placeholder' => 'Digite seu email','class' => 'form-control')) !!}
+            {!! Form::text('email', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Senha:</strong>
-            {!! Form::password('password', array('placeholder' => 'Digite sua senha','class' => 'form-control')) !!}
+            <strong>Telefone:</strong>
+            {!! Form::text('telefone', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Confirmar senha:</strong>
-            {!! Form::password('confirm-password', array('placeholder' => 'Confirmar senha','class' => 'form-control')) !!}
+            <strong>Matricula:</strong>
+            {!! Form::text('matricula', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Papel:</strong>
-            {!! Form::select('fk_role', $roles, null, array('class' => 'form-control')) !!}
+            <strong>Bolsista:</strong>
+            <br>
+            {!! Form::radio('bolsista', 'Não', array('class' => 'form-control')) !!}<p>Não</p>
+            {!! Form::radio('bolsista', 'Sim') !!}<p>Sim</p>
         </div>
-    </div>  
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Data de Nascimento:</strong>
+            {!! Form::date('data_nasc', null, array('placeholder' => '','class' => 'form-control')) !!}
+        </div>
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>

@@ -14,8 +14,8 @@ class CreateFrequenciasTable extends Migration
     {
         Schema::create('frequencias', function (Blueprint $table) {
             $table->increments('id');
-            $table->DateTime('horaentrada_frequencia');
-            $table->DateTime('horasainda_frequencia');
+            $table->string('horaentrada_frequencia');
+            $table->string('horasainda_frequencia');
             $table->string('status_frequencia');
             $table->integer('fk_funcionario')->unsigned();
             $table->foreign('fk_funcionario')->references('id')->on('funcionarios');

@@ -5,24 +5,24 @@
     <div class="col-lg-12 margin-tb">
          @section('contentheader_title')
         <div class="pull-left">
-            <h2>Cadastrar usuário</h2>
+            <h2>Editar Projeto</h2>
         </div>
-         @endsection  
+        @endsection   
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('projetos.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
 @if (count($errors) > 0)
-<div class="alert alert-danger"
-     <ul>
+<div class="alert alert-danger">
+    <ul>
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
         @endforeach
     </ul>
 </div>
 @endif
-{!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
+{!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -53,7 +53,7 @@
             <strong>Papel:</strong>
             {!! Form::select('fk_role', $roles, null, array('class' => 'form-control')) !!}
         </div>
-    </div>  
+    </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>

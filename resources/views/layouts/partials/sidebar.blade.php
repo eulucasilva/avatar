@@ -63,10 +63,17 @@
                     <li class="treeview">
                         <a href="#"><i class="fa fa-cog" data-toggle="dropdown"></i> <span>SALA</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
-                             <li><a href="{{ route('local.index') }}"><i class="fa fa-home" aria-hidden="true"></i>LOCAL</a></li>
-                             <li><a href="{{ route('sala.index') }}"><i class="fa fa-home" aria-hidden="true"></i>SALA</a></li>
+                            <li><a href="{{ route('local.index') }}"><i class="fa fa-home" aria-hidden="true"></i>LOCAL</a></li>
+                            <li><a href="{{ route('sala.index') }}"><i class="fa fa-home" aria-hidden="true"></i>SALA</a></li>
+                            <li><a href="{{ route('reservasala.index') }}"><i class="fa fa-home" aria-hidden="true"></i>RESERVAR SALA</a></li>
                         </ul>
-                     <li><a href="{{ route('funcionario.index') }}"><i class="fa fa-tasks" aria-hidden="true"></i>FUNCIONÁRIO</a></li>
+                    </li>
+                    <li class="treeview">
+                        <a href="#"><i class="fa fa-cog" data-toggle="dropdown"></i> <span>PROJETO</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{ route('area.index') }}"><i class="fa fa-home" aria-hidden="true"></i>ÁREA DE ATUAÇÃO</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             @endpermission
@@ -89,7 +96,6 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-link' data-toggle="dropdown"></i> <span> ATIVIDADES </span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu"> 
-                    <li><a href="{{ route('atividadeEnsino.index') }}">ENSINO</a></li>
                     <li><a href="{{ route('atividadeComplementar.index') }}">COMPLEMENTAR</a></li>
                     <li><a href="{{ route('atividadePesquisa.index') }}">PESQUISA</a></li>
                     <li><a href="{{ route('atividadeProjetoExtensao.index') }}">EXTENÇÃO</a></li>

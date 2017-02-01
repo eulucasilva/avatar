@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Frequencia;
-use App\Funcionario;
+use App\Departamento;
 
-class FrequenciaController extends Controller {
+
+class DepartamentoController extends Controller {
 
     public function index(Request $request) {
         $departamentos = Departamento::orderBy('id', 'DESC')->paginate(5);

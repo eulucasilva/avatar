@@ -56,6 +56,12 @@ class SalaController extends Controller
                         ->with('success','Sala atualizada com sucesso!');
     }
     
+    public function destroy($id) {
+        Sala::find($id)->delete();
+        return redirect()->route('sala.index')
+                        ->with('success', 'Sala excluída com sucesso!');
+    }
+    
     public function show($id)
     {
         $sala = Sala::find($id);
