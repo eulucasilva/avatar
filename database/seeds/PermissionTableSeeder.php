@@ -153,6 +153,7 @@ class PermissionTableSeeder extends Seeder {
                 'name' => 'grupo-delete',
                 'display_name' => 'Excluir grupo de pesquisa',
                 'description' => 'Excluir grupo de pesquisa'
+            ],
             //projeto
             [   
                 'name' => 'projeto-list',

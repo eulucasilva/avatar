@@ -5,12 +5,12 @@
     <div class="col-lg-12 margin-tb">
         @section('contentheader_title')
         <div class="pull-left">
-            <h2>Alunos</h2>
+            <h2>Cursos</h2>
         </div>
         @endsection
         
         <div class="pull-right">
-            @permission('aluno-create')
+            @permission('curso-create')
             <a class="btn btn-primary" href="{{ route('aluno.create') }}"><span class="glyphicon glyphicon-plus"></span> Cadastrar Projeto</a>
             @endpermission
         </div>
@@ -28,40 +28,24 @@
         <tr>
             <th>No</th>
             <th>Nome</th>
-            <th>Email</th>
-            <th>Telefon</th>
-            <th>Matricula</th>
-            <th>Bolsista</th>
-            <th>Data de Nascimento</th>
-            <th>Curso</th>
+            <th>Departamento</th>
             <th width="280px">Ação</th>
         </tr>
-        @foreach ($data as $key => $aluno)
+        @foreach ($data as $key => $curso)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $aluno->nome }}</td>
-            <td>{{ $aluno->emaill }}</td>
-            <td>{{ $aluno->telefone }}</td>
-            <td>{{ $aluno->matricula }}</td> 
-            <td>{{ $aluno->bolsista }}</td>
-            <td>{{ $aluno->data_nasc }}</td>
-            <td>{{ $aluno->curso }}</td>
+            <td>{{ $curso->nomeCurso }}</td>
+            <td>{{ $aluno->fk_departamento }}</td>
+            
             <td>
-                @if(!empty($aluno->roles))
-                @foreach($aluno->roles as $v)
-                <label class="label label-success">{{ $v->display_name }}</label>
-                @endforeach
-                @endif
-            </td>
-            <td>
-                @permission('gestao_aluno-create')
-                <a class="btn btn-info" href="{{ route('alunos.show',$aluno->id) }}">Visualizar</a>
+                @permission('curso-create')
+                <a class="btn btn-info" href="{{ route('curso.show',$cruso->id) }}">Visualizar</a>
                 @endpermission
                 @permission('gestao_aluno-edit')
-                <a class="btn btn-primary" href="{{ route('alunos.edit',$aluno->id) }}">Editar</a>
+                <a class="btn btn-primary" href="{{ route('curso.edit',$curso->id) }}">Editar</a>
                 @endpermission
                 @permission('gestao_aluno-delete')
-                {!! Form::open(['method' => 'DELETE','route' => ['alunos.destroy', $aluno->id],'style'=>'display:inline']) !!}
+                {!! Form::open(['method' => 'DELETE','route' => ['curso.destroy', $curso->id],'style'=>'display:inline']) !!}
                 {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
                 @endpermission
