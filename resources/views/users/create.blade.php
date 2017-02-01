@@ -53,7 +53,7 @@
             <strong>Papel:</strong>
             {!! Form::select('fk_role', $roles, null, array('class' => 'form-control')) !!}
         </div>
-    </div>
+    </div>  
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>

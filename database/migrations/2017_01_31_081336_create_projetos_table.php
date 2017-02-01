@@ -20,6 +20,8 @@ class CreateProjetosTable extends Migration
             $table->string('objetivoEspc');
             $table->string('resultadosEsperados');
             $table->string('financiamento');
+            $table->string('fonteFinanciamento');
+            $table->string('tipoPesquisa');
             $table->timestamps();
         });
     }

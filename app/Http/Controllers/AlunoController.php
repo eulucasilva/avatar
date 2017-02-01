@@ -40,16 +40,15 @@ class AlunoController extends Controller {
      */
     public function store(Request $request) {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:alunos,email',
+                        'nome' => 'required',
+                        'email' => 'required|email|unique:alunos,email',
 			'telefone' => 'required',
 			'bolsista' => 'required',
-			'dataNasc' => 'required',
+			'data_nasc' => 'required',
         ]);
 
-       
-        $aluno = Aluno::create($input);
-       
+       Aluno::create($request->all());
+        
 
         return redirect()->route('aluno.index')
                         ->with('success', 'Aluno cadastrado com sucesso!');
@@ -88,7 +87,7 @@ class AlunoController extends Controller {
      */
     public function update(Request $request, $id) {
         $this->validate($request, [
-            'name' => 'required',
+            'nome' => 'required',
             'email' => 'required|email|unique:alunos,email',
 			'telefone' => 'required',
 			'bolsista' => 'required',

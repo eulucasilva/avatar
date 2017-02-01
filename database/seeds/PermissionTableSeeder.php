@@ -93,6 +93,7 @@ class PermissionTableSeeder extends Seeder {
                 'display_name' => 'Excluir sala',
                 'description' => 'Excluir sala'
             ],
+            //reserva Sala
             [
                 'name' => 'reservasala-list',
                 'display_name' => 'Listagem das reservas de salas',
@@ -110,6 +111,70 @@ class PermissionTableSeeder extends Seeder {
             ],
             [
                 'name' => 'reservasala-delete',
+                'display_name' => 'Excluir reserva',
+                'description' => 'Excluir reserva'
+            ],
+            //projeto
+            [   
+                'name' => 'projeto-list',
+                'display_name' => 'Listagem das reservas de salas',
+                'description' => 'Listar reservas de salas'
+            ],
+            [
+                'name' => 'projeto-create',
+                'display_name' => 'Cadastrar reserva',
+                'description' => 'Cadastrar reserva'
+            ],
+            [
+                'name' => 'projeto-edit',
+                'display_name' => 'Editar reserva',
+                'description' => 'Editar reserva'
+            ],
+            [
+                'name' => 'projeto-delete',
+                'display_name' => 'Excluir reserva',
+                'description' => 'Excluir reserva'
+            ],
+            //profesor
+            [
+				'name' => 'professor-list',
+                'display_name' => 'Listagem das reservas de salas',
+                'description' => 'Listar reservas de salas'
+            ],
+            [
+                'name' => 'professor-create',
+                'display_name' => 'Cadastrar reserva',
+                'description' => 'Cadastrar reserva'
+            ],
+            [
+                'name' => 'professor-edit',
+                'display_name' => 'Editar reserva',
+                'description' => 'Editar reserva'
+            ],
+            [
+                'name' => 'professor-delete',
+                'display_name' => 'Excluir reserva',
+                'description' => 'Excluir reserva'
+            ],
+            //aluno
+            
+            [
+				'name' => 'aluno-list',
+                'display_name' => 'Listagem das reservas de salas',
+                'description' => 'Listar reservas de salas'
+            ],
+            [
+                'name' => 'aluno-create',
+                'display_name' => 'Cadastrar reserva',
+                'description' => 'Cadastrar reserva'
+            ],
+            [
+                'name' => 'aluno-edit',
+                'display_name' => 'Editar reserva',
+                'description' => 'Editar reserva'
+            ],
+            [
+                'name' => 'aluno-delete',
                 'display_name' => 'Excluir reserva',
                 'description' => 'Excluir reserva'
             ],

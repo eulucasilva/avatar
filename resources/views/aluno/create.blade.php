@@ -51,13 +51,15 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Bolsista:</strong>
-            {!! Form::text('bolsista', null, array('placeholder' => '','class' => 'form-control')) !!}
+            <br>
+            {!! Form::radio('bolsista', 'Não', array('class' => 'form-control')) !!}<p>Não</p>
+            {!! Form::radio('bolsista', 'Sim') !!}<p>Sim</p>
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Data de Nascimento:</strong>
-            {!! Form::text('data_nasc', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {!! Form::date('data_nasc', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

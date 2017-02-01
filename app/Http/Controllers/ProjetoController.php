@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Projeto;
-use App\Role;
+use App\Professor;
 use DB;
 use Hash;
 
@@ -18,7 +18,7 @@ class ProjetoController extends Controller {
      */
     public function index(Request $request) {
         $data = Projeto::orderBy('id', 'DESC')->paginate(5);
-        return view('projetos.index', compact('data'))
+        return view('projeto.index', compact('data'))
                         ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -28,8 +28,8 @@ class ProjetoController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $professors = Role::lists('display_name', 'id');
-        return view('projetos.create', compact('professors'));
+        $professors = Professor::lists('nome', 'id');
+        return view('projeto.create', compact('professors'));
     }
 
     /**
@@ -40,8 +40,8 @@ class ProjetoController extends Controller {
      */
     public function store(Request $request) {
         $this->validate($request, [
-            'titulo' => 'required',
-            'objetivoGeral' => 'required',
+                        'titulo' => 'required',
+                        'objetivoGeral' => 'required',
 			'fk_professor' => 'required',
 			'objetivoEspec' => 'required',
 			'resultadosEsperados' => 'required',
@@ -52,10 +52,11 @@ class ProjetoController extends Controller {
         ]);
 
        
-        $projeto = Projeto::create($input);
-       
+        Projeto::create($request->all());
 
-        return redirect()->route('projetos.index')
+           
+
+        return redirect()->route('projeto.index')
                         ->with('success', 'Projeto cadastrado com sucesso!');
     }
 
@@ -67,7 +68,7 @@ class ProjetoController extends Controller {
      */
     public function show($id) {
         $projeto = Projeto::find($id);
-        return view('projetos.show', compact('projeto'));
+        return view('projeto.show', compact('projeto'));
     }
 
     /**
@@ -80,7 +81,7 @@ class ProjetoController extends Controller {
         $projeto = Projeto::find($id);
              
 
-        return view('projetos.edit', compact('projeto'));
+        return view('projeto.edit', compact('projeto'));
     }
 
     /**
@@ -112,7 +113,7 @@ class ProjetoController extends Controller {
 
         
 
-        return redirect()->route('projetos.index')
+        return redirect()->route('projeto.index')
                         ->with('success', 'Projeto atualizado com sucesso!');
     }
 
@@ -124,7 +125,7 @@ class ProjetoController extends Controller {
      */
     public function destroy($id) {
         Projeto::find($id)->delete();
-        return redirect()->route('projetos.index')
+        return redirect()->route('projeto.index')
                         ->with('success', 'Usuário excluído com sucesso!');
     }
 

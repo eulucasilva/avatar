@@ -9,12 +9,12 @@
         </div>
         @endsection
         <div class="pull-left">
-            @permission('relatorioProfessor')
+            @permission('relatorioProjeto')
             <a class="btn btn-default" href="{{ route('relatorio.projeto') }}">Gerar relatório</a>
             @endpermission
         </div>
         <div class="pull-right">
-            @permission('gestao_projeto-create')
+            @permission('projeto-create')
             <a class="btn btn-primary" href="{{ route('projeto.create') }}"><span class="glyphicon glyphicon-plus"></span> Cadastrar Projeto</a>
             @endpermission
         </div>
@@ -46,7 +46,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $projeto->titulo }}</td>
             <td>{{ $projeto->objetivoGeral }}</td>
-            <td>{{ $projeto->professor_idCoordenador }}</td>
+            <td>{{ $projeto->fk_professor }}</td>
             <td>{{ $projeto->objetivoEspec }}</td> 
             <td>{{ $projeto->resultadoEsperados }}</td>
             <td>{{ $projeto->finaciamento }}</td>
@@ -54,20 +54,16 @@
             <td>{{ $projeto->fonteFinancimento }}</td>
             <td>{{ $projeto->grupoPesquisaProjeto }}</td>
             <td>
-                @if(!empty($projeto->roles))
-                @foreach($projeto->roles as $v)
-                <label class="label label-success">{{ $v->display_name }}</label>
-                @endforeach
-                @endif
+               
             </td>
             <td>
-                @permission('gestao_projeto-create')
+                @permission('projeto-create')
                 <a class="btn btn-info" href="{{ route('projetos.show',$projeto->id) }}">Visualizar</a>
                 @endpermission
-                @permission('gestao_projeto-edit')
+                @permission('projeto-edit')
                 <a class="btn btn-primary" href="{{ route('projetos.edit',$projeto->id) }}">Editar</a>
                 @endpermission
-                @permission('gestao_projeto-delete')
+                @permission('projeto-delete')
                 {!! Form::open(['method' => 'DELETE','route' => ['projetos.destroy', $projeto->id],'style'=>'display:inline']) !!}
                 {!! Form::submit('Excluir', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}

@@ -18,7 +18,7 @@ class ProfessorController extends Controller {
      */
     public function index(Request $request) {
         $data = Professor::orderBy('id', 'DESC')->paginate(5);
-        return view('professors.index', compact('data'))
+        return view('professor.index', compact('data'))
                         ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -28,9 +28,9 @@ class ProfessorController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        $departamentos = Role::lists('display_name', 'id');
-        $cursos = Role::lists('display_name', 'id');
-        return view('professors.create', compact('departamentos', 'cursos'));
+        $departamentos = Departamento::lists('display_name', 'id');
+        $cursos = Curso::lists('display_nme', 'id');
+        return view('professor.create', compact('departamentos', 'cursos'));
     }
 
     /**
@@ -56,10 +56,10 @@ class ProfessorController extends Controller {
         ]);
 
 
-        $projeto = Professor::create($input);
+        $professor = Professor::create($input);
 
 
-        return redirect()->route('professors.index')
+        return redirect()->route('professor.index')
                         ->with('success', 'Professor cadastrado com sucesso!');
     }
 
@@ -70,8 +70,8 @@ class ProfessorController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        $professor= Projeto::find($id);
-        return view('professor.show', compact('projeto'));
+        $professor = Professor::find($id);
+        return view('professor.show', compact('Professor'));
     }
 
     /**
@@ -81,10 +81,10 @@ class ProfessorController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $projeto = Projeto::find($id);
+        $Professor = Professor::find($id);
 
 
-        return view('professor.edit', compact('projeto'));
+        return view('professor.edit', compact('Professor'));
     }
 
     /**
@@ -113,14 +113,14 @@ class ProfessorController extends Controller {
         $input = $request->all();
 
         $professor = Professor::find($id);
-        $projeto->update($input);
+       $professor->update($input);
 
 
 
 
 
         return redirect()->route('professor.index')
-                        ->with('success', 'Projeto atualizado com sucesso!');
+                        ->with('success', 'Professor atualizado com sucesso!');
     }
 
     /**
@@ -130,9 +130,9 @@ class ProfessorController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        Projeto::find($id)->delete();
+        Professor::find($id)->delete();
         return redirect()->route('professor.index')
-                        ->with('success', 'Projeto excluído com sucesso!');
+                        ->with('success', 'Professor excluído com sucesso!');
     }
 
 }

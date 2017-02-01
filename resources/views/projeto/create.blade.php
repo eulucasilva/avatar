@@ -9,7 +9,7 @@
         </div>
          @endsection  
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('projetos.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('projeto.index') }}"> Voltar</a>
         </div>
     </div>
 </div>
@@ -22,7 +22,7 @@
     </ul>
 </div>
 @endif
-{!! Form::open(array('route' => 'projetos.store','method'=>'POST')) !!}
+{!! Form::open(array('route' => 'projeto.store','method'=>'POST')) !!}
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
@@ -33,7 +33,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Objetivo Geral:</strong>
-            {!! Form::text('objetivoGeral', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {!! Form::textarea('objetivoGeral', null, array('placeholder' => '','class' => 'form-control', 'size'=> '30x6')) !!}
         </div>
     </div>
    
@@ -46,19 +46,19 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Objetivo Especifico:</strong>
-            {!! Form::text('objetivoEspec', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {!! Form::textarea('objetivoEspec', null, array('placeholder' => '','class' => 'form-control', 'size'=> '30x6')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Resultados Esperados:</strong>
-            {!! Form::text('resultadosEsperados', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {!! Form::textarea('resultadosEsperados', null, array('placeholder' => '','class' => 'form-control','size'=> '30x6')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Financiamento:</strong>
-            {!! Form::text('financimento', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {!! Form::text('financiamento', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
@@ -70,7 +70,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Fonte de Financiamento:</strong>
-            {!! Form::text('fonteFinancimanto', null, array('placeholder' => '','class' => 'form-control')) !!}
+            {!! Form::text('fonteFinanciamento', null, array('placeholder' => '','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">

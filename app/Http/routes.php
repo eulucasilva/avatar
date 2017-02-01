@@ -209,14 +209,14 @@ Route::group(['middleware' => ['auth']], function() {
         Route::delete('/{id}', ['as' => 'professor.destroy', 'uses' => 'ProfessorController@destroy', 'middleware' => ['permission:professor-delete']]);
     });
 //rotas de projetos
-    Route::group(['prefix' => 'projetos', 'where' => ['id' => '[0-9]+']], function() {
-        Route::get('', ['as' => 'projetos.index', 'uses' => 'ProjetoController@index', 'middleware' => ['permission:projeto-list|projeto-create|projeto-edit|projeto-delete']]);
-        Route::get('/create', ['as' => 'projetos.create', 'uses' => 'ProjetoController@create', 'middleware' => ['permission:projeto-create']]);
-        Route::post('/create', ['as' => 'projetos.store', 'uses' => 'ProjetoController@store', 'middleware' => ['permission:projeto-create']]);
-        Route::get('/{id}', ['as' => 'projetos.show', 'uses' => 'ProjetoController@show']);
-        Route::get('/{id}/edit', ['as' => 'projetos.edit', 'uses' => 'ProjetoController@edit', 'middleware' => ['permission:projeto-edit']]);
-        Route::patch('/{id}', ['as' => 'projetos.update', 'uses' => 'ProjetoController@update', 'middleware' => ['permission:projeto-edit']]);
-        Route::delete('/{id}', ['as' => 'projetos.destroy', 'uses' => 'ProjetoController@destroy', 'middleware' => ['permission:projeto-delete']]);
+    Route::group(['prefix' => 'projeto', 'where' => ['id' => '[0-9]+']], function() {
+        Route::get('', ['as' => 'projeto.index', 'uses' => 'ProjetoController@index', 'middleware' => ['permission:projeto-list|projeto-create|projeto-edit|projeto-delete']]);
+        Route::get('/create', ['as' => 'projeto.create', 'uses' => 'ProjetoController@create', 'middleware' => ['permission:projeto-create']]);
+        Route::post('/create', ['as' => 'projeto.store', 'uses' => 'ProjetoController@store', 'middleware' => ['permission:projeto-create']]);
+        Route::get('/{id}', ['as' => 'projeto.show', 'uses' => 'ProjetoController@show']);
+        Route::get('/{id}/edit', ['as' => 'projeto.edit', 'uses' => 'ProjetoController@edit', 'middleware' => ['permission:projeto-edit']]);
+        Route::patch('/{id}', ['as' => 'projeto.update', 'uses' => 'ProjetoController@update', 'middleware' => ['permission:projeto-edit']]);
+        Route::delete('/{id}', ['as' => 'projeto.destroy', 'uses' => 'ProjetoController@destroy', 'middleware' => ['permission:projeto-delete']]);
     });
     //rotas de atividade complementar
     Route::group(['prefix' => 'atividade_complementar', 'where' => ['id' => '[0-9]+']], function() {
