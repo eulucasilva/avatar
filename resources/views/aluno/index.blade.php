@@ -10,7 +10,11 @@
         @endsection
         
         <div class="pull-right">
+
+            @permission('gestao_aluno-create')
+
             @permission('aluno-create')
+
             <a class="btn btn-primary" href="{{ route('aluno.create') }}"><span class="glyphicon glyphicon-plus"></span> Cadastrar Projeto</a>
             @endpermission
         </div>

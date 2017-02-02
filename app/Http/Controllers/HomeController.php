@@ -37,7 +37,7 @@ class HomeController extends Controller
                     $role = $v->name ;
                 }
 
-            if($role == "Administrador"){ return view('telasIniciais.TelaInicialAdministrador');} 
+            if($role == "Administrador do Sistema"){ return view('telasIniciais.TelaInicialAdministrador');} 
             else if($role == "Coordenador"){ return view('telasIniciais.TelaInicialCoordenador');}
             else if($role == "Secretaria"){ return view('telasIniciais.TelaInicialSecretaria');}
             else if($role == "Professor"){ return view('telasIniciais.TelaInicialProfessor');}

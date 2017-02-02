@@ -93,6 +93,99 @@ class PermissionTableSeeder extends Seeder {
                 'display_name' => 'Excluir sala',
                 'description' => 'Excluir sala'
             ],
+
+            //funcionario
+             [
+                'name' => 'funcionario-list',
+                'display_name' => 'Listagem dos Funcionarios',
+                'description' => 'Listar Funcionarios'
+            ],
+            [
+                'name' => 'funcionario-create',
+                'display_name' => 'Cadastrar funcionario',
+                'description' => 'Cadastrar funcionario'
+            ],
+            [
+                'name' => 'funcionario-edit',
+                'display_name' => 'Editar funcionario',
+                'description' => 'Editar funcionario'
+            ],
+            [
+                'name' => 'funcionario-delete',
+                'display_name' => 'Excluir funcionario',
+                'description' => 'Excluir funcionario'
+            ],//fim funcionario
+            
+            
+             //frequencia
+             [
+                'name' => 'frequencia-list',
+                'display_name' => 'Listagem dos Frequencia',
+                'description' => 'Listar Frequencia'
+            ],
+            [
+                'name' => 'frequencia-create',
+                'display_name' => 'Cadastrar Frequencia',
+                'description' => 'Cadastrar Frequencia'
+            ],
+            [
+                'name' => 'frequencia-edit',
+                'display_name' => 'Editar Frequencia',
+                'description' => 'Editar Frequencia'
+            ],
+            [
+                'name' => 'frequencia-delete',
+                'display_name' => 'Excluir Frequencia',
+                'description' => 'Excluir Frequencia'
+            ],//fim frequencia
+            
+             //colaborador
+             [
+                'name' => 'colaborador-list',
+                'display_name' => 'Listagem dos colaborador',
+                'description' => 'Listar colaborador'
+            ],
+            [
+                'name' => 'colaborador-create',
+                'display_name' => 'Cadastrar colaborador',
+                'description' => 'Cadastrar colaborador'
+            ],
+            [
+                'name' => 'colaborador-edit',
+                'display_name' => 'Editar Colaborador',
+                'description' => 'Editar Colaborador'
+            ],
+            [
+                'name' => 'colaborador-delete',
+                'display_name' => 'Excluir Colaborador',
+                'description' => 'Excluir Colaborador'
+            ],//fim colaborador
+            
+            
+              //departamento
+             [
+                'name' => 'departamento-list',
+                'display_name' => 'Listagem dos departamento',
+                'description' => 'Listar departamento'
+            ],
+            [
+                'name' => 'departamento-create',
+                'display_name' => 'Cadastrar departamento',
+                'description' => 'Cadastrar departamento'
+            ],
+            [
+                'name' => 'departamento-edit',
+                'display_name' => 'Editar departamento',
+                'description' => 'Editar departamento'
+            ],
+            [
+                'name' => 'departamento-delete',
+                'display_name' => 'Excluir departamento',
+                'description' => 'Excluir departamento'
+            ],//fim departamento
+            
+            // Telas iniciais
+
             //reserva Sala
             [
                 'name' => 'reservasala-list',
@@ -197,6 +290,7 @@ class PermissionTableSeeder extends Seeder {
                 'description' => 'Excluir reserva'
             ],
             //aluno
+
             
             [
                 'name' => 'aluno-list',

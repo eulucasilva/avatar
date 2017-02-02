@@ -96,7 +96,6 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-link' data-toggle="dropdown"></i> <span> ATIVIDADES </span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu"> 
-                    <li><a href="{{ route('atividadeEnsino.index') }}">ENSINO</a></li>
                     <li><a href="{{ route('atividadeComplementar.index') }}">COMPLEMENTAR</a></li>
                     <li><a href="{{ route('atividadePesquisa.index') }}">PESQUISA</a></li>
                     <li><a href="{{ route('atividadeProjetoExtensao.index') }}">EXTENÇÃO</a></li>
