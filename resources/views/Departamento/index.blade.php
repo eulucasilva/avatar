@@ -27,19 +27,17 @@
         <tr>
             <th>No</th>
             <th>Nome</th>
-            <th>Horário de entrada</th>
-            <th>Horário de saída</th>
-            <th>Status da frequencia</th>
+            <th>Descrição</th>
+          
             <th width="280px">Ação</th>
         </tr>
 
         @foreach ($departamentos as $key => $departamento)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $departamento->funcionario->nome_funcionario }}</td>
-            <td>{{ $departamento->horaentrada_frequencia }}</td>
-            <td>{{ $departamento->horasainda_frequencia }}</td>
-            <td>{{ $departamento->status_frequencia }}</td>
+            <td>{{ $departamento->nome_departamento }}</td>
+            <td>{{ $departamento->descricao_departamento }}</td>
+
 
             <td>
                 @permission('departamento-create')
@@ -63,6 +61,7 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+            
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Excluir</h4>

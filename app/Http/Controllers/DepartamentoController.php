@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Departamento;
 
-
 class DepartamentoController extends Controller {
 
     public function index(Request $request) {
